@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import {
   Dispatch,
   ComponentType,
@@ -7,6 +8,7 @@ import {
   ReactNode,
 } from "react";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type ReactTag = keyof JSX.IntrinsicElements | ComponentType<any>;
 
 export type ToggleProps<TTag extends ReactTag> = BaseToggleProps<TTag> &

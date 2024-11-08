@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import React, { Ref, MouseEventHandler } from "react";
 import { forwardRefWithAs } from "./utils";
 import { ToggleProps, ReactTag } from "./types";
@@ -29,6 +32,7 @@ const Within = forwardRefWithAs(function Within<
     className,
   ].join(" ");
   style["--theme-toggle__within--duration"] = `${duration}ms`;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   if (Component === "button" && !rest.type) (rest as any).type = "button";
   const handleClick: MouseEventHandler<TTag> = (e) => {
     onToggle && onToggle(!toggled);
