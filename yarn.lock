@@ -454,6 +454,34 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@radix-ui/react-compose-refs@npm:1.1.0":
+  version: 1.1.0
+  resolution: "@radix-ui/react-compose-refs@npm:1.1.0"
+  peerDependencies:
+    "@types/react": "*"
+    react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 10c3/570ce5d5316e0b15a6ad2017b7eb691e590e143ad451e456ce9b31b938f434703056b2554974f41b60db3ba63e09fa34edea60174e22aee07629630d36173290
+  languageName: node
+  linkType: hard
+
+"@radix-ui/react-slot@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "@radix-ui/react-slot@npm:1.1.0"
+  dependencies:
+    "@radix-ui/react-compose-refs": "npm:1.1.0"
+  peerDependencies:
+    "@types/react": "*"
+    react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 10c3/dd055747fff2743bdeb1a2210fa25bc0a638814a325b7286ee1c3ce3ffcae137956859f3dc8396b17bbc3b1c94a2d17a2c4a975e1b04bce51914ceffa5807289
+  languageName: node
+  linkType: hard
+
 "@rtsao/scc@npm:^1.1.0":
   version: 1.1.0
   resolution: "@rtsao/scc@npm:1.1.0"
@@ -481,6 +509,16 @@ __metadata:
   dependencies:
     tslib: "npm:^2.4.0"
   checksum: 10c3/22dc6dd70584006eee6ed3b17f448092710a58f04472ba3a7fa1f4efd927d393938b512832609fea820530f30cbc13d2210af141ce1fd91af3f5d3c03ea6f6fb
+  languageName: node
+  linkType: hard
+
+"@theme-toggles/react@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "@theme-toggles/react@npm:4.1.0"
+  peerDependencies:
+    react: ^16 || ^17 || ^18
+    react-dom: ^16 || ^17 || ^18
+  checksum: 10c3/c7cd3d3789264e054a441243d83bf3e372a52fecac98f26226d459fbed4fea164ba3094b93d25910fcc2d369550d8f5dbd586005cc771cee84640143bdea9b79
   languageName: node
   linkType: hard
 
@@ -1049,6 +1087,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"class-variance-authority@npm:^0.7.0":
+  version: 0.7.0
+  resolution: "class-variance-authority@npm:0.7.0"
+  dependencies:
+    clsx: "npm:2.0.0"
+  checksum: 10c3/5f1be34ce2c5f72cf4eb1d17e4f1e6cf992064af29834abb940198c98dc7600ea2a3333ee70602fb1444bd7f3911e00916b57acbec36e8be05b388651333f20c
+  languageName: node
+  linkType: hard
+
 "clean-stack@npm:^2.0.0":
   version: 2.2.0
   resolution: "clean-stack@npm:2.2.0"
@@ -1060,6 +1107,20 @@ __metadata:
   version: 0.0.1
   resolution: "client-only@npm:0.0.1"
   checksum: 10c3/7fc9779108429b088d7fe337283bb845cb638a5c05cce5dc747cd114c455cff624773e2a5d8ad5da986c7a64d6162814175867edf56f1030bea86e5de565904d
+  languageName: node
+  linkType: hard
+
+"clsx@npm:2.0.0":
+  version: 2.0.0
+  resolution: "clsx@npm:2.0.0"
+  checksum: 10c3/5c80c65ead62d9911c3f836185d39fcd84af9d3207b6b35aaaa47116b1982ec167e912f498520367197651b4ca0f1f9f50c8231f9f1fd7f29c535abc0654646b
+  languageName: node
+  linkType: hard
+
+"clsx@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "clsx@npm:2.1.1"
+  checksum: 10c3/46001099c2eebf55e127f91e29950857bb97ade79eed996d90ad2eed27117c401250dd31c1b2b80887c19388bf5c98b9c59e48d5b56f55f956f3e6a557479855
   languageName: node
   linkType: hard
 
@@ -2114,16 +2175,25 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "hhat-web@workspace:."
   dependencies:
+    "@radix-ui/react-slot": "npm:^1.1.0"
+    "@theme-toggles/react": "npm:^4.1.0"
     "@types/node": "npm:^20"
     "@types/react": "npm:^18"
     "@types/react-dom": "npm:^18"
+    class-variance-authority: "npm:^0.7.0"
+    clsx: "npm:^2.1.1"
     eslint: "npm:^8"
     eslint-config-next: "npm:15.0.3"
+    lucide-react: "npm:^0.456.0"
     next: "npm:15.0.3"
+    next-themes: "npm:^0.4.3"
     postcss: "npm:^8"
     react: "npm:19.0.0-rc-66855b96-20241106"
     react-dom: "npm:19.0.0-rc-66855b96-20241106"
+    sonner: "npm:^1.7.0"
+    tailwind-merge: "npm:^2.5.4"
     tailwindcss: "npm:^3.4.1"
+    tailwindcss-animate: "npm:^1.0.7"
     typescript: "npm:^5"
   languageName: unknown
   linkType: soft
@@ -2709,6 +2779,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lucide-react@npm:^0.456.0":
+  version: 0.456.0
+  resolution: "lucide-react@npm:0.456.0"
+  peerDependencies:
+    react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0-rc
+  checksum: 10c3/88fa4f133ad65d128717b92effdd7117c004bc30e270eb177a9d1ee0106ff9bf3f2b0758ce9907e624ec8add7ae67c86468263bbe5fb8441a899f472ef83dc0c
+  languageName: node
+  linkType: hard
+
 "make-fetch-happen@npm:^13.0.0":
   version: 13.0.1
   resolution: "make-fetch-happen@npm:13.0.1"
@@ -2902,6 +2981,16 @@ __metadata:
   version: 0.6.4
   resolution: "negotiator@npm:0.6.4"
   checksum: 10c3/935c4d8592e228c5e08d6839abc673ff93f4f6e94269984b50a9630683df66cccf16f1f987e3facb6ef3a6400571a58dddfb754fc11405157c0786d5b573cb10
+  languageName: node
+  linkType: hard
+
+"next-themes@npm:^0.4.3":
+  version: 0.4.3
+  resolution: "next-themes@npm:0.4.3"
+  peerDependencies:
+    react: ^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc
+    react-dom: ^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc
+  checksum: 10c3/bd6d2b0c4d57ba131366018aeb492f451e1e51268b3ba82767e665afcd06b2815b5a3961797d0991301019eb60d96a8d1855c05cde82030822d1ba93955093ca
   languageName: node
   linkType: hard
 
@@ -3761,6 +3850,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"sonner@npm:^1.7.0":
+  version: 1.7.0
+  resolution: "sonner@npm:1.7.0"
+  peerDependencies:
+    react: ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+    react-dom: ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+  checksum: 10c3/05338ff4be976e58c4d5892061cd68fc9f49f3db289e6d606ba8675f86a38934c7de86471a5d1da3505f3e7bb75e590950c3c51d8838dd42ca5432d76de081ab
+  languageName: node
+  linkType: hard
+
 "source-map-js@npm:^1.0.2, source-map-js@npm:^1.2.1":
   version: 1.2.1
   resolution: "source-map-js@npm:1.2.1"
@@ -3967,6 +4066,22 @@ __metadata:
   version: 1.0.0
   resolution: "supports-preserve-symlinks-flag@npm:1.0.0"
   checksum: 10c3/6fa8a3d05222179df07dd0b76cea170f5ce066b8e13c1053b1d1c5a4fabc6aec0c6fddb6a8241f724096055bcecda349f7ed1521a492a0f29f8f1b53e803fef1
+  languageName: node
+  linkType: hard
+
+"tailwind-merge@npm:^2.5.4":
+  version: 2.5.4
+  resolution: "tailwind-merge@npm:2.5.4"
+  checksum: 10c3/8c23672194af440c35ef370e2525dd31614efc6d796050d6529d261144f0ba2ae02d17ba67d5dc04036b7dccaaa2855d15730f5fef8454655b959829183404e7
+  languageName: node
+  linkType: hard
+
+"tailwindcss-animate@npm:^1.0.7":
+  version: 1.0.7
+  resolution: "tailwindcss-animate@npm:1.0.7"
+  peerDependencies:
+    tailwindcss: "*"
+  checksum: 10c3/805bd1291cce586a0f124173b4a8f31f61646b07627a942af599bb710d60b38c0c92bdbacb5eabf959484b78aefdba9bfa33b77b801cf01f5dc8e3e1b8ba82bd
   languageName: node
   linkType: hard
 
