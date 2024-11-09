@@ -1,7 +1,5 @@
-"use client";
-
-import { ThemeToggleButton } from "@/components/Theme";
-import { Button } from "@/components/ui/button";
+import { ThemeToggleButton } from "§comp/Theme";
+import { Button } from "§ui/button";
 
 import { toast } from "sonner";
 import Link from "next/link";

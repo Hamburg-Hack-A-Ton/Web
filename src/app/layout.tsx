@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Toaster } from "@/components/ui/sonner";
+import { Toaster } from "§ui/sonner";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
+import { VercelToolbar } from "@vercel/toolbar/next";
 
 export const metadata: Metadata = {
   title: "Hamburg Hack A Ton!",
@@ -16,14 +17,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`antialiased bg-background text-primary-foreground`}
-      >
+      <head>
         <SpeedInsights />
         <Analytics />
-        <link rel="stylesheet" href="https://use.typekit.net/nib2aic.css"></link>
+        <link
+          rel="stylesheet"
+          href="https://use.typekit.net/nib2aic.css"
+        ></link>
+      </head>
+      <body className={`antialiased bg-background text-primary-foreground`}>
         <Toaster />
-        {children}
+        <div className="h-screen w-screen z-0">{children}</div>
+        <VercelToolbar className="z-10" />
       </body>
     </html>
   );

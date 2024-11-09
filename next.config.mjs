@@ -1,11 +1,44 @@
 import {withSentryConfig} from "@sentry/nextjs";
-import type { NextConfig } from "next";
+import { withVercelToolbar } from '@vercel/toolbar/plugins/next';
+import NodePolyfillPlugin from "node-polyfill-webpack-plugin";
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        async_hooks: false,
+      };
+    }
 
-export default withSentryConfig(nextConfig, {
+    config.module.rules.push({
+      test: /\.m?js/,
+      resolve: {
+        fullySpecified: false,
+      },
+    });
+
+    config.cache = false;
+
+    config.plugins.push(new NodePolyfillPlugin());
+
+    // Add a custom rule to handle node: scheme
+    config.module.rules.push({
+      test: /\.js$/,
+      loader: 'string-replace-loader',
+      options: {
+        search: 'node:',
+        replace: '',
+      },
+    });
+
+    return config;
+  }
+}
+
+
+const nextconf2 = withSentryConfig(nextConfig, {
 // For all available options, see:
 // https://github.com/getsentry/sentry-webpack-plugin#options
 
@@ -44,3 +77,5 @@ disableLogger: true,
 // https://vercel.com/docs/cron-jobs
 automaticVercelMonitors: true,
 });
+
+export default withVercelToolbar()(nextconf2);
