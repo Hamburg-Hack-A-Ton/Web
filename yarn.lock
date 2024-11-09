@@ -1911,6 +1911,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vercel/edge-config-fs@npm:0.1.0":
+  version: 0.1.0
+  resolution: "@vercel/edge-config-fs@npm:0.1.0"
+  checksum: 10c3/378eda42570a87ebfab46d1a2ce42b159c9a9253d16a70f528849d7b984e036e43eb93361c23fb8bd972f5745f83dab9d22a80e9bda21735d49c586440aec333
+  languageName: node
+  linkType: hard
+
+"@vercel/edge-config@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "@vercel/edge-config@npm:1.4.0"
+  dependencies:
+    "@vercel/edge-config-fs": "npm:0.1.0"
+  peerDependencies:
+    "@opentelemetry/api": ^1.7.0
+  peerDependenciesMeta:
+    "@opentelemetry/api":
+      optional: true
+  checksum: 10c3/af87bbd838049c6857c81fde23307382ccb2ec78c6316721d0fa2976324ddad960285be29807eb10eaded0ff14b9dad2b59de2e69621cf537c50dfc960934461
+  languageName: node
+  linkType: hard
+
 "@vercel/flags@npm:^2.6.3":
   version: 2.6.3
   resolution: "@vercel/flags@npm:2.6.3"
@@ -4081,6 +4102,7 @@ __metadata:
     "@types/react": "npm:^18"
     "@types/react-dom": "npm:^18"
     "@vercel/analytics": "npm:^1.3.2"
+    "@vercel/edge-config": "npm:^1.4.0"
     "@vercel/flags": "npm:^2.6.3"
     "@vercel/speed-insights": "npm:^1.1.0"
     "@vercel/toolbar": "npm:^0.1.26"

@@ -4,6 +4,7 @@ import { Toaster } from "§ui/sonner";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import { VercelToolbar } from "@vercel/toolbar/next";
+import { AnimatePresence } from "framer-motion";
 
 export const metadata: Metadata = {
   title: "Hamburg Hack A Ton!",
@@ -25,9 +26,11 @@ export default function RootLayout({
           href="https://use.typekit.net/nib2aic.css"
         ></link>
       </head>
-      <body className="antialiased bg-background text-primary-foreground">
+      <body className="antialiased bg-background text-foreground">
         <Toaster />
-        <div className="h-screen w-screen z-0">{children}</div>
+        <div className="h-screen w-screen z-0">
+          <AnimatePresence>{children}</AnimatePresence>
+        </div>
         <VercelToolbar />
       </body>
     </html>
