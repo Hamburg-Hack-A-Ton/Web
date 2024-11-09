@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import RootMain from "@/pages/root/main";
+import RootMain from "@/libary/root/main";
 
 export default function Home() {
   return <RootMain />;
