@@ -1,25 +1,17 @@
 /* eslint-disable @next/next/no-async-client-component */
-"use client";
-
-import React, { useEffect } from "react";
+import React, { Suspense } from "react";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { gkMain } from "@/flags";
+import UnderConstruction from "@/ux/components/Homepage/WIP";
+import RootMain from "@/ux/components/Homepage/main";
 
-export default function Home() {
-  const [data, setData] = React.useState(false);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await gkMain();
-      setData(result);
-    };
-    fetchData();
-  }, []);
+export default async function Home() {
+  const enter = await gkMain();
 
   return (
-    <div>
-      <h1>Home {data ? "test" : "not test"}</h1>
-    </div>
+    <Suspense fallback={<div>Loading...</div>}>
+      {enter ? <RootMain /> : <UnderConstruction />}
+    </Suspense>
   );
 }

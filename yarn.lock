@@ -2282,6 +2282,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"autoprefixer@npm:^10.4.20":
+  version: 10.4.20
+  resolution: "autoprefixer@npm:10.4.20"
+  dependencies:
+    browserslist: "npm:^4.23.3"
+    caniuse-lite: "npm:^1.0.30001646"
+    fraction.js: "npm:^4.3.7"
+    normalize-range: "npm:^0.1.2"
+    picocolors: "npm:^1.0.1"
+    postcss-value-parser: "npm:^4.2.0"
+  peerDependencies:
+    postcss: ^8.1.0
+  bin:
+    autoprefixer: bin/autoprefixer
+  checksum: 10c3/451d8e9319bb47822e3d9d08e6930b94506e83b02fd27024e80029a0bd4efd0ae79af009c280ab259ae97d715698b1eac8226ac457f34c283efb4e988ab7ba7f
+  languageName: node
+  linkType: hard
+
 "available-typed-arrays@npm:^1.0.7":
   version: 1.0.7
   resolution: "available-typed-arrays@npm:1.0.7"
@@ -2457,7 +2475,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"browserslist@npm:^4.24.0":
+"browserslist@npm:^4.23.3, browserslist@npm:^4.24.0":
   version: 4.24.2
   resolution: "browserslist@npm:4.24.2"
   dependencies:
@@ -2551,7 +2569,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"caniuse-lite@npm:^1.0.30001579, caniuse-lite@npm:^1.0.30001669":
+"caniuse-lite@npm:^1.0.30001579, caniuse-lite@npm:^1.0.30001646, caniuse-lite@npm:^1.0.30001669":
   version: 1.0.30001679
   resolution: "caniuse-lite@npm:1.0.30001679"
   checksum: 10c3/00790c92abd2379ea1f0cfe04edb940c8f4a05dc2242a8c9704907272bf4e859547db326eebd7c52dfde7a638d9400f390e8e5100b259cef42ddb4f88b1422b9
@@ -3706,6 +3724,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fraction.js@npm:^4.3.7":
+  version: 4.3.7
+  resolution: "fraction.js@npm:4.3.7"
+  checksum: 10c3/230449a88f59e71c0a5c1f20a1c0eedff3d40e88796b0370ca1c4389c43b6b33b08c3bf4715fde422d8a1c8ab67e7ddba9dab89f63ba399b9a9343e1ef60d17c
+  languageName: node
+  linkType: hard
+
 "framer-motion@npm:^11.11.11":
   version: 11.11.11
   resolution: "framer-motion@npm:11.11.11"
@@ -4059,6 +4084,7 @@ __metadata:
     "@vercel/flags": "npm:^2.6.3"
     "@vercel/speed-insights": "npm:^1.1.0"
     "@vercel/toolbar": "npm:^0.1.26"
+    autoprefixer: "npm:^10.4.20"
     class-variance-authority: "npm:^0.7.0"
     clsx: "npm:^2.1.1"
     eslint: "npm:^8"
@@ -5288,6 +5314,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"normalize-range@npm:^0.1.2":
+  version: 0.1.2
+  resolution: "normalize-range@npm:0.1.2"
+  checksum: 10c3/32bf2688c6400c542946bb0a5df8a7dc9b9d9cd7fd7988307bb2b24b9192932e3401e5b22c330893a0e6c87158adf9fc089736419c4f3bba10d672e40b01e32f
+  languageName: node
+  linkType: hard
+
 "npm-run-path@npm:^4.0.1":
   version: 4.0.1
   resolution: "npm-run-path@npm:4.0.1"
@@ -5609,7 +5642,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"picocolors@npm:^1.0.0, picocolors@npm:^1.1.0":
+"picocolors@npm:^1.0.0, picocolors@npm:^1.0.1, picocolors@npm:^1.1.0":
   version: 1.1.1
   resolution: "picocolors@npm:1.1.1"
   checksum: 10c3/f549be7f1b10e879bd31e9f72a178b60f645a71d27296c2371079e63454117929ae5ab37334c3b6b4997cfae71d3ed7ce2f7828b784ece370e62e63657fb0bae
@@ -5714,7 +5747,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-value-parser@npm:^4.0.0":
+"postcss-value-parser@npm:^4.0.0, postcss-value-parser@npm:^4.2.0":
   version: 4.2.0
   resolution: "postcss-value-parser@npm:4.2.0"
   checksum: 10c3/868db7988d0ca97e0f1696b5e339aba477459b03360c3cf5d5f820254b15e3b996e6d806d9f4bdc443d1e45a08f0b05a20ec58d8006e59c219e7263ab1b42e8e

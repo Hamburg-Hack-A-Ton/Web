@@ -25,10 +25,10 @@ export default function RootLayout({
           href="https://use.typekit.net/nib2aic.css"
         ></link>
       </head>
-      <body className={`antialiased bg-background text-primary-foreground`}>
+      <body className="antialiased bg-background text-primary-foreground">
         <Toaster />
         <div className="h-screen w-screen z-0">{children}</div>
-        <VercelToolbar className="z-10" />
+        <VercelToolbar />
       </body>
     </html>
   );

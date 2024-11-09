@@ -3,7 +3,7 @@ import { ThemeToggleButton } from "§comp/Theme";
 
 const UnderConstruction: React.FC = () => {
   return (
-    <main className="bg-l-bg dark:bg-d-bg h-screen w-screen flex items-center justify-center duration-300">
+    <main className="bg-background text-foreground h-screen w-screen flex items-center justify-center duration-300">
       <section className="flex flex-col items-center justify-center">
         <div className="flex py-2">
           <h1 className="gigalypse text-5xl text-center">

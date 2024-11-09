@@ -1,3 +1,5 @@
+"use client";
+
 import { ThemeToggleButton } from "§comp/Theme";
 import { Button } from "§ui/button";
 
