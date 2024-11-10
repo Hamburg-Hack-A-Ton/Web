@@ -10,8 +10,8 @@ const Card = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "rounded-lg border bg-l-bg/10 dark:bg-d-bg/10 duration-700 glassblur text-l-txt dark:text-d-txt shadow-sm",
-      className,
+      "rounded-lg border bg-background/10 duration-700 glassblur text-foreground shadow-sm",
+      className
     )}
     {...props}
   />
@@ -38,7 +38,7 @@ const CardTitle = React.forwardRef<
     ref={ref}
     className={cn(
       "text-2xl px-3 pt-2 font-semibold leading-none tracking-tight",
-      className,
+      className
     )}
     {...props}
   />
@@ -52,8 +52,8 @@ const CardDescription = React.forwardRef<
   <p
     ref={ref}
     className={cn(
-      "pl-3 text-sm text-l-txt-800 duration-700 dark:text-d-txt-200",
-      className,
+      "pl-3 text-sm text-muted-foreground duration-700 ",
+      className
     )}
     {...props}
   />
@@ -86,10 +86,7 @@ const CardDivider = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn(
-      "border-t border-d-bg duration-700 dark:border-l-bg",
-      className,
-    )}
+    className={cn("border-t border-ring duration-700 ", className)}
     {...props}
   />
 ));

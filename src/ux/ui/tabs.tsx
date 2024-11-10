@@ -73,7 +73,7 @@ function CustomDirectionAwareTabs({
     <div className=" flex flex-col items-center w-full">
       <div
         className={cn(
-          "flex space-x-1 border border-none border-l-acc dark:border-d-acc rounded-full cursor-pointer bg-l-bg-400 dark:bg-d-bg-900 opacity-90 glassblur px-[3px] py-[3.2px] shadow-inner-shadow",
+          "flex space-x-1 border border-none border-accent rounded-full cursor-pointer bg-muted opacity-90 glassblur px-[3px] py-[3.2px] shadow-inner-shadow",
           className,
           rounded
         )}
@@ -95,7 +95,7 @@ function CustomDirectionAwareTabs({
             {activeTab === tab.id && (
               <motion.span
                 layoutId="bubble"
-                className="absolute  inset-0 z-10 bg-l-bg-400 dark:bg-d-bg-800 mix-blend-difference shadow-inner-shadow border border-l-acc dark:border-d-acc"
+                className="absolute  inset-0 z-10 bg-muted mix-blend-difference shadow-inner-shadow border border-accent"
                 style={rounded ? { borderRadius: 9 } : { borderRadius: 9999 }}
                 transition={{ type: "spring", bounce: 0.19, duration: 0.4 }}
               />
@@ -126,7 +126,7 @@ function CustomDirectionAwareTabs({
                 custom={direction}
                 onAnimationStart={() => setIsAnimating(true)}
                 onAnimationComplete={() => setIsAnimating(false)}
-                className={"text-l-txt dark:text-d-txt"}
+                className={"text-foreground"}
               >
                 {content}
               </motion.div>
@@ -143,7 +143,7 @@ import { DefaultText } from "§util/className";
 function PresetDirectionAwareTabs(props: OgImageSectionProps) {
   const [activeTabs, setActiveTabs] = useState(0);
   return (
-    <Wrapper className="border-l-acc dark:border-d-acc">
+    <Wrapper className="border-accent ">
       <CustomDirectionAwareTabs
         {...props}
         activeTab={activeTabs}

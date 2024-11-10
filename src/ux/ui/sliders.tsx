@@ -14,14 +14,14 @@ const Slider = React.forwardRef<
     ref={ref}
     className={cn(
       "relative flex w-full touch-none select-none items-center",
-      className,
+      className
     )}
     {...props}
   >
-    <SliderPrimitive.Track className="relative h-2 w-full grow overflow-hidden rounded-full duration-700 bg-l-sec dark:bg-d-sec opacity-50 glassblur">
-      <SliderPrimitive.Range className="absolute h-full bg-l-prim duration-700 dark:bg-d-prim" />
+    <SliderPrimitive.Track className="relative h-2 w-full grow overflow-hidden rounded-full duration-700 bg-secondary opacity-50 glassblur">
+      <SliderPrimitive.Range className="absolute h-full bg-primary duration-700" />
     </SliderPrimitive.Track>
-    <SliderPrimitive.Thumb className="block h-5 w-5 rounded-full border-2 border-l-prim duration-700 dark:border-d-prim bg-l-bg dark:bg-d-bg ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-l-acc dark:focus-visible:ring-d-acc focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50" />
+    <SliderPrimitive.Thumb className="block h-5 w-5 rounded-full border-2 border-secondary duration-700  bg-background ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50" />
   </SliderPrimitive.Root>
 ));
 Slider.displayName = SliderPrimitive.Root.displayName;
@@ -44,8 +44,8 @@ function GaugeCircle({
   return (
     <div
       className={cn(
-        "relative h-40 w-40 text-2xl font-semibold text-l-txt duration-700 dark:text-d-txt",
-        className,
+        "relative h-40 w-40 text-2xl font-semibold text-foreground duration-700",
+        className
       )}
       style={
         {
@@ -77,7 +77,7 @@ function GaugeCircle({
             strokeDashoffset="0"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="opacity-100 stroke stroke-l-sec/70 duration-700 dark:stroke-d-sec-500/70"
+            className="opacity-100 stroke stroke-secondary/70 duration-700"
             style={
               {
                 stroke: "",
@@ -102,7 +102,7 @@ function GaugeCircle({
           strokeDashoffset="0"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="opacity-100 stroke stroke-l-prim duration-700 dark:stroke-d-prim"
+          className="opacity-100 stroke stroke-primary duration-700"
           style={
             {
               stroke: "",

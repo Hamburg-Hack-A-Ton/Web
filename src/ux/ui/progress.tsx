@@ -21,11 +21,11 @@ const Progress = React.forwardRef<
   ProgressProps
 >(
   (
-    { className, value, color, bg = "bg-l-sec dark:bg-d-sec", ...props },
+    { className, value, color, bg = "bg-background", ...props },
     ref,
   ) => {
     const colorClasses = React.useMemo(() => {
-      if (!color) return "bg-l-prim dark:bg-d-prim duration-700"; // Default
+      if (!color) return "bg-primary duration-700"; // Default
 
       const sortedKeys = Object.keys(color)
         .map(Number)

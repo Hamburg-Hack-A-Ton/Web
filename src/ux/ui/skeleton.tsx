@@ -30,14 +30,11 @@ function Skeleton({
         </div>
       )}
       <div
-        className="bg-l-bg duration-700 dark:bg-d-bg relative z-50"
+        className="bg-background duration-700  relative z-50"
         style={{ top: `-${height}px` }}
       >
         <div
-          className={cn(
-            "rounded-sm  animate-skeleton bg-l-bg-300 dark:bg-d-bg-800 ",
-            className,
-          )}
+          className={cn("rounded-sm  animate-skeleton bg-muted ", className)}
           style={{
             position: "relative",
             zIndex: 1,

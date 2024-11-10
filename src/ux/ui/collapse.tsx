@@ -24,7 +24,7 @@ const CollapseGroup: React.FC<CGroupProps> = ({
         type="multiple"
         {...props}
         defaultValue={["default"]}
-        className="border-t border-b duration-700 border-d-bg dark:border-l-bg"
+        className="border-t border-b duration-700 border-secondary-foreground"
       >
         {children}
       </CollapsePrimitive.Root>
@@ -40,8 +40,8 @@ const CollapseItem = React.forwardRef<
     ref={ref}
     {...props}
     className={cn(
-      "border-t border-b border-d-bg/70 duration-700 dark:border-l-bg/70",
-      className,
+      "border-t border-b border-secondary-foreground/70 duration-700 ",
+      className
     )}
   />
 ));
@@ -55,8 +55,8 @@ const CollapseHeadRaw = React.forwardRef<
     <CollapsePrimitive.Trigger
       ref={ref}
       className={cn(
-        "flex flex-1 items-center justify-between text-l-txt duration-700 dark:text-d-txt font py-4 font-medium transition-all [&[data-state=open]>svg]:rotate-180",
-        className,
+        "flex flex-1 items-center justify-between text-foreground duration-700 font py-4 font-medium transition-all [&[data-state=open]>svg]:rotate-180",
+        className
       )}
       {...props}
     >
@@ -107,11 +107,11 @@ const Collapse: React.FC<CollapseProps> = ({
       <CollapseItem className={cn("border-b border-t")} value={value}>
         <CollapseHeadRaw>{trigger}</CollapseHeadRaw>
         <CollapseContentRaw>
-          <h1 className=" font-bold border-collapse top-2 duration-700 text-l-txt-800 dark:text-d-txt-400">
+          <h1 className=" font-bold border-collapse top-2 duration-700 text-muted-foreground">
             {title}
           </h1>
           <div
-            className={cn("text-l-txt dark:text-d-txt duration-700", className)}
+            className={cn("text-foreground duration-700", className)}
             {...props}
           >
             {children}
@@ -124,13 +124,10 @@ const Collapse: React.FC<CollapseProps> = ({
       <CollapseItem className={cn("border-b border-t")} value={"default"}>
         <CollapseHeadRaw>{trigger}</CollapseHeadRaw>
         <CollapseContentRaw>
-          <h1 className=" font-bold border-collapse top-2 text-l-txt-800 dark:text-d-txt-400">
+          <h1 className=" font-bold border-collapse top-2 text-muted-foreground">
             {title}
           </h1>
-          <div
-            className={cn("text-l-txt dark:text-d-txt", className)}
-            {...props}
-          >
+          <div className={cn("text-foreground", className)} {...props}>
             {children}
           </div>
         </CollapseContentRaw>

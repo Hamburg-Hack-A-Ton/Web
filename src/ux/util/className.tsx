@@ -1,6 +1,5 @@
+export const DefaultWrapper: string = `bernina bold bg-background text-foreground border-2 border-ring duration-700`;
 
-export const DefaultWrapper: string = `oxanium bg-l-bg dark:bg-d-bg text-l-txt dark:text-d-txt duration-700`;
+export const DefaultText: string = `omnes bg-background text-foreground duration-700`;
 
-export const DefaultText: string = `oxanium text-l-txt dark:text-d-txt duration-700`;
-
-export const DefaultHeader: string = `gigalypse text-l-txt dark:text-d-txt duration-700 mb-4 text-2xl font-bold`;
+export const DefaultHeader: string = `lores bg-background text-foreground duration-700 mb-4 text-3xl font-bold`;

@@ -241,6 +241,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fillout/react@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "@fillout/react@npm:1.1.2"
+  checksum: 10c3/bf748ba9fa133136943e4753821ff6b3915c1e66b5131fe1b4c73bcf024d3ed4340db368ec4d801d637609583837864fbc089f5f5714ff4e4e64360cad0cca7f
+  languageName: node
+  linkType: hard
+
 "@floating-ui/core@npm:^1.6.0":
   version: 1.6.8
   resolution: "@floating-ui/core@npm:1.6.8"
@@ -5027,6 +5034,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "hhat-web@workspace:."
   dependencies:
+    "@fillout/react": "npm:^1.1.2"
     "@radix-ui/react-accordion": "npm:^1.2.1"
     "@radix-ui/react-alert-dialog": "npm:^1.1.2"
     "@radix-ui/react-aspect-ratio": "npm:^1.1.0"
@@ -6339,9 +6347,9 @@ __metadata:
   linkType: hard
 
 "object-inspect@npm:^1.13.1":
-  version: 1.13.2
-  resolution: "object-inspect@npm:1.13.2"
-  checksum: 10c3/2f16672bc107801d4e6ab8e8089bfff3a686a870be54867983ea4ed380f1afe1cddb3f66373c90435304553a8b6996505e3908550e3d72f3969bf4ab6d564384
+  version: 1.13.3
+  resolution: "object-inspect@npm:1.13.3"
+  checksum: 10c3/1574d1d40ae16c79faeda97180b819be50c93e0a6d1ab9143add631f02103e67dfd59633f5ff005a05b25c224b2b41a72c318fbbd17e760d0a688a86c1f41820
   languageName: node
   linkType: hard
 
