@@ -15,6 +15,7 @@ import { Card, CardContent } from "§ui/card";
 import { Button } from "§ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import { AspectRatio } from "@/ux/ui/aspect-ratio";
 
 export default function RootMain() {
   const [isTTVisible, setIsTTVisible] = useState(true);
@@ -23,6 +24,7 @@ export default function RootMain() {
   const { scrollY } = useScroll();
   const [showStickyHeader, setStickyShowHeader] = useState(false);
   const MotionImage = motion.create(Image);
+  const Card = motion.div;
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > 100) {
@@ -32,33 +34,70 @@ export default function RootMain() {
     }
   });
   return (
-    <motion.main className="w-screen h-max justify-center">
+    <motion.main className="w-screen h-max justify-center" layout>
       <AnimatePresence>
-        <motion.header className="h-16">Normal Header</motion.header>
+        <motion.header
+          className="h-16 sticky top-0 z-10 bg-background glassblur duration-200 data-[showstickyheader=true]:opacity-50 data-[showstickyheader=true]:h-14"
+          data-showstickyheader={showStickyHeader}
+          key="top-header"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: showStickyHeader ? 0.75 : 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <AnimatePresence>
+            {(showStickyHeader && <p>Cool Header</p>) || (
+              <p>Not so cool Header</p>
+            )}
+          </AnimatePresence>
+        </motion.header>
 
-        {showStickyHeader && (
-          <motion.header
-            className="sticky top-0 h-14 bg-background  text-foreground flex items-center z-100"
-            initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -50, opacity: 0 }}
-            transition={{ duration: 1 }}
-          >
-            <motion.div className="absolute left-2">
-              <h1>Sticky Header</h1>
-            </motion.div>
-          </motion.header>
-        )}
-
-        <motion.section>
-          <motion.div className=" p-4  border-border w-3/4 border-2 rounded-sm border-spacing-3">
-            <div className="flex items-top justify-around">
-              <MotionImage
-                src="/cdn/placeholder/elphi1.webp"
-                width={580}
-                height={286}
-                className="rounded-lg border-ring border-4 dark:border-2 cursor-crosshair"
+        <motion.section className="flex-row items-start justify-center">
+          <motion.div key="hero">
+            <motion.div className="w-screen h-3/5">
+              <Image
+                src="/cdn/placeholder/lg.jpg"
+                alt="Hamburg"
+                width={1920}
+                height={1080}
+                className=""
               />
+            </motion.div>
+            <motion.div
+              className="absolute inset-0 flex flex-col h-3/5 items-center justify-center text-white bg-black bg-opacity-50"
+              initial={{ opacity: 0, y: showStickyHeader ? "-0.5rem" : "0rem" }}
+              animate={{
+                opacity: 1,
+                y: showStickyHeader ? "1.5rem" : "2rem",
+              }}
+              transition={{ duration: 0.5 }}
+            >
+              <motion.h1 className="text-6xl gigalypse">
+                Welcome to Hamburg Hack A Ton
+              </motion.h1>
+              <motion.p className="text-2xl omnes">
+                The best place to build projects
+              </motion.p>
+            </motion.div>
+          </motion.div>
+          <Card className="flex items-start justify-center p-4">
+            <motion.div
+              className=" p-4 flex items-start justify-center border-border w-4/5 h-60 border-2 rounded-sm border-spacing-3"
+              key="content"
+            >
+              <AspectRatio
+                ratio={2.028}
+                style={{ paddingBottom: 0, height: "12.5rem" }}
+                className="flex items-center justify-center"
+              >
+                <MotionImage
+                  src="/cdn/placeholder/elphi1.webp"
+                  alt="Elbphilharmonie"
+                  width={580}
+                  height={286}
+                  className="rounded-lg border-ring border-4 dark:border-2 cursor-crosshair"
+                />
+              </AspectRatio>
               <div className="p-4">
                 <motion.h1 className="lores text-2xl ">
                   Hello fellow Developers
@@ -71,12 +110,15 @@ export default function RootMain() {
                   projects.
                 </motion.p>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </Card>
         </motion.section>
 
         {isDeveloper && (
-          <motion.section className="absolute bottom-7 w-screen flex flex-grow justify-center">
+          <motion.section
+            className="absolute bottom-7 w-screen flex flex-grow justify-center"
+            key="devui"
+          >
             <Card>
               <CardContent>
                 <Button>
@@ -89,11 +131,12 @@ export default function RootMain() {
 
         {isTTVisible && (
           <motion.section
-            className="bottom-2 left-2 sticky z-10"
+            className="bottom-2 left-2 sticky z-10 w-7 h-7"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
+            key="theme-toggle"
           >
             <ThemeToggleButton />
           </motion.section>
