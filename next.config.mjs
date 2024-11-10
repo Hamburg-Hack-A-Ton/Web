@@ -1,8 +1,28 @@
 import {withSentryConfig} from "@sentry/nextjs";
 import { withVercelToolbar } from '@vercel/toolbar/plugins/next';
 
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        async_hooks: false,
+      };
+    }
+
+    config.module.rules.push({
+      test: /\.m?js/,
+      resolve: {
+        fullySpecified: false,
+      },
+    });
+
+    config.cache = false;
+
+    return config;
+  }
 }
 
 
