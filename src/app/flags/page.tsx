@@ -1,3 +1,3 @@
-export default function FlagsPage() {
+export default async function FlagsPage() {
   return <p>Test</p>;
 }

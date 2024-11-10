@@ -1,4 +1,4 @@
-import { TextAnimate } from "§ui/textAnimate";
+import { TextAnimate } from "§ui/TextAnimate";
 import React from "react";
 import { ThemeToggleButton } from "§comp/Theme";
 import { motion } from "framer-motion";

@@ -15,7 +15,7 @@ import { Card, CardContent } from "§ui/card";
 import { Button } from "§ui/button";
 import Link from "next/link";
 import Image from "next/image";
-import { AspectRatio } from "@/ux/ui/aspect-ratio";
+import { AspectRatio } from "§ui/aspect-ratio";
 
 export default function RootMain() {
   const [isTTVisible, setIsTTVisible] = useState(true);
