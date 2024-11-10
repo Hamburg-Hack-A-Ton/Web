@@ -6,7 +6,7 @@ import * as TogglePrimitive from "@radix-ui/react-toggle";
 import * as ToggleGroupPrimitive from "@radix-ui/react-toggle-group";
 import { cva, type VariantProps } from "cva";
 
-import { cn } from "§util/twm";
+import { cn } from ">util/twm";
 
 const toggleVariants = cva({
   base: "text-foreground inline-flex items-center duration-700 justify-center rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-muted hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-accent data-[state=on]:text-accent-foreground",
@@ -80,7 +80,7 @@ const ToggleGroupItem = React.forwardRef<
           variant: variant,
           size: size,
         }),
-        className,
+        className
       )}
       {...props}
     >

@@ -13,7 +13,7 @@ import React, {
 import { AnimatePresence, MotionConfig, motion } from "framer-motion";
 import { X } from "react-feather";
 
-import { cn } from "§util/twm";
+import { cn } from ">util/twm";
 
 const TRANSITION = {
   type: "spring",
@@ -23,7 +23,7 @@ const TRANSITION = {
 
 function useClickOutside(
   ref: React.RefObject<HTMLElement>,
-  handler: () => void,
+  handler: () => void
 ) {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -86,7 +86,7 @@ export function ScaleUpRoot({ children, className }: ScaleUpRootProps) {
         <div
           className={cn(
             "relative flex items-center justify-center isolate",
-            className,
+            className
           )}
         >
           {children}
@@ -111,7 +111,7 @@ export function ScaleUpTrigger({ children, className }: ScaleUpTriggerProps) {
         layoutId={`ScaleUp-${uniqueId}`}
         className={cn(
           "flex h-9 items-center border border-zinc-950/10 bg-white px-3 text-zinc-950 dark:border-zinc-50/10 dark:bg-zinc-700 dark:text-zinc-50",
-          className,
+          className
         )}
         style={{
           borderRadius: 8,
@@ -164,7 +164,7 @@ export function ScaleUpContent({
           layoutId={`ScaleUp-${uniqueId}`}
           className={cn(
             "absolute h-[200px] w-[364px] overflow-hidden border border-zinc-950/10 bg-white outline-none dark:bg-zinc-700 z-50", // Changed z-90 to z-50
-            className,
+            className
           )}
           style={{
             borderRadius: 12,
@@ -227,7 +227,7 @@ export function ScaleUpLabel({ children, className }: ScaleUpLabelProps) {
       }}
       className={cn(
         "absolute left-4 top-3 select-none text-sm text-zinc-500 dark:text-zinc-400",
-        className,
+        className
       )}
     >
       {children}
@@ -246,7 +246,7 @@ export function ScaleUpTextarea({ className }: ScaleUpTextareaProps) {
     <textarea
       className={cn(
         "h-full w-full resize-none rounded-md bg-transparent px-4 py-3 text-sm outline-none",
-        className,
+        className
       )}
       autoFocus
       value={note}
@@ -303,7 +303,7 @@ export function ScaleUpSubmitButton({
     <button
       className={cn(
         "relative ml-1 flex h-8 shrink-0 scale-100 select-none appearance-none items-center justify-center rounded-lg border border-zinc-950/10 bg-transparent px-2 text-sm text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-zinc-800 focus-visible:ring-2 active:scale-[0.98] dark:border-zinc-50/10 dark:text-zinc-50 dark:hover:bg-zinc-800",
-        className,
+        className
       )}
       type="submit"
       aria-label={text}
@@ -324,7 +324,7 @@ export function ScaleUpHeader({
     <div
       className={cn(
         "px-4 py-2 font-semibold text-zinc-900 dark:text-zinc-100",
-        className,
+        className
       )}
     >
       {children}
@@ -356,7 +356,7 @@ export function ScaleUpButton({
     <button
       className={cn(
         "flex w-full items-center gap-2 rounded-md px-4 py-2 text-left text-sm hover:bg-zinc-100 dark:hover:bg-zinc-700",
-        className,
+        className
       )}
       onClick={onClick}
     >

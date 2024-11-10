@@ -9,7 +9,7 @@ import {
 } from "react";
 import { AnimatePresence, MotionConfig, Variants, motion } from "framer-motion";
 import { ArrowLeft } from "react-feather";
-import { cn } from "§util/twm";
+import { cn } from ">util/twm";
 
 const TRANSITION = {
   type: "spring",
@@ -37,7 +37,7 @@ function useFloatingPanel() {
   const context = useContext(FloatingPanelContext);
   if (!context) {
     throw new Error(
-      "useFloatingPanel must be used within a FloatingPanelProvider",
+      "useFloatingPanel must be used within a FloatingPanelProvider"
     );
   }
   return context;
@@ -119,7 +119,7 @@ export function FloatingPanelTrigger({
       layoutId={`floating-panel-trigger-${uniqueId}`}
       className={cn(
         "flex h-9 items-center border border-zinc-950/10 bg-white px-3 text-zinc-950 dark:border-zinc-50/10 dark:bg-zinc-700 dark:text-zinc-50",
-        className,
+        className
       )}
       style={{ borderRadius: 8 }}
       onClick={handleClick}
@@ -197,7 +197,7 @@ export function FloatingPanelContent({
             layoutId={`floating-panel-${uniqueId}`}
             className={cn(
               "fixed z-50 overflow-hidden border border-zinc-950/10 bg-white shadow-lg outline-none dark:border-zinc-50/10 dark:bg-zinc-800",
-              className,
+              className
             )}
             style={{
               borderRadius: 12,
@@ -293,7 +293,7 @@ export function FloatingPanelLabel({
       style={{ opacity: note ? 0 : 1 }}
       className={cn(
         "block mb-2 text-sm font-medium text-zinc-900 dark:text-zinc-100",
-        className,
+        className
       )}
     >
       {children}
@@ -317,7 +317,7 @@ export function FloatingPanelTextarea({
       id={id}
       className={cn(
         "h-full w-full resize-none rounded-md bg-transparent px-4 py-3 text-sm outline-none",
-        className,
+        className
       )}
       autoFocus
       value={note}
@@ -339,7 +339,7 @@ export function FloatingPanelHeader({
     <motion.div
       className={cn(
         "px-4 py-2 font-semibold text-zinc-900 dark:text-zinc-100",
-        className,
+        className
       )}
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
@@ -428,7 +428,7 @@ export function FloatingPanelSubmitButton({
     <motion.button
       className={cn(
         "relative ml-1 flex h-8 shrink-0 scale-100 select-none appearance-none items-center justify-center rounded-lg border border-zinc-950/10 bg-transparent px-2 text-sm text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-zinc-800 focus-visible:ring-2 active:scale-[0.98] dark:border-zinc-50/10 dark:text-zinc-50 dark:hover:bg-zinc-800",
-        className,
+        className
       )}
       type="submit"
       aria-label={text}
@@ -455,7 +455,7 @@ export function FloatingPanelButton({
     <motion.button
       className={cn(
         "flex w-full items-center gap-2 rounded-md px-4 py-2 text-left text-sm hover:bg-zinc-100 dark:hover:bg-zinc-700",
-        className,
+        className
       )}
       onClick={onClick}
       whileHover={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}

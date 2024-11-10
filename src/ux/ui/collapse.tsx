@@ -5,7 +5,7 @@ import * as React from "react";
 import * as CollapsePrimitive from "@radix-ui/react-accordion";
 import { ChevronDown } from "react-feather";
 
-import { cn } from "§util/twm";
+import { cn } from ">util/twm";
 
 interface CGroupProps {
   title?: string;

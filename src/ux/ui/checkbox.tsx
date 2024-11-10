@@ -5,7 +5,7 @@ import * as React from "react";
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 import { Check, Minus } from "react-feather";
 
-import { cn } from "§util/twm";
+import { cn } from ">util/twm";
 
 /**
  * Checkbox component.

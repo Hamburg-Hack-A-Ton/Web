@@ -1,6 +1,6 @@
-import { TextAnimate } from "§ui/TextAnimate";
+import { TextAnimate } from ">ui/TextAnimate";
 import React from "react";
-import { ThemeToggleButton } from "§comp/Theme";
+import { ThemeToggleButton } from ">comp/Theme";
 import { motion } from "framer-motion";
 
 const UnderConstruction: React.FC = () => {

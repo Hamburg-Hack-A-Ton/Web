@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
-import { ThemeToggleButton } from "§comp/Theme";
+import { ThemeToggleButton } from ">comp/Theme";
 import {
   motion,
   AnimatePresence,
@@ -10,12 +10,12 @@ import {
 } from "framer-motion";
 import { useEffect, useState } from "react";
 import React from "react";
-import useIsDeveloper from "§api/auth/vercel/hasAccess";
-import { Card, CardContent } from "§ui/card";
-import { Button } from "§ui/button";
+import useIsDeveloper from ">api/auth/vercel/hasAccess";
+import { Card, CardContent } from ">ui/card";
+import { Button } from ">ui/button";
 import Link from "next/link";
 import Image from "next/image";
-import { AspectRatio } from "§ui/aspect-ratio";
+import { AspectRatio } from ">ui/aspect-ratio";
 
 export default function RootMain() {
   const [isTTVisible, setIsTTVisible] = useState(true);

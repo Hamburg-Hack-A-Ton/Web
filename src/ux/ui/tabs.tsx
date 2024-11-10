@@ -5,7 +5,7 @@ import { ReactNode, useMemo, useState } from "react";
 import { AnimatePresence, MotionConfig, motion } from "framer-motion";
 import useMeasure from "react-use-measure";
 
-import { cn } from "§util/twm";
+import { cn } from ">util/twm";
 
 // Direction Aware Tabs
 type Tab = {
@@ -137,8 +137,8 @@ function CustomDirectionAwareTabs({
     </div>
   );
 }
-import { Wrapper } from "§ui/CustomCard";
-import { DefaultText } from "§util/className";
+import { Wrapper } from ">ui/CustomCard";
+import { DefaultText } from ">util/className";
 
 function PresetDirectionAwareTabs(props: OgImageSectionProps) {
   const [activeTabs, setActiveTabs] = useState(0);

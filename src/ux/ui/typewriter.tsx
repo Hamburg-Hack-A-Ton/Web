@@ -3,8 +3,8 @@
 
 import { useEffect, useState } from "react";
 import { animate, motion, useMotionValue, useTransform } from "framer-motion";
-import { DefaultText } from "§util/className";
-import { cn } from "§util/twm";
+import { DefaultText } from ">util/className";
+import { cn } from ">util/twm";
 
 export interface ITypewriterProps {
   delay: number;

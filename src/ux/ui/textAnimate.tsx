@@ -8,8 +8,8 @@ import {
   useAnimation,
   useInView,
 } from "framer-motion";
-import { DefaultText } from "§util/className";
-import { cn } from "§util/twm";
+import { DefaultText } from ">util/className";
+import { cn } from ">util/twm";
 
 type AnimationType =
   | "fadeIn"

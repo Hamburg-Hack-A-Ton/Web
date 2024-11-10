@@ -1,7 +1,7 @@
 /* eslint-disable-next-line no-redeclare */
 import * as React from "react";
 
-import { cn } from "§util/twm";
+import { cn } from ">util/twm";
 
 const Card = React.forwardRef<
   HTMLDivElement,

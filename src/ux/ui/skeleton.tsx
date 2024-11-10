@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState, RefObject } from "react";
-import { cn } from "§util/twm";
+import { cn } from ">util/twm";
 
 function useDimensions(ref: RefObject<HTMLElement>, options = { debounce: 0 }) {
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });

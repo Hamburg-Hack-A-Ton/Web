@@ -6,9 +6,9 @@ import { type DialogProps } from "@radix-ui/react-dialog";
 import { Command as CommandPrimitive } from "cmdk";
 import { Search } from "react-feather";
 
-import { cn } from "§util/twm";
-import { Dialog, DialogWrapper } from "§ui/Dialog";
-import { Preset } from "§ui/Popup";
+import { cn } from ">util/twm";
+import { Dialog, DialogWrapper } from ">ui/Dialog";
+import { Preset } from ">ui/Popup";
 
 const Command = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive>,

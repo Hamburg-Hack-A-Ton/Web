@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { MotionValue, motion, useSpring, useTransform } from "framer-motion";
-import { DefaultText } from "§util/className";
+import { DefaultText } from ">util/className";
 
 interface AnimatedNumberProps {
   value: number;

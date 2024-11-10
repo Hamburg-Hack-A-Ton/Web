@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Toaster } from "§ui/sonner";
+import { Toaster } from ">ui/sonner";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import { VercelToolbar } from "@vercel/toolbar/next";

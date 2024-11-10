@@ -5,8 +5,8 @@ import * as React from "react";
 import * as LabelPrimitive from "@radix-ui/react-label";
 import { cva, type VariantProps } from "cva";
 
-import { cn } from "§util/twm";
-import { DefaultText } from "§util/className";
+import { cn } from ">util/twm";
+import { DefaultText } from ">util/className";
 
 const labelVariants = cva({
   base: "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70",

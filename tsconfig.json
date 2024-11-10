@@ -13,25 +13,24 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "paths": {
+      "@/*": ["./src/*"],
+      ">/*": ["./src/ux/*"],
+      ">api/*": ["./src/ux/api/*"],
+      ">fx/*": ["./src/ux/effects/*"],
+      ">comp/*": ["./src/ux/components/*"],
+      ">util/*": ["./src/ux/util/*"],
+      ">ui/*": ["./src/ux/ui/*"],
+      ">hooks/*": ["./src/ux/hooks/*"],
+      ">cn/*": ["./src/ux/shadcn/*"],
+      "~/*": ["./public/*"],
+    },
     "plugins": [
       {
         "name": "next"
       }
     ],
-    "paths": {
-      "@/*": ["./src/*"],
-      "§/*": ["./src/ux/*"],
-      "§api/*": ["./src/ux/api/*"],
-      "§fx/*": ["./src/ux/effects/*"],
-      "§comp/*": ["./src/ux/components/*"],
-      "§util/*": ["./src/ux/util/*"],
-      "§ui/*": ["./src/ux/ui/*"],
-      "§hooks/*": ["./src/ux/hooks/*"],
-      "§cn/*": ["./src/ux/shadcn/*"],
-      "§flags": ["./src/flags"],
-      "~/*": ["./public/*"],
-    }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "tailwind.config.js", "src/ux/api/firebase/firebase.js", "next.config.mjs"],
+  "include": ["next-env.d.ts", "./src/**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "tailwind.config.js", "next.config.mjs"],
   "exclude": ["node_modules"]
 }

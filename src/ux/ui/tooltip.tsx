@@ -4,8 +4,8 @@
 import * as React from "react";
 import * as RawTooltipPrimitive from "@radix-ui/react-tooltip";
 
-import { cn } from "§util/twm";
-import { DefaultText } from "§util/className";
+import { cn } from ">util/twm";
+import { DefaultText } from ">util/className";
 
 const RawTooltipProvider = RawTooltipPrimitive.Provider;
 

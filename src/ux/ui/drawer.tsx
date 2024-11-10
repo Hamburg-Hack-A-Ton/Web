@@ -4,8 +4,8 @@
 import * as React from "react";
 import { Drawer as DrawerPrimitive } from "vaul";
 
-import { cn } from "§util/twm";
-import { Button } from "§ui/button";
+import { cn } from ">util/twm";
+import { Button } from ">ui/button";
 
 const Drawer = ({
   shouldScaleBackground = true,

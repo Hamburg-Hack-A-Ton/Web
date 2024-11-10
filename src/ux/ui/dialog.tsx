@@ -6,8 +6,8 @@ import * as RawAlertRawDialogPrimitive from "@radix-ui/react-alert-dialog";
 import * as RawDialogPrimitive from "@radix-ui/react-dialog";
 import { X } from "react-feather";
 
-import { cn } from "§util/twm";
-import { Button } from "§ui/button";
+import { cn } from ">util/twm";
+import { Button } from ">ui/button";
 
 // ALERT DIALOG
 
