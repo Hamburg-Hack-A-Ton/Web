@@ -138,7 +138,7 @@ function CustomDirectionAwareTabs({
     </div>
   );
 }
-import { Wrapper } from ">ui/CustomCard";
+import { Wrapper } from ">ui/customCard";
 import { DefaultText } from ">util/className";
 
 function PresetDirectionAwareTabs(props: OgImageSectionProps) {

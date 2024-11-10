@@ -7,8 +7,8 @@ import { Command as CommandPrimitive } from "cmdk";
 import { Search } from "react-feather";
 
 import { cn } from ">util/twm";
-import { Dialog, DialogWrapper } from ">ui/Dialog";
-import { Preset } from ">ui/Popup";
+import { Dialog, DialogWrapper } from ">ui/dialog";
+import { Preset } from ">ui/popup";
 // need to add smth because vercel git integration is not working
 
 const Command = React.forwardRef<
