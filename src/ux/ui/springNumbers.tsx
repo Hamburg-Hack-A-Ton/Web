@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { MotionValue, motion, useSpring, useTransform } from "framer-motion";
 import { DefaultText } from ">util/className";
 
+// need to add smth because vercel git integration is not working
 interface AnimatedNumberProps {
   value: number;
   mass?: number;
@@ -30,8 +31,8 @@ export function Custom({
   const display: MotionValue<string> = useTransform(
     spring,
     (
-      current: number, // typeof number is a fix rn / Need to Test dis
-    ) => format(parseFloat(current.toFixed(precision))),
+      current: number // typeof number is a fix rn / Need to Test dis
+    ) => format(parseFloat(current.toFixed(precision)))
   );
 
   useEffect(() => {

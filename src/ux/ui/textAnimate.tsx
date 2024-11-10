@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
+// need to add smth because vercel git integration is not working
 
 import { FC, useRef } from "react";
 import {

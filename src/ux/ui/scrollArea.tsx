@@ -1,5 +1,6 @@
 "use client";
 
+// need to add smth because vercel git integration is not working
 // eslint-disable-next-line no-redeclare
 import * as React from "react";
 import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area";

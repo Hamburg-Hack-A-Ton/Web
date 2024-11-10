@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 "use client";
+// need to add smth because vercel git integration is not working
 
 import { useEffect, useState } from "react";
 import { animate, motion, useMotionValue, useTransform } from "framer-motion";

@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 "use client";
+// need to add smth because vercel git integration is not working
 
 import { ReactNode, useMemo, useState } from "react";
 import { AnimatePresence, MotionConfig, motion } from "framer-motion";

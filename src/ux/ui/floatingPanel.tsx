@@ -13,6 +13,7 @@ import { cn } from ">util/twm";
 
 const TRANSITION = {
   type: "spring",
+  // need to add smth because vercel git integration is not working
   bounce: 0.1,
   duration: 0.4,
 };

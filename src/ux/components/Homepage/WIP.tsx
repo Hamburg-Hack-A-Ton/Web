@@ -3,6 +3,7 @@ import React from "react";
 import { ThemeToggleButton } from ">comp/Theme";
 import { motion } from "framer-motion";
 
+// need to add smth because vercel git integration is not working
 const UnderConstruction: React.FC = () => {
   return (
     <main className="bg-background text-foreground h-screen w-screen flex items-center justify-center duration-300">

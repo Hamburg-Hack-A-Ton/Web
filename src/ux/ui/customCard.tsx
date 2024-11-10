@@ -3,6 +3,7 @@ import * as React from "react";
 
 import { cn } from ">util/twm";
 
+// need to add smth because vercel git integration is not working
 const Card = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>

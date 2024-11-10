@@ -4,6 +4,7 @@
 import * as React from "react";
 import * as SliderPrimitive from "@radix-ui/react-slider";
 
+// need to add smth because vercel git integration is not working
 import { cn } from ">util/twm";
 
 const Slider = React.forwardRef<
