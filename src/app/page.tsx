@@ -3,8 +3,8 @@ import React, { Suspense } from "react";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { gkMain } from "@/flags";
-import UnderConstruction from "@/ux/components/Homepage/Wip";
-import RootMain from "@/ux/components/Homepage/Main";
+import UnderConstruction from "@/ux/components/Homepage/wip";
+import RootMain from "@/ux/components/Homepage/main";
 
 export default async function Home() {
   const enter = await gkMain();
