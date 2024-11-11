@@ -7,7 +7,7 @@ export default function setDevModeOff() {
   React.useEffect(() => {
     setOff();
 
-    if (document) {
+    if (typeof window !== "undefined" && document) {
       const link = document.querySelector("a");
       if (link) {
         link.click();

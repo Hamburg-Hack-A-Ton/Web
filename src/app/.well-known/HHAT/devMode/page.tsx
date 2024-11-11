@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 
 export default function reroute() {
-  if (document) {
+  if (typeof window !== "undefined" && document) {
     const link = document.querySelector("a");
     if (link) {
       link.click();
