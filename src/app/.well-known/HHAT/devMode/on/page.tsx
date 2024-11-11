@@ -7,13 +7,19 @@ export default function setDevModeOff() {
   React.useEffect(() => {
     setOn();
 
-    const link = document?.querySelector("a");
-    if (link) {
-      link.click();
+    if (document) {
+      const link = document.querySelector("a");
+      if (link) {
+        link.click();
+      }
     }
   }, []);
 
-  return <Link href="/" />;
+  return (
+    <main>
+      <Link href="/">Back</Link>
+    </main>
+  );
 }
 
 function setOn() {

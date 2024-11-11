@@ -4,9 +4,15 @@ import React from "react";
 import Link from "next/link";
 
 export default function reroute() {
-  const link = document?.querySelector("a");
-  if (link) {
-    link.click();
+  if (document) {
+    const link = document.querySelector("a");
+    if (link) {
+      link.click();
+    }
   }
-  return <Link href="/.well-known/HHAT/devMode/on" />;
+  return (
+    <main>
+      <Link href="/.well-known/HHAT/devMode/on">On</Link>
+    </main>
+  );
 }

@@ -10,5 +10,9 @@ export default function toDevMode() {
       link.click();
     }
   }, []);
-  return <Link href="/.well-known/HHAT/devMode" />;
+  return (
+    <main>
+      <Link href="/.well-known/HHAT/devMode/">DevMode</Link>
+    </main>
+  );
 }
