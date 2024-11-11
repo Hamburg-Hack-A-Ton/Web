@@ -5,6 +5,8 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import { AnimatePresence } from "framer-motion";
 import { Toolbar } from ">comp/Toolbar";
+import { DefaultText } from ">util/className";
+import { cn } from ">util/twm";
 
 export const metadata: Metadata = {
   title: "Hamburg Hack A Ton!",
@@ -26,7 +28,9 @@ export default function RootLayout({
           href="https://use.typekit.net/nib2aic.css"
         ></link>
       </head>
-      <body className="antialiased bg-background text-foreground">
+      <body
+        className={cn(DefaultText, "antialiased bg-background text-foreground")}
+      >
         <AnimatePresence>{children}</AnimatePresence>
         <Toaster />
       </body>

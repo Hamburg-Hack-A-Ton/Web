@@ -1,7 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @next/next/no-async-client-component */
 import React, { Suspense } from "react";
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { gkMain } from "@/flags";
 import { UnderConstruction } from "@/ux/components/Homepage/wip";
 import { RootMain } from "@/ux/components/Homepage/main";

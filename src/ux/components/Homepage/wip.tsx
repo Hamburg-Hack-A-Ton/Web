@@ -1,12 +1,19 @@
 import { TextAnimate } from ">ui/textAnimate";
 import React from "react";
 import { ThemeToggleButton } from ">comp/Theme";
-import { motion } from "framer-motion";
+import * as motion from "framer-motion/client";
+import { cn } from ">util/twm";
+import { DefaultText } from ">util/className";
 
 // need to add smth because vercel git integration is not working
 const UnderConstruction: React.FC = () => {
   return (
-    <main className="bg-background text-foreground h-screen w-screen flex items-center justify-center duration-300">
+    <main
+      className={cn(
+        DefaultText,
+        "bg-background text-foreground h-screen w-screen flex items-center justify-center"
+      )}
+    >
       <section className="flex flex-col items-center justify-center">
         <div className="flex py-2">
           <TextAnimate
@@ -19,13 +26,16 @@ const UnderConstruction: React.FC = () => {
             initial={{
               opacity: 0,
               y: -10,
+              x: -20,
             }}
             animate={{
               opacity: 1,
               y: 0,
+              x: 0,
             }}
             transition={{
               duration: 1,
+              delay: 0.75,
             }}
             className="oxanium py-1 font-bold text-xl"
           >
