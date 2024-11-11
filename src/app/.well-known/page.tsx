@@ -3,14 +3,12 @@
 import React from "react";
 import Link from "next/link";
 
-export default function SetDeveloperMode() {
+export default function toDevMode() {
   React.useEffect(() => {
-    localStorage.setItem("dev", "false");
-
     const link = document.querySelector("a");
     if (link) {
       link.click();
     }
   }, []);
-  return <Link href="/" />;
+  return <Link href="/.well-known/HHAT/devMode" />;
 }

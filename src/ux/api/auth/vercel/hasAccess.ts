@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import React from "react";
+import { hasDevMode } from "@/ux/components/Toolbar";
 import { useEffect, useState } from "react";
 
 
@@ -16,9 +16,7 @@ const useIsDeveloper = () => {
     const [isDeveloper, setIsDeveloper] = useState(false);
 
     useEffect(() => {
-        hasAccess().then((access) => {
-            setIsDeveloper(access);
-        });
+        setIsDeveloper(hasDevMode());
     }, []);
 
     return [isDeveloper, setIsDeveloper];

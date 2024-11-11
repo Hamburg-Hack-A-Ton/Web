@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import Within from "./ttport/Within";
-import "@theme-toggles/react/css/Within.css"
+import "@theme-toggles/react/css/Within.css";
 // eslint-disable-next-line no-redeclare
 import React from "react";
 
@@ -43,3 +43,13 @@ const ThemeToggleButton: React.FC<{ size?: number }> = ({ size = 5 }) => {
 ThemeToggleButton.displayName = "ThemeToggleButton";
 
 export { ThemeToggleButton };
+
+function updateTheme() {
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+  } else {
+    document.body.classList.remove("dark");
+  }
+}
+
+export { updateTheme };

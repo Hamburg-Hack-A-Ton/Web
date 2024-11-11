@@ -29,7 +29,10 @@ export default function RootLayout({
         ></link>
       </head>
       <body
-        className={cn(DefaultText, "antialiased bg-background text-foreground")}
+        className={cn(
+          DefaultText,
+          "antialiased bg-background duration-200 text-foreground"
+        )}
       >
         <AnimatePresence>{children}</AnimatePresence>
         <Toaster />

@@ -19,3 +19,7 @@ export function Toolbar() {
     return null;
   }
 }
+
+export function hasDevMode() {
+  return localStorage.getItem("dev") === "true";
+}
