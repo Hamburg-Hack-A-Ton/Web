@@ -40,4 +40,5 @@ const UnderConstruction: React.FC = () => {
   );
 };
 
-export default UnderConstruction;
+UnderConstruction.displayName = "UnderConstruction";
+export { UnderConstruction };

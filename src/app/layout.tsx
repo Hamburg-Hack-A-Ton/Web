@@ -3,8 +3,8 @@ import "./globals.css";
 import { Toaster } from ">ui/sonner";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
-import { VercelToolbar } from "@vercel/toolbar/next";
 import { AnimatePresence } from "framer-motion";
+import { Toolbar } from ">comp/Toolbar";
 
 export const metadata: Metadata = {
   title: "Hamburg Hack A Ton!",
@@ -27,12 +27,10 @@ export default function RootLayout({
         ></link>
       </head>
       <body className="antialiased bg-background text-foreground">
+        <AnimatePresence>{children}</AnimatePresence>
         <Toaster />
-        <div className="h-screen w-screen z-0">
-          <AnimatePresence>{children}</AnimatePresence>
-        </div>
-        <VercelToolbar />
       </body>
+      <Toolbar />
     </html>
   );
 }

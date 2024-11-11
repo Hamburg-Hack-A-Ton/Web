@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
 import { ThemeToggleButton } from ">comp/Theme";
 import {
@@ -17,7 +17,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { AspectRatio } from ">ui/aspect-ratio";
 
-export default function RootMain() {
+export function RootMain() {
   const [isTTVisible, setIsTTVisible] = useState(true);
   const [isDeveloper, setIsDeveloper] = useIsDeveloper();
 
