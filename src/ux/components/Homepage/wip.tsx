@@ -13,17 +13,17 @@ const UnderConstruction: React.FC = () => {
       <main
         className={cn(
           DefaultText,
-          "bg-background text-foreground h-screen w-screen flex items-center justify-center"
+          "bg-background text-foreground h-screen w-screen flex items-center duration-200 justify-center"
         )}
       >
-        <section className="flex flex-col items-center justify-center">
-          <div className="flex py-2">
+        <section className="flex flex-col items-center duration-200 justify-center">
+          <div className="flex py-2 duration-200">
             <TextAnimate
-              className="gigalypse text-5xl text-center"
+              className="gigalypse text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-5xl text-center duration-200"
               text="Hello, This Website is Currently under Construction!"
             />
           </div>
-          <div className="flex flex-row">
+          <div className="flex flex-row duration-200">
             <motion.p
               initial={{
                 opacity: 0,
@@ -39,7 +39,7 @@ const UnderConstruction: React.FC = () => {
                 duration: 1,
                 delay: 0.75,
               }}
-              className="oxanium py-1 font-bold text-xl"
+              className="oxanium py-1 font-bold duration-200 text-xs md:text-xl lg:text-2xl"
             >
               By Jack@DJL
             </motion.p>

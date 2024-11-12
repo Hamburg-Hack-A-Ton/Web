@@ -16,6 +16,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ThemeToggleButton } from "./Theme";
 import { AspectRatio } from "../ui/aspect-ratio";
+import { cn } from ">util/twm";
 
 export const Header = () => {
   const { scrollY } = useScroll();
@@ -94,7 +95,7 @@ export const Header = () => {
   );
 };
 
-export const Footer = () => {
+export const Footer: React.FC<{ className?: string }> = ({ className }) => {
   const [isTTVisible, setIsTTVisible] = useState(true);
   const [isDeveloper, setIsDeveloper] = useIsDeveloper();
 
@@ -103,7 +104,10 @@ export const Footer = () => {
       {isDeveloper && (
         <>
           <motion.section
-            className="bottom-16 sticky w-screen flex flex-grow justify-center"
+            className={cn(
+              "bottom-16 sticky w-screen flex flex-grow justify-center",
+              className
+            )}
             key="devui"
           >
             <Button className="p-4">
@@ -114,7 +118,10 @@ export const Footer = () => {
           </motion.section>
           <motion.section
             key="turnOff"
-            className="sticky right-2 bottom-2 bg-transparent justify-end p-4 flex flex-grow items-center text-accent-foreground"
+            className={cn(
+              "sticky right-2 bottom-2 bg-transparent justify-end p-4 flex flex-grow items-center text-accent-foreground",
+              className
+            )}
           >
             <Tooltip tips="Turn DevMode of?">
               <Link href="/.well-known/HHAT/devMode/off">
@@ -127,10 +134,12 @@ export const Footer = () => {
 
       {isTTVisible && (
         <motion.section
-          className="bottom-2 left-2 sticky z-10 w-7 h-7"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          className={cn("bottom-2 left-2 sticky z-10 w-7 h-7", className)}
+          initial={{ opacity: 0, scale: 0.5, x: -10 }}
+          animate={{ opacity: 1, scale: 1, x: 3, y: 5 }}
           exit={{ opacity: 0 }}
+          whileHover={{ scale: 1.5, y: 8, x: 5.5 }}
+          whileTap={{ scale: 1.25, y: 6, x: 4.5 }}
           transition={{ duration: 0.5 }}
           key="theme-toggle"
         >
