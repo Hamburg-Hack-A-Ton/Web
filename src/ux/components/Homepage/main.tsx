@@ -79,7 +79,7 @@ export function RootMain() {
               </AspectRatio>
               <div className="p-4">
                 <motion.h1 className="lores text-2xl " key="hellohero">
-                  Hello fellow Developers
+                  Hello Hackers
                 </motion.h1>
                 <motion.p className="p bernina bold" key="contenthero">
                   Welcome to the Hamburg Hack A Ton! This is a community of

@@ -10,7 +10,6 @@ import {
 import { Tooltip } from ">ui/tooltip";
 import { Power } from "react-feather";
 import useIsDeveloper from ">api/auth/vercel/hasAccess";
-import { Card, CardContent } from ">ui/card";
 import { Button } from ">ui/button";
 import Link from "next/link";
 import Image from "next/image";
@@ -84,6 +83,67 @@ export const Header = () => {
               </Link>
             </motion.h1>
           )}
+          <motion.section
+            className="flex items-center flex-grow justify-between w-2/3"
+            layout
+          >
+            <AnimatePresence>
+              {!showStickyHeader && (
+                <motion.p
+                  initial={{ y: 10, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -10, opacity: 0 }}
+                >
+                  Test
+                </motion.p>
+              )}
+              {!showStickyHeader && (
+                <motion.p
+                  initial={{ y: 10, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -10, opacity: 0 }}
+                >
+                  Test
+                </motion.p>
+              )}
+              {!showStickyHeader && (
+                <motion.p
+                  initial={{ y: 10, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -10, opacity: 0 }}
+                >
+                  Test
+                </motion.p>
+              )}
+              {showStickyHeader && (
+                <motion.p
+                  initial={{ y: 10, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -10, opacity: 0 }}
+                >
+                  Test
+                </motion.p>
+              )}
+              {showStickyHeader && (
+                <motion.p
+                  initial={{ y: 10, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -10, opacity: 0 }}
+                >
+                  Test
+                </motion.p>
+              )}
+              {showStickyHeader && (
+                <motion.p
+                  initial={{ y: 10, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -10, opacity: 0 }}
+                >
+                  Test
+                </motion.p>
+              )}
+            </AnimatePresence>
+          </motion.section>
         </AnimatePresence>
       </motion.header>
       <motion.div

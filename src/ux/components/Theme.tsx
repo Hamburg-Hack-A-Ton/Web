@@ -45,10 +45,12 @@ ThemeToggleButton.displayName = "ThemeToggleButton";
 export { ThemeToggleButton };
 
 function updateTheme() {
-  if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark");
-  } else {
-    document.body.classList.remove("dark");
+  if (typeof window !== "undefined" && document) {
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
   }
 }
 
