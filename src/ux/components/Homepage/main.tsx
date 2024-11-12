@@ -28,7 +28,7 @@ export function RootMain() {
           className="flex-row items-center left-0 justify-center"
           key="HeroW"
         >
-          <motion.div key="hero" className="py-5">
+          <motion.div key="hero" className="pb-5">
             <motion.div className="w-screen h-screen " key="heroimage">
               <Image
                 src="/cdn/placeholder/lg.jpg"

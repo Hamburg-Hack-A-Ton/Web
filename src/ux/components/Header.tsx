@@ -16,10 +16,13 @@ import Image from "next/image";
 import { ThemeToggleButton } from "./Theme";
 import { AspectRatio } from "../ui/aspect-ratio";
 import { cn } from ">util/twm";
+import { applicationPhase } from "@/flags";
 
 export const Header = () => {
   const { scrollY } = useScroll();
   const [showStickyHeader, setStickyShowHeader] = useState(false);
+
+  const MotionLink = motion.create(Link);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest >= 80) {
@@ -29,7 +32,7 @@ export const Header = () => {
     }
   });
   return (
-    <>
+    <motion.header key="HeaderWrapper" className="pb-5 sticky top-0 z-10">
       <motion.header
         className=" h-20 sticky backdrop-blur-lg top-0 z-10 bg-background glassblur duration-200 data-[showstickyheader=true]:opacity-50 data-[showstickyheader=true]:h-16 flex items-center "
         data-showstickyheader={showStickyHeader}
@@ -53,7 +56,9 @@ export const Header = () => {
               scale: showStickyHeader ? 0.75 : 1,
               top: showStickyHeader ? "0.15rem" : "1rem",
             }}
-            whileHover={{ scale: showStickyHeader ? 0.9 : 1.15, opacity: 1 }}
+            whileHover={{ scale: showStickyHeader ? 0.85 : 1.15, opacity: 1 }}
+            whileTap={{ scale: showStickyHeader ? 0.8 : 1.1 }}
+            key="Logo"
           >
             <Link href="/" prefetch>
               <AspectRatio ratio={1}>
@@ -70,8 +75,10 @@ export const Header = () => {
           {!showStickyHeader && (
             <motion.h1
               className="px-3"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1, x: "4.5rem" }}
+              initial={{ opacity: 0, x: 0, y: 5 }}
+              animate={{ opacity: 1, x: "4.5rem", y: 7 }}
+              exit={{ opacity: 0, x: "5rem", y: -50 }}
+              key="Title"
             >
               <Link
                 href="/"
@@ -84,66 +91,47 @@ export const Header = () => {
             </motion.h1>
           )}
           <motion.section
-            className="flex items-center flex-grow justify-between w-2/3"
+            className="absolute right-14 w-2/3"
             layout
+            key="Links"
+            animate={{ y: showStickyHeader ? 0 : 10 }}
           >
-            <AnimatePresence>
-              {!showStickyHeader && (
+            <div className="right-3 flex items-center p-4 justify-between  w-2/3">
+              <AnimatePresence>
                 <motion.p
                   initial={{ y: 10, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: -10, opacity: 0 }}
+                  key="Links-Sticky1"
                 >
                   Test
                 </motion.p>
-              )}
-              {!showStickyHeader && (
                 <motion.p
                   initial={{ y: 10, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: -10, opacity: 0 }}
+                  key="Links-Sticky2"
                 >
                   Test
                 </motion.p>
-              )}
-              {!showStickyHeader && (
                 <motion.p
                   initial={{ y: 10, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: -10, opacity: 0 }}
+                  key="Links-About"
                 >
-                  Test
+                  <Link href="/about" prefetch>
+                    About
+                  </Link>
                 </motion.p>
-              )}
-              {showStickyHeader && (
-                <motion.p
-                  initial={{ y: 10, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -10, opacity: 0 }}
-                >
-                  Test
-                </motion.p>
-              )}
-              {showStickyHeader && (
-                <motion.p
-                  initial={{ y: 10, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -10, opacity: 0 }}
-                >
-                  Test
-                </motion.p>
-              )}
-              {showStickyHeader && (
-                <motion.p
-                  initial={{ y: 10, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -10, opacity: 0 }}
-                >
-                  Test
-                </motion.p>
-              )}
-            </AnimatePresence>
+              </AnimatePresence>
+            </div>
           </motion.section>
+          {true && (
+            <motion.div key="apply" className="absolute right-4 p-2">
+              Content
+            </motion.div>
+          )}
         </AnimatePresence>
       </motion.header>
       <motion.div
@@ -151,7 +139,7 @@ export const Header = () => {
         data-showstickyheader={showStickyHeader}
         key="top-header-spacer"
       />
-    </>
+    </motion.header>
   );
 };
 
@@ -200,7 +188,7 @@ export const Footer: React.FC<{ className?: string }> = ({ className }) => {
           exit={{ opacity: 0 }}
           whileHover={{ scale: 1.5, y: 8, x: 5.5 }}
           whileTap={{ scale: 1.25, y: 6, x: 4.5 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.15 }}
           key="theme-toggle"
         >
           <ThemeToggleButton />

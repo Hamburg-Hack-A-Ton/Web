@@ -19,7 +19,7 @@ const UnderConstruction: React.FC = () => {
         <section className="flex flex-col items-center duration-200 justify-center">
           <div className="flex py-2 duration-200">
             <TextAnimate
-              className="gigalypse text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-5xl text-center duration-200"
+              className="gigalypse text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-center duration-200"
               text="Hello, This Website is Currently under Construction!"
             />
           </div>

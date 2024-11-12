@@ -15,4 +15,15 @@ export const gkMain = flag({
     origin: "/"
 });
 
-export const precomputeFlags = [gkMain] as const;
+export const applicationPhase = flag({
+    key: 'Application Phase',
+    description: 'Controls whether the application button should be shown',
+    decide: async () => {
+        const result = await client.get('applicationPhase');
+        return result === 'true';
+    },
+    defaultValue: false,
+    origin: "/apply"
+});
+
+export const precomputeFlags = [gkMain, applicationPhase] as const;
