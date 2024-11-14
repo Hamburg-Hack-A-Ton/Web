@@ -46,7 +46,7 @@ const UnderConstruction: React.FC = () => {
           </div>
         </section>
       </main>
-      <Footer />
+      <Footer noFooter />
     </>
   );
 };

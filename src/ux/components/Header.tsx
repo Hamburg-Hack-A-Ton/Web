@@ -25,7 +25,7 @@ export const Header = () => {
   const MotionLink = motion.create(Link);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    if (latest >= 80) {
+    if (latest >= 25) {
       setStickyShowHeader(true);
     } else {
       setStickyShowHeader(false);
@@ -91,29 +91,21 @@ export const Header = () => {
             </motion.h1>
           )}
           <motion.section
-            className="absolute right-14 w-2/3"
+            className="absolute "
             layout
             key="Links"
-            animate={{ y: showStickyHeader ? 0 : 10 }}
+            animate={{
+              y: showStickyHeader ? 0 : 10,
+              width: showStickyHeader ? "75%" : "66%",
+              right: showStickyHeader ? "0rem" : "3.5rem",
+            }}
           >
-            <div className="right-3 flex items-center p-4 justify-between  w-2/3">
+            <motion.div
+              className="right-3 flex items-center p-4 justify-between"
+              animate={{ width: "66%" }}
+              key="LinkWrapper"
+            >
               <AnimatePresence>
-                <motion.p
-                  initial={{ y: 10, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -10, opacity: 0 }}
-                  key="Links-Sticky1"
-                >
-                  Test
-                </motion.p>
-                <motion.p
-                  initial={{ y: 10, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -10, opacity: 0 }}
-                  key="Links-Sticky2"
-                >
-                  Test
-                </motion.p>
                 <motion.p
                   initial={{ y: 10, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
@@ -124,12 +116,38 @@ export const Header = () => {
                     About
                   </Link>
                 </motion.p>
+                <motion.p
+                  initial={{ y: 10, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -10, opacity: 0 }}
+                  key="Links-Schedules"
+                >
+                  <Link href="/schedule" prefetch>
+                    Schedule
+                  </Link>
+                </motion.p>
+                <motion.p
+                  initial={{ y: 10, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -10, opacity: 0 }}
+                  key="Links-Sponsors"
+                >
+                  <Link href="/sponsors" prefetch>
+                    Sponsors
+                  </Link>
+                </motion.p>
               </AnimatePresence>
-            </div>
+            </motion.div>
           </motion.section>
           {true && (
-            <motion.div key="apply" className="absolute right-4 p-2">
-              Content
+            <motion.div
+              key="apply"
+              className="absolute right-4 p-2"
+              animate={{ y: showStickyHeader ? 0 : 10, x: -5 }}
+            >
+              <Link href="/register" prefetch>
+                Register
+              </Link>
             </motion.div>
           )}
         </AnimatePresence>
@@ -143,40 +161,52 @@ export const Header = () => {
   );
 };
 
-export const Footer: React.FC<{ className?: string }> = ({ className }) => {
+export const Footer: React.FC<{ className?: string; noFooter?: boolean }> = ({
+  className,
+  noFooter,
+}) => {
   const [isTTVisible, setIsTTVisible] = useState(true);
   const [isDeveloper, setIsDeveloper] = useIsDeveloper();
+  const [isFooter, setIsFooter] = useState(false);
 
   return (
     <>
-      {isDeveloper && (
+      {!noFooter && (
         <>
-          <motion.section
-            className={cn(
-              "bottom-16 sticky w-screen flex flex-grow justify-center",
-              className
-            )}
-            key="devui"
-          >
-            <Button className="p-4">
-              <Link prefetch href="/portal">
-                To Dev Portal
-              </Link>
-            </Button>
-          </motion.section>
-          <motion.section
-            key="turnOff"
-            className={cn(
-              "sticky right-2 bottom-2 bg-transparent justify-end p-4 flex flex-grow items-center text-accent-foreground",
-              className
-            )}
-          >
-            <Tooltip tips="Turn DevMode of?">
-              <Link href="/.well-known/HHAT/devMode/off">
-                <Power />
-              </Link>
-            </Tooltip>
-          </motion.section>
+          <motion.div
+            key="displacer"
+            animate={{ height: isFooter ? "0rem" : "10rem" }}
+          ></motion.div>
+          {false && (
+            <>
+              <motion.section
+                className={cn(
+                  "bottom-16 sticky w-screen flex flex-grow justify-center",
+                  className
+                )}
+                key="devui"
+              >
+                <Button className="p-4 z-20">
+                  <Link prefetch href="/portal">
+                    To Dev Portal
+                  </Link>
+                </Button>
+              </motion.section>
+              <motion.section
+                key="turnOff"
+                className={cn(
+                  "sticky right-2 bottom-2 bg-transparent justify-end p-4 flex flex-grow items-center text-accent-foreground",
+                  className
+                )}
+              >
+                <Tooltip tips="Turn DevMode of?">
+                  <Link href="/.well-known/HHAT/devMode/off">
+                    <Power />
+                  </Link>
+                </Tooltip>
+              </motion.section>
+            </>
+          )}
         </>
       )}
 
@@ -184,15 +214,41 @@ export const Footer: React.FC<{ className?: string }> = ({ className }) => {
         <motion.section
           className={cn("bottom-2 left-2 sticky z-10 w-7 h-7", className)}
           initial={{ opacity: 0, scale: 0.5, x: -10 }}
-          animate={{ opacity: 1, scale: 1, x: 3, y: 5 }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            x: 3,
+            y: isFooter ? "14.7rem" : 5,
+          }}
           exit={{ opacity: 0 }}
-          whileHover={{ scale: 1.5, y: 8, x: 5.5 }}
-          whileTap={{ scale: 1.25, y: 6, x: 4.5 }}
+          whileHover={{ scale: 1.5, y: isFooter ? "14.85rem" : 8, x: 5.5 }}
+          whileTap={{ scale: 1.25, y: isFooter ? "14.8rem" : 6, x: 4.5 }}
           transition={{ duration: 0.15 }}
           key="theme-toggle"
         >
           <ThemeToggleButton />
         </motion.section>
+      )}
+      {!noFooter && (
+        <motion.footer key="Footer" className=" text-foreground">
+          <motion.section
+            className="flex flex-row justify-center  border-t-2 border border-x-0 border-b-0 border-accent"
+            animate={{ height: "5rem", alignItems: "start" }}
+            whileInView={{ height: "15rem", alignItems: "center" }}
+            onViewportEnter={() => setIsFooter(true)}
+            onViewportLeave={() => setIsFooter(false)}
+          >
+            <motion.p
+              key="ccHHAT"
+              className="text-foreground z-10"
+              animate={{
+                y: isFooter ? "0rem" : "-7.5rem",
+              }}
+            >
+              &copy; {new Date().getFullYear()} Hamburg Hack A Ton
+            </motion.p>
+          </motion.section>
+        </motion.footer>
       )}
     </>
   );
