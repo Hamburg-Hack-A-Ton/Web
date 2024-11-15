@@ -234,7 +234,7 @@ export const Footer: React.FC<{ className?: string; noFooter?: boolean }> = ({
           <motion.section
             className="flex flex-row justify-center  border-t-2 border border-x-0 border-b-0 border-accent"
             animate={{ height: "5rem", alignItems: "start" }}
-            whileInView={{ height: "15rem", alignItems: "center" }}
+            whileInView={{ height: "15rem", alignItems: "start" }}
             onViewportEnter={() => setIsFooter(true)}
             onViewportLeave={() => setIsFooter(false)}
           >
@@ -242,7 +242,7 @@ export const Footer: React.FC<{ className?: string; noFooter?: boolean }> = ({
               key="ccHHAT"
               className="text-foreground z-10"
               animate={{
-                y: isFooter ? "0rem" : "-7.5rem",
+                y: isFooter ? "12.5rem" : "-7.5rem",
               }}
             >
               &copy; {new Date().getFullYear()} Hamburg Hack A Ton
