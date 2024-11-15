@@ -1,5 +1,5 @@
 "use client";
-import { TextAnimate } from ">ui/textAnimate";
+import { TextAnimate } from ">fx/textAnimate";
 import React from "react";
 import * as motion from "framer-motion/client";
 import { cn } from ">util/twm";

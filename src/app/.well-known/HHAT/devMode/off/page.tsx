@@ -2,8 +2,12 @@
 
 import React from "react";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 export default function setDevModeOff() {
+  if (process.env.NODE_ENV === "production") {
+    notFound();
+  }
   React.useEffect(() => {
     setOff();
 

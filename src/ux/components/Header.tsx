@@ -15,12 +15,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { ThemeToggleButton } from "./Theme";
 import { AspectRatio } from "../ui/aspect-ratio";
+import { Pivot as Hamburger } from "hamburger-react";
 import { cn } from ">util/twm";
 import { applicationPhase } from "@/flags";
 
 export const Header = () => {
   const { scrollY } = useScroll();
   const [showStickyHeader, setStickyShowHeader] = useState(false);
+  const [showHeaderBorder, setShowHeaderBorder] = useState(false);
+  const [popupOpen, setPopupOpen] = useState(false);
 
   const MotionLink = motion.create(Link);
 
@@ -32,13 +35,18 @@ export const Header = () => {
     }
   });
   return (
-    <motion.header key="HeaderWrapper" className="pb-5 sticky top-0 z-10">
+    <motion.header
+      key="HeaderWrapper"
+      data-popupopen={popupOpen}
+      className="data-[popupopen=false]:pb-5 sticky top-0 z-10"
+    >
       <motion.header
-        className=" h-20 sticky backdrop-blur-lg top-0 z-10 bg-background glassblur duration-200 data-[showstickyheader=true]:opacity-50 data-[showstickyheader=true]:h-16 flex items-center "
+        className=" h-20 sticky backdrop-blur-lg top-0 z-10 bg-background glassblur border-accent data-[popupopen=true]:border-b-2 duration-200 data-[showstickyheader=true]:data-[popupopen=false]:opacity-50 data-[showstickyheader=true]:h-16 data-[popupopen=true]:h-96 flex items-center "
         data-showstickyheader={showStickyHeader}
+        data-popupopen={popupOpen}
         key="top-header"
         initial={{ opacity: 0 }}
-        animate={{ opacity: showStickyHeader ? 0.75 : 1 }}
+        animate={{ opacity: showStickyHeader && !popupOpen ? 0.75 : 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5 }}
         layout
@@ -53,8 +61,8 @@ export const Header = () => {
               x: 0,
               y: 0,
               opacity: 1,
-              scale: showStickyHeader ? 0.75 : 1,
-              top: showStickyHeader ? "0.15rem" : "1rem",
+              scale: showStickyHeader && !popupOpen ? 0.75 : 1,
+              top: showStickyHeader && !popupOpen ? "0.15rem" : "1rem",
             }}
             whileHover={{ scale: showStickyHeader ? 0.85 : 1.15, opacity: 1 }}
             whileTap={{ scale: showStickyHeader ? 0.8 : 1.1 }}
@@ -72,11 +80,11 @@ export const Header = () => {
               </AspectRatio>
             </Link>
           </motion.div>
-          {!showStickyHeader && (
+          {!showStickyHeader && !popupOpen && (
             <motion.h1
               className="px-3"
               initial={{ opacity: 0, x: 0, y: 5 }}
-              animate={{ opacity: 1, x: "4.5rem", y: 7 }}
+              animate={{ opacity: 1, x: "4.5rem", y: 7, width: "30%" }}
               exit={{ opacity: 0, x: "5rem", y: -50 }}
               key="Title"
             >
@@ -101,7 +109,7 @@ export const Header = () => {
             }}
           >
             <motion.div
-              className="right-3 flex items-center p-4 justify-between"
+              className="right-3 flex items-center p-4 justify-between max-sm:hidden duration-200"
               animate={{ width: "66%" }}
               key="LinkWrapper"
             >
@@ -142,7 +150,7 @@ export const Header = () => {
           {true && (
             <motion.div
               key="apply"
-              className="absolute right-4 p-2"
+              className="absolute right-4 p-2 max-sm:hidden"
               animate={{ y: showStickyHeader ? 0 : 10, x: -5 }}
             >
               <Link href="/register" prefetch>
@@ -150,11 +158,85 @@ export const Header = () => {
               </Link>
             </motion.div>
           )}
+          <motion.div
+            className="sm:hidden absolute right-4 data-[popupopen=true]:top-2 p-2 duration-200"
+            data-popupopen={popupOpen}
+            key="hamburgerbutton"
+            initial={{ x: -10 }}
+            animate={{ x: 0, y: showStickyHeader && !popupOpen ? 0 : 10 }}
+          >
+            <Hamburger toggled={popupOpen} onToggle={setPopupOpen} />
+          </motion.div>
+          <motion.div
+            key="exheadercontent"
+            className="flex items-center justify-evenly w-screen duration-200"
+            animate={{
+              opacity: popupOpen ? 1 : 0,
+              x: popupOpen ? "0rem" : "5rem",
+            }}
+            transition={{ delay: 0.25 }}
+          >
+            <AnimatePresence>
+              {popupOpen && (
+                <motion.p
+                  initial={{ y: 10, opacity: 0, x: "-5rem" }}
+                  animate={{ y: 0, opacity: 1, x: 0 }}
+                  exit={{ y: -10, opacity: 0, x: "-5rem" }}
+                  transition={{ delay: 0.5 }}
+                  key="Links-About2"
+                >
+                  <Link href="/about" prefetch>
+                    About
+                  </Link>
+                </motion.p>
+              )}
+              {popupOpen && (
+                <motion.p
+                  initial={{ y: 10, opacity: 0, x: "-5rem" }}
+                  animate={{ y: 0, opacity: 1, x: 0 }}
+                  exit={{ y: -10, opacity: 0, x: "-5rem" }}
+                  transition={{ delay: 0.5 }}
+                  key="Links-Schedules2"
+                >
+                  <Link href="/schedule" prefetch>
+                    Schedule
+                  </Link>
+                </motion.p>
+              )}
+              {popupOpen && (
+                <motion.p
+                  initial={{ y: 10, opacity: 0, x: "-5rem" }}
+                  animate={{ y: 0, opacity: 1, x: 0 }}
+                  exit={{ y: -10, opacity: 0, x: "-5rem" }}
+                  transition={{ delay: 0.5 }}
+                  key="Links-Sponsors2"
+                >
+                  <Link href="/sponsors" prefetch>
+                    Sponsors
+                  </Link>
+                </motion.p>
+              )}
+              {popupOpen && (
+                <motion.p
+                  initial={{ y: 10, opacity: 0, x: "-5rem" }}
+                  animate={{ y: 0, opacity: 1, x: 0 }}
+                  exit={{ y: -10, opacity: 0, x: "-5rem" }}
+                  transition={{ delay: 0.5 }}
+                  key="Links-Register2"
+                >
+                  <Link href="/register" prefetch>
+                    Register
+                  </Link>
+                </motion.p>
+              )}
+            </AnimatePresence>
+          </motion.div>
         </AnimatePresence>
       </motion.header>
       <motion.div
-        className="w-screen h-0 data-[showstickyheader=true]:h-4 duration-200"
+        className="w-screen h-0 data-[showstickyheader=true]:data-[popupopen=false]:h-4 duration-200"
         data-showstickyheader={showStickyHeader}
+        data-popupopen={popupOpen}
         key="top-header-spacer"
       />
     </motion.header>

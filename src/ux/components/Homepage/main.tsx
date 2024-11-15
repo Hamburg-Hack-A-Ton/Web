@@ -29,7 +29,7 @@ export function RootMain() {
           key="HeroW"
         >
           <motion.div key="hero" className="pb-5">
-            <motion.div className="w-screen h-screen " key="heroimage">
+            <motion.div className="w-screen h-max " key="heroimage">
               <Image
                 src="/cdn/placeholder/lg.jpg"
                 alt="Hamburg"
@@ -41,7 +41,7 @@ export function RootMain() {
               />
             </motion.div>
             <motion.div
-              className="absolute inset-0 flex flex-col h-screen items-center justify-center text-white"
+              className="absolute inset-0 flex flex-col h-2/4 sm:h-3/5 md:h-4/6 xl:h-screen items-center justify-center text-white duration-200"
               initial={{ opacity: 0, y: "0rem" }}
               animate={{
                 opacity: 1,
@@ -49,8 +49,12 @@ export function RootMain() {
               }}
               transition={{ duration: 0.5 }}
               key="herocontent"
+              layout
             >
-              <motion.h1 className="text-6xl gigalypse" key="h1">
+              <motion.h1
+                className="text-lg sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl gigalypse"
+                key="h1"
+              >
                 Welcome to Hamburg Hack A Ton
               </motion.h1>
               <motion.p className="text-2xl omnes " key="p">
