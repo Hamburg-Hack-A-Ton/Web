@@ -1,3 +1,4 @@
+"use client"
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { hasDevMode } from "@/ux/components/Toolbar";
 import { useEffect, useState } from "react";

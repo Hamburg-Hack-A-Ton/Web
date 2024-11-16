@@ -7,6 +7,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { cn } from ">util/twm";
+import Link from "next/link";
 
 export const Card = React.memo(
   ({
@@ -29,12 +30,14 @@ export const Card = React.memo(
         hovered !== null && hovered !== index && "blur-sm scale-[0.98]"
       )}
     >
-      <Image
-        src={card.src}
-        alt={card.title}
-        fill
-        className="object-cover absolute inset-0"
-      />
+      <Link href={card.href} prefetch={card.prefetch}>
+        <Image
+          src={card.src}
+          alt={card.title}
+          fill
+          className="object-cover absolute inset-0"
+        />
+      </Link>
       <div
         className={cn(
           "absolute inset-0 bg-black/50 flex items-end py-8 px-4 transition-opacity duration-300",
@@ -54,6 +57,8 @@ Card.displayName = "Card";
 type Card = {
   title: string;
   src: string;
+  href: string;
+  prefetch?: boolean;
 };
 
 export function FocusCards({ cards }: { cards: Card[] }) {

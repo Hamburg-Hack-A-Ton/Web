@@ -1,3 +1,4 @@
+"use client";
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react";
 import { useState } from "react";
@@ -18,6 +19,7 @@ import { AspectRatio } from "../ui/aspect-ratio";
 import { Pivot as Hamburger } from "hamburger-react";
 import { cn } from ">util/twm";
 import { applicationPhase } from "@/flags";
+import { HoverEffect } from "../effects/hovercards";
 
 export const Header = () => {
   const { scrollY } = useScroll();
@@ -41,7 +43,7 @@ export const Header = () => {
       className="data-[popupopen=false]:pb-5 sticky top-0 z-10"
     >
       <motion.header
-        className=" h-20 sticky backdrop-blur-lg top-0 z-10 bg-background glassblur border-accent data-[popupopen=true]:border-b-2 duration-200 data-[showstickyheader=true]:data-[popupopen=false]:opacity-50 data-[showstickyheader=true]:h-16 data-[popupopen=true]:h-96 flex items-center "
+        className=" h-20 sticky backdrop-blur-lg top-0 z-10 bg-background glassblur border-accent data-[popupopen=true]:border-b-2 duration-200 data-[showstickyheader=true]:data-[popupopen=false]:opacity-50 data-[showstickyheader=true]:data-[popupopen=false]:h-16 data-[popupopen=true]:h-96 flex items-center "
         data-showstickyheader={showStickyHeader}
         data-popupopen={popupOpen}
         key="top-header"
@@ -169,12 +171,12 @@ export const Header = () => {
           </motion.div>
           <motion.div
             key="exheadercontent"
-            className="flex items-center justify-evenly w-screen duration-200"
+            data-popupopen={popupOpen}
+            className="flex items-center justify-evenly w-48 data-[popupopen=true]:w-screen duration-200"
             animate={{
               opacity: popupOpen ? 1 : 0,
-              x: popupOpen ? "0rem" : "5rem",
+              x: popupOpen ? "0rem" : "10rem",
             }}
-            transition={{ delay: 0.25 }}
           >
             <AnimatePresence>
               {popupOpen && (
@@ -314,24 +316,159 @@ export const Footer: React.FC<{ className?: string; noFooter?: boolean }> = ({
       {!noFooter && (
         <motion.footer key="Footer" className=" text-foreground">
           <motion.section
-            className="flex flex-row justify-center  border-t-2 border border-x-0 border-b-0 border-accent"
+            className="flex flex-row justify-evenly  border-t-2 border border-x-0 border-b-0 border-accent p-4"
             animate={{ height: "5rem", alignItems: "start" }}
             whileInView={{ height: "15rem", alignItems: "start" }}
             onViewportEnter={() => setIsFooter(true)}
             onViewportLeave={() => setIsFooter(false)}
           >
+            {isFooter && (
+              <motion.section
+                key="FooterLinks"
+                className="max-lg:grid max-lg:grid-rows-3 max-lg:grid-cols-2  lg:flex  lg:flex-col items-center justify-evenly h-48 p-4"
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: "-10rem", opacity: 0 }}
+              >
+                <motion.h1
+                  key="Footer-Title"
+                  className="lores max-lg:col-start-1 max-lg:col-span-2 text-3xl max-sm:text-lg max-md:text-xl max-sm:flex max-sm:items-center max-sm:justify-center duration-200"
+                  initial={{ y: "-2.5rem", opacity: 0 }}
+                  animate={{ y: "0rem", opacity: 1 }}
+                  transition={{ delay: 0 }}
+                >
+                  Quick Links
+                </motion.h1>
+                <motion.p
+                  key="Footer-About"
+                  className="p-2 hover:underline"
+                  initial={{ y: "-2.5rem", opacity: 0 }}
+                  animate={{ y: "0rem", opacity: 1 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  <Link href="/about" prefetch>
+                    About
+                  </Link>
+                </motion.p>
+                <motion.p
+                  key="Footer-Schedule"
+                  className="p-2 hover:underline"
+                  initial={{ y: "-2.5rem", opacity: 0 }}
+                  animate={{ y: "0rem", opacity: 1 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  <Link href="/schedule" prefetch>
+                    Schedule
+                  </Link>
+                </motion.p>
+                <motion.p
+                  key="Footer-Sponsors"
+                  className="p-2 hover:underline"
+                  initial={{ y: "-2.5rem", opacity: 0 }}
+                  animate={{ y: "0rem", opacity: 1 }}
+                  transition={{ delay: 0.6 }}
+                >
+                  <Link href="/sponsors" prefetch>
+                    Sponsors
+                  </Link>
+                </motion.p>
+                <motion.p
+                  key="Footer-Register"
+                  className="p-2 hover:underline"
+                  initial={{ y: "-2.5rem", opacity: 0 }}
+                  animate={{ y: "0rem", opacity: 1 }}
+                  transition={{ delay: 0.8 }}
+                >
+                  <Link href="/register" prefetch>
+                    Register
+                  </Link>
+                </motion.p>
+              </motion.section>
+            )}
             <motion.p
               key="ccHHAT"
               className="text-foreground z-10"
               animate={{
-                y: isFooter ? "12.5rem" : "-7.5rem",
+                y: isFooter ? "11.5rem" : "-7.5rem",
               }}
+              transition={{ delay: 0.1 }}
             >
               &copy; {new Date().getFullYear()} Hamburg Hack A Ton
             </motion.p>
+            {isFooter && (
+              <motion.section
+                key="Footer-SponsorsnJack"
+                className="flex flex-col items-center justify-evenly h-48 p-4"
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: "-10rem", opacity: 0 }}
+              >
+                <motion.h1
+                  key="FooterS-Title"
+                  className="lores text-3xl max-sm:text-lg max-md:text-xl max-lg:underline duration-200"
+                  initial={{ y: "-2.5rem", opacity: 0 }}
+                  animate={{ y: "0rem", opacity: 1 }}
+                  transition={{ delay: 0.1 }}
+                >
+                  <Link href="/sponsors" prefetch>
+                    Sponsors
+                  </Link>
+                </motion.h1>
+                <motion.section
+                  className="flex items-center justify-center max-lg:hidden"
+                  key="sponsors"
+                  initial={{ y: "-2.5rem", opacity: 0 }}
+                  animate={{ y: "0rem", opacity: 1 }}
+                  transition={{ delay: 0.3 }}
+                >
+                  <HoverEffect
+                    items={sponsors}
+                    className="w-64 h-24 max-lg:hidden duration-200  px-4"
+                  />
+                </motion.section>
+                <motion.h1
+                  key="FooterA-Title"
+                  className="lores text-3xl max-sm:text-lg max-md:text-xl  max-lg:underline duration-200"
+                  initial={{ y: "-2.5rem", opacity: 0 }}
+                  animate={{ y: "0rem", opacity: 1 }}
+                  transition={{ delay: 0.5 }}
+                >
+                  <Link href="/team" prefetch>
+                    Team
+                  </Link>
+                </motion.h1>
+                <motion.section
+                  className="flex items-center justify-center max-lg:hidden"
+                  key="team"
+                >
+                  <Link href="/team" prefetch>
+                    <motion.p
+                      initial={{ y: "-2.5rem", opacity: 0 }}
+                      animate={{ y: "0rem", opacity: 1 }}
+                      transition={{ delay: 0.7 }}
+                    >
+                      Jack Ruder
+                    </motion.p>
+                  </Link>
+                </motion.section>
+              </motion.section>
+            )}
           </motion.section>
         </motion.footer>
       )}
     </>
   );
 };
+
+const sponsors = [
+  {
+    href: "https://example.com",
+    bg: "/cdn/sponsors/placeholder/cool.svg",
+  },
+  {
+    href: "https://example.com",
+    bg: "/cdn/sponsors/placeholder/triangles.svg",
+  },
+  {
+    href: "https://example.com",
+    bg: "/cdn/sponsors/placeholder/rainbow.svg",
+  },
+];
