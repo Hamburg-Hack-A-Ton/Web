@@ -1,14 +1,21 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { cn } from "../util/twm";
 
 export const TextHoverEffect = ({
   text,
   duration,
+  className,
+  thick,
+  font,
 }: {
   text: string;
   duration?: number;
   automatic?: boolean;
+  className?: string;
+  thick?: string;
+  font?: string;
 }) => {
   const svgRef = useRef<SVGSVGElement>(null);
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
@@ -29,6 +36,7 @@ export const TextHoverEffect = ({
 
   return (
     <svg
+      key="hoverfx"
       ref={svgRef}
       width="100%"
       height="100%"
@@ -37,7 +45,7 @@ export const TextHoverEffect = ({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onMouseMove={(e) => setCursor({ x: e.clientX, y: e.clientY })}
-      className="select-none"
+      className={cn("select-none", className)}
     >
       <defs>
         <linearGradient
@@ -87,23 +95,31 @@ export const TextHoverEffect = ({
         </mask>
       </defs>
       <text
+        key="t1"
         x="50%"
         y="50%"
         textAnchor="middle"
         dominantBaseline="middle"
-        strokeWidth="0.3"
-        className="font-[helvetica] font-bold stroke-neutral-200 dark:stroke-neutral-800 fill-transparent text-7xl  "
+        strokeWidth={thick ?? "0.3"}
+        className={cn(
+          font ?? "font-[helvetica] font-bold ",
+          " stroke-neutral-200 dark:stroke-neutral-800 fill-transparent text-7xl"
+        )}
         style={{ opacity: hovered ? 0.7 : 0 }}
       >
         {text}
       </text>
       <motion.text
+        key="t2"
         x="50%"
         y="50%"
         textAnchor="middle"
         dominantBaseline="middle"
-        strokeWidth="0.3"
-        className="font-[helvetica] font-bold fill-transparent text-7xl   stroke-neutral-200 dark:stroke-neutral-800"
+        strokeWidth={thick ?? "0.3"}
+        className={cn(
+          font ?? "font-[helvetica] font-bold ",
+          " font-bold fill-transparent text-7xl   stroke-neutral-200 dark:stroke-neutral-800"
+        )}
         initial={{ strokeDashoffset: 1000, strokeDasharray: 1000 }}
         animate={{
           strokeDashoffset: 0,
@@ -117,14 +133,18 @@ export const TextHoverEffect = ({
         {text}
       </motion.text>
       <text
+        key="t3"
         x="50%"
         y="50%"
         textAnchor="middle"
         dominantBaseline="middle"
         stroke="url(#textGradient)"
-        strokeWidth="0.3"
+        strokeWidth={thick ?? "0.3"}
         mask="url(#textMask)"
-        className="font-[helvetica] font-bold fill-transparent text-7xl  "
+        className={cn(
+          font ?? "font-[helvetica] font-bold ",
+          " font-bold fill-transparent text-7xl  "
+        )}
       >
         {text}
       </text>

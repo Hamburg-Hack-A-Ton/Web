@@ -1,0 +1,43 @@
+{
+  "hackathon": {
+    "fxheader": "?",
+    "title": "What is a Hackathon?",
+    "content": [
+      "A hackathon is a design sprint-like event in which computer programmers and others involved in software development, including graphic designers,",
+      " interface designers, project managers, and others, often including subject-matter-experts, collaborate intensively on software projects.",
+      "The goal of a hackathon is to create usable software or hardware with the goal of creating a functioning product by the end of the event.",
+      "Hackathons tend to have a specific focus, which can include the programming language used, the operating system, an application, an API, or the subject and the demographic group of the programmers.",
+      "In other cases, there is no restriction on the type of software being created."
+    ],
+    "other": [
+      {
+        "href": "/faq/",
+        "text": "Back to FAQ"
+      },
+      {
+        "href": "/faq/rules",
+        "text": "What are Rules?"
+      }
+    ]
+  },
+  "rules": {
+    "fxheader": "Rules",
+    "title": "What are Rules?",
+    "content": [
+      "Rules are a set of explicit or understood regulations or principles governing conduct within a particular activity or sphere.",
+      "In the context of a hackathon, rules are the guidelines that participants must follow in order to ensure that the event runs smoothly and fairly.",
+      "These rules may include restrictions on the use of certain technologies, requirements for the completion of a project, and guidelines for behavior and conduct during the event.",
+      "By establishing clear rules and expectations, hackathon organizers can create an environment that encourages creativity, collaboration, and innovation among participants."
+    ],
+    "other": [
+      {
+        "href": "/faq/",
+        "text": "Back to FAQ"
+      },
+      {
+        "href": "/faq/hackathon/",
+        "text": "What is a Hackathon?"
+      }
+    ]
+  }
+}

@@ -1,5 +1,5 @@
-import { UnderConstruction } from "@/ux/components/Homepage/wip";
+import { AboutEN } from ">comp/about/en";
 
 export default function AboutPage() {
-  return <UnderConstruction />;
+  return <AboutEN />;
 }

@@ -13,6 +13,7 @@ import React from "react";
 import Image from "next/image";
 import { AspectRatio } from ">ui/aspect-ratio";
 import { Footer, Header } from "../Header";
+import { TextHoverEffect } from "@/ux/effects/texthoverfx";
 
 export function RootMain() {
   updateTheme();
@@ -33,6 +34,7 @@ export function RootMain() {
               <Image
                 src="/cdn/placeholder/lg.jpg"
                 alt="Hamburg"
+                loading="eager"
                 width={1920}
                 height={1080}
                 data-loadingfinished={isHeroImageLoaded}
@@ -52,7 +54,7 @@ export function RootMain() {
               layout
             >
               <motion.h1
-                className="text-lg sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl gigalypse"
+                className="text-lg sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl gigalypse z-20"
                 key="h1"
               >
                 Welcome to Hamburg Hack A Ton
@@ -62,43 +64,8 @@ export function RootMain() {
               </motion.p>
             </motion.div>
           </motion.div>
-          <Card className="flex items-start justify-center p-4">
-            <motion.div
-              className=" p-4 flex items-start justify-center border-border w-4/5 h-60 border-2 rounded-sm border-spacing-3"
-              key="content"
-            >
-              <AspectRatio
-                ratio={2.028}
-                style={{ paddingBottom: 0, height: "12.5rem" }}
-                className="flex items-center justify-center"
-              >
-                <MotionImage
-                  src="/cdn/placeholder/elphi1.webp"
-                  alt="Elbphilharmonie"
-                  width={580}
-                  height={286}
-                  className="rounded-lg border-ring border-4 dark:border-2 cursor-crosshair duration-200"
-                  key="pic"
-                />
-              </AspectRatio>
-              <div className="p-4">
-                <motion.h1 className="lores text-2xl " key="hellohero">
-                  Hello Hackers
-                </motion.h1>
-                <motion.p className="p bernina bold" key="contenthero">
-                  Welcome to the Hamburg Hack A Ton! This is a community of
-                  developers who love to code and build projects. We are a
-                  community of developers who love to code and build projects.
-                  We are a community of developers who love to code and build
-                  projects.
-                </motion.p>
-              </div>
-            </motion.div>
-          </Card>
         </motion.section>
-        <div className="w-screen h-screen bg-card" key="placeholder">
-          Content
-        </div>
+        <div className="pb-5" />
         <Footer key="footer" />
       </AnimatePresence>
     </motion.main>

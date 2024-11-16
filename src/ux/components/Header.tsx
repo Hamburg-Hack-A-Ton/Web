@@ -146,6 +146,16 @@ export const Header = () => {
                     Sponsors
                   </Link>
                 </motion.p>
+                <motion.p
+                  initial={{ y: 10, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -10, opacity: 0 }}
+                  key="Links-FAQ"
+                >
+                  <Link href="/faq" prefetch>
+                    FAQ
+                  </Link>
+                </motion.p>
               </AnimatePresence>
             </motion.div>
           </motion.section>
@@ -215,6 +225,19 @@ export const Header = () => {
                 >
                   <Link href="/sponsors" prefetch>
                     Sponsors
+                  </Link>
+                </motion.p>
+              )}
+              {popupOpen && (
+                <motion.p
+                  initial={{ y: 10, opacity: 0, x: "-5rem" }}
+                  animate={{ y: 0, opacity: 1, x: 0 }}
+                  exit={{ y: -10, opacity: 0, x: "-5rem" }}
+                  transition={{ delay: 0.5 }}
+                  key="Links-FAQ2"
+                >
+                  <Link href="/faq" prefetch>
+                    FAQ
                   </Link>
                 </motion.p>
               )}
@@ -340,7 +363,7 @@ export const Footer: React.FC<{ className?: string; noFooter?: boolean }> = ({
                 </motion.h1>
                 <motion.p
                   key="Footer-About"
-                  className="p-2 hover:underline"
+                  className="p-1 hover:underline"
                   initial={{ y: "-2.5rem", opacity: 0 }}
                   animate={{ y: "0rem", opacity: 1 }}
                   transition={{ delay: 0.2 }}
@@ -351,7 +374,7 @@ export const Footer: React.FC<{ className?: string; noFooter?: boolean }> = ({
                 </motion.p>
                 <motion.p
                   key="Footer-Schedule"
-                  className="p-2 hover:underline"
+                  className="p-1 hover:underline"
                   initial={{ y: "-2.5rem", opacity: 0 }}
                   animate={{ y: "0rem", opacity: 1 }}
                   transition={{ delay: 0.4 }}
@@ -362,7 +385,7 @@ export const Footer: React.FC<{ className?: string; noFooter?: boolean }> = ({
                 </motion.p>
                 <motion.p
                   key="Footer-Sponsors"
-                  className="p-2 hover:underline"
+                  className="p-1 hover:underline"
                   initial={{ y: "-2.5rem", opacity: 0 }}
                   animate={{ y: "0rem", opacity: 1 }}
                   transition={{ delay: 0.6 }}
@@ -372,11 +395,22 @@ export const Footer: React.FC<{ className?: string; noFooter?: boolean }> = ({
                   </Link>
                 </motion.p>
                 <motion.p
-                  key="Footer-Register"
-                  className="p-2 hover:underline"
+                  key="Footer-FAQ"
+                  className="p-1 hover:underline"
                   initial={{ y: "-2.5rem", opacity: 0 }}
                   animate={{ y: "0rem", opacity: 1 }}
                   transition={{ delay: 0.8 }}
+                >
+                  <Link href="/faq" prefetch>
+                    FAQ
+                  </Link>
+                </motion.p>
+                <motion.p
+                  key="Footer-Register"
+                  className="p-1 hover:underline"
+                  initial={{ y: "-2.5rem", opacity: 0 }}
+                  animate={{ y: "0rem", opacity: 1 }}
+                  transition={{ delay: 1 }}
                 >
                   <Link href="/register" prefetch>
                     Register
@@ -403,7 +437,7 @@ export const Footer: React.FC<{ className?: string; noFooter?: boolean }> = ({
               >
                 <motion.h1
                   key="FooterS-Title"
-                  className="lores text-3xl max-sm:text-lg max-md:text-xl max-lg:underline duration-200"
+                  className="lores text-3xl max-sm:text-lg max-md:text-xl max-lg:decoration-wavy max-lg:underline duration-200"
                   initial={{ y: "-2.5rem", opacity: 0 }}
                   animate={{ y: "0rem", opacity: 1 }}
                   transition={{ delay: 0.1 }}
@@ -419,14 +453,25 @@ export const Footer: React.FC<{ className?: string; noFooter?: boolean }> = ({
                   animate={{ y: "0rem", opacity: 1 }}
                   transition={{ delay: 0.3 }}
                 >
-                  <HoverEffect
-                    items={sponsors}
-                    className="w-64 h-24 max-lg:hidden duration-200  px-4"
-                  />
+                  <Tooltip
+                    className="w-64 h-20 flex items-center justify-center"
+                    tips={
+                      <>
+                        <Link href="/sponsors/apply" prefetch>
+                          Do you Want to Become a Sponsor?
+                        </Link>
+                      </>
+                    }
+                  >
+                    <HoverEffect
+                      items={sponsors}
+                      className="w-64 h-24 max-lg:hidden duration-200  px-4"
+                    />
+                  </Tooltip>
                 </motion.section>
                 <motion.h1
                   key="FooterA-Title"
-                  className="lores text-3xl max-sm:text-lg max-md:text-xl  max-lg:underline duration-200"
+                  className="lores text-3xl max-sm:text-lg max-md:text-xl max-lg:decoration-wavy  max-lg:underline duration-200"
                   initial={{ y: "-2.5rem", opacity: 0 }}
                   animate={{ y: "0rem", opacity: 1 }}
                   transition={{ delay: 0.5 }}
