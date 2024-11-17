@@ -14,6 +14,7 @@ import Image from "next/image";
 import { AspectRatio } from ">ui/aspect-ratio";
 import { Footer, Header } from "../Header";
 import { TextHoverEffect } from "@/ux/effects/texthoverfx";
+import { DefaultText } from "@/ux/util/className";
 
 export function RootMain() {
   updateTheme();
@@ -66,6 +67,13 @@ export function RootMain() {
           </motion.div>
         </motion.section>
         <div className="pb-5" />
+        <div className="flex flex-row items-start justify-center">
+          <p className={DefaultText}>
+            Disclaimer: This is just an Idea! <br />
+            Not Affiliated with Hackclub! <br />
+            Not Affiliated with the city of Hamburg!
+          </p>
+        </div>
         <Footer key="footer" />
       </AnimatePresence>
     </motion.main>

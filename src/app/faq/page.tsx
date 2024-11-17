@@ -28,9 +28,9 @@ export default function QnaMainPage() {
             text="Frequently asked questions"
             className="text-lg sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl puffin-nerf text-foreground p-4 z-20"
           />
-          <ul>
+          <ul className="text-lg p-2 grid grid-cols-4">
             {Object.entries(qaData).map(([key, value]) => (
-              <li key={key}>
+              <li key={key} className="p-2 m-4 border border-accent rounded-xl">
                 <Link href={`/faq/${key}`} prefetch>
                   {value.title}
                 </Link>

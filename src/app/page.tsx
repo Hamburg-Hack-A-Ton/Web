@@ -12,6 +12,6 @@ export default async function Home() {
   if (enter) {
     return <RootMain />;
   } else {
-    return UnderConstruction;
+    return <UnderConstruction />;
   }
 }

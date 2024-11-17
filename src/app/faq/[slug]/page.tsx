@@ -68,11 +68,32 @@ export default async function FAQPage({
 function Other({ data }: { data: FAQjsonType[string] }) {
   return (
     <>
-      {data.other.map((item, index) => (
-        <Link key={index} href={item.href} prefetch>
-          {item.text}
-        </Link>
-      ))}
+      <motion.h1
+        className="p-2 text-xl m-2 mt-4"
+        initial={{ y: 10, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+      >
+        Other:
+      </motion.h1>
+      <div className="text-lg p-2 grid grid-cols-4">
+        {data.other.map((item, index) => (
+          <Link
+            key={index}
+            href={item.href}
+            className="p-2 m-4 border border-accent rounded-xl"
+            prefetch
+          >
+            {item.text}
+          </Link>
+        ))}
+      </div>
+      <Link
+        href="/faq"
+        prefetch
+        className="py-2 px-4 m-4 border border-accent rounded-xl"
+      >
+        Back
+      </Link>
     </>
   );
 }
