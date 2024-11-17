@@ -123,6 +123,15 @@ module.exports = {
         "caret-blink": "caret-blink 1.25s ease-out infinite",
       },
     },
+    fontFamily: {
+      bernina: ["jaf-bernina-sans", "sans-serif"],
+      lores: ["lores-9-plus-wide", "sans-serif"],
+      omnes: ["omnes-cond", "sans-serif"],
+      gigalypse: ["gigalypse", "sans-serif"],
+      puffin_nerf: ["puffin-arcade-nerf", "sans-serif"],
+      puffin_regular: ["puffin-arcade-regular", "sans-serif"],
+      puffin_foozle: ["puffin-arcade-foozle", "sans-serif"],
+    },
   },
   plugins: [
     "tailwindcss-animate",

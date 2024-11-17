@@ -344,6 +344,7 @@ export const Footer: React.FC<{ className?: string; noFooter?: boolean }> = ({
             whileInView={{ height: "15rem", alignItems: "start" }}
             onViewportEnter={() => setIsFooter(true)}
             onViewportLeave={() => setIsFooter(false)}
+            key="FooterContentzz"
           >
             {isFooter && (
               <motion.section
@@ -448,7 +449,7 @@ export const Footer: React.FC<{ className?: string; noFooter?: boolean }> = ({
                 </motion.h1>
                 <motion.section
                   className="flex items-center justify-center max-lg:hidden"
-                  key="sponsors"
+                  key="FooterSponsors"
                   initial={{ y: "-2.5rem", opacity: 0 }}
                   animate={{ y: "0rem", opacity: 1 }}
                   transition={{ delay: 0.3 }}
@@ -465,6 +466,7 @@ export const Footer: React.FC<{ className?: string; noFooter?: boolean }> = ({
                   >
                     <HoverEffect
                       items={sponsors}
+                      key="SponsorHFX"
                       className="w-64 h-24 max-lg:hidden duration-200  px-4"
                     />
                   </Tooltip>

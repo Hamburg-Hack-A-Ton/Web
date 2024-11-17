@@ -29,12 +29,13 @@ export const HoverEffect = ({
         "grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  py-4",
         className
       )}
-      key="hovereffect"
+      key="hovereffectfxwrapppper"
     >
       {items.map((item, idx) => (
         <Link
           href={item?.href || "#"}
           key={item?.title}
+          id={item?.title}
           className="relative group  block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}

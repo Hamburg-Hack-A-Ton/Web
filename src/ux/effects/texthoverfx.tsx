@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -9,6 +10,9 @@ export const TextHoverEffect = ({
   className,
   thick,
   font,
+  initial,
+  animate,
+  exit,
 }: {
   text: string;
   duration?: number;
@@ -16,6 +20,9 @@ export const TextHoverEffect = ({
   className?: string;
   thick?: string;
   font?: string;
+  initial?: any;
+  animate?: any;
+  exit?: any;
 }) => {
   const svgRef = useRef<SVGSVGElement>(null);
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
@@ -35,7 +42,7 @@ export const TextHoverEffect = ({
   }, [cursor]);
 
   return (
-    <svg
+    <motion.svg
       key="hoverfx"
       ref={svgRef}
       width="100%"
@@ -46,6 +53,9 @@ export const TextHoverEffect = ({
       onMouseLeave={() => setHovered(false)}
       onMouseMove={(e) => setCursor({ x: e.clientX, y: e.clientY })}
       className={cn("select-none", className)}
+      initial={initial}
+      animate={animate}
+      exit={exit}
     >
       <defs>
         <linearGradient
@@ -148,6 +158,6 @@ export const TextHoverEffect = ({
       >
         {text}
       </text>
-    </svg>
+    </motion.svg>
   );
 };

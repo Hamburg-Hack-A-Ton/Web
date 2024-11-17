@@ -72,7 +72,9 @@
   .tinyblur {
     backdrop-filter: blur(1px);
   }
+}
 
+@layer components {
   .bernina {
     font-family: jaf-bernina-sans, sans-serif;
     font-weight: 400;
@@ -88,9 +90,6 @@
     font-weight: 700;
     font-style: normal;
   }
-}
-
-@layer components {
   .lores {
     font-family: lores-9-plus-wide, sans-serif;
     font-weight: 700;
@@ -108,75 +107,18 @@
     font-weight: 800;
     font-style: normal;
   }
-
-  .puffin-wipe {
-    font-family: puffin-arcade-wipe, sans-serif;
-    font-weight: 800;
-    font-style: normal;
-  }
-
-  .puffin-arcade {
-    font-family: puffin-arcade-regular, sans-serif;
-    font-weight: 800;
-    font-style: normal;
-  }
-
-  .puffin-tate {
-    font-family: puffin-arcade-tate, sans-serif;
-    font-weight: 800;
-    font-style: normal;
-  }
-
-  .puffin-level {
-    font-family: puffin-arcade-level, sans-serif;
-    font-weight: 800;
-    font-style: normal;
-  }
-
-  .puffin-liquid {
-    font-family: puffin-arcade-liquid, sans-serif;
-    font-weight: 800;
-    font-style: normal;
-  }
-
-  .puffin-yoko {
-    font-family: puffin-arcade-yoko, sans-serif;
-    font-weight: 800;
-    font-style: normal;
-  }
-
-  .puffin-dither {
-    font-family: puffin-arcade-dither, sans-serif;
-    font-weight: 800;
-    font-style: normal;
-  }
-
-  .puffin-loadout {
-    font-family: puffin-arcade-loadout, sans-serif;
-    font-weight: 800;
-    font-style: normal;
-  }
-
   .puffin-nerf {
     font-family: puffin-arcade-nerf, sans-serif;
     font-weight: 800;
     font-style: normal;
   }
-
-  .puffin-warp {
-    font-family: puffin-arcade-warp, sans-serif;
+  .puffin-regular {
+    font-family: puffin-arcade-regular, sans-serif;
     font-weight: 800;
     font-style: normal;
   }
-
   .puffin-foozle {
     font-family: puffin-arcade-foozle, sans-serif;
-    font-weight: 800;
-    font-style: normal;
-  }
-
-  .puffin-chrome {
-    font-family: puffin-arcade-chrome, sans-serif;
     font-weight: 800;
     font-style: normal;
   }

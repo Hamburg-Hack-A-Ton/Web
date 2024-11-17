@@ -17,7 +17,7 @@ export const gkMain = flag({
 
 export const applicationPhase = flag({
     key: 'Application Phase',
-    description: 'Controls whether the application button should be shown',
+    description: 'Controls whether the application form should be shown',
     decide: async () => {
         const result = await client.get('applicationPhase');
         return result === 'true';
