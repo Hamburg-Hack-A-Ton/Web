@@ -19,7 +19,7 @@ import { AspectRatio } from "../ui/aspect-ratio";
 import { Pivot as Hamburger } from "hamburger-react";
 import { cn } from ">util/twm";
 import { HoverEffect } from "../effects/hovercards";
-import { RegistationText } from "../Interested";
+import { TextCalc } from "../Interested";
 
 export const Header = () => {
   const { scrollY } = useScroll();
@@ -166,7 +166,7 @@ export const Header = () => {
               animate={{ y: showStickyHeader ? 0 : 10, x: -5 }}
             >
               <Link href="/register" prefetch>
-                <RegistationText />
+                <TextCalc />
               </Link>
             </motion.div>
           )}
