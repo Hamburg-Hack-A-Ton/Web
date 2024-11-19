@@ -16,14 +16,25 @@ export const gkMain = flag({
 });
 
 export const applicationPhase = flag({
-    key: 'Application Phase',
-    description: 'Controls whether the application form should be shown',
+    key: 'Applications Allowed',
+    description: 'Controlls whether any applications are allowed',
     decide: async () => {
         const result = await client.get('applicationPhase');
         return result === 'true';
     },
     defaultValue: false,
-    origin: "/apply"
+    origin: "/register"
 });
 
-export const precomputeFlags = [gkMain, applicationPhase] as const;
+export const registerApplication = flag({
+    key: 'Register Application',
+    description: 'Controlls whether the user can register for the hackathon // Else fill out Interested Application',
+    decide: async () => {
+        const result = await client.get('registerApplication');
+        return result === 'true';
+    },
+    defaultValue: false,
+    origin: "/register"
+});
+
+export const precomputeFlags = [gkMain, applicationPhase, registerApplication] as const;

@@ -18,8 +18,8 @@ import { ThemeToggleButton } from "./Theme";
 import { AspectRatio } from "../ui/aspect-ratio";
 import { Pivot as Hamburger } from "hamburger-react";
 import { cn } from ">util/twm";
-import { applicationPhase } from "@/flags";
 import { HoverEffect } from "../effects/hovercards";
+import { RegistationText } from "../Interested";
 
 export const Header = () => {
   const { scrollY } = useScroll();
@@ -166,7 +166,7 @@ export const Header = () => {
               animate={{ y: showStickyHeader ? 0 : 10, x: -5 }}
             >
               <Link href="/register" prefetch>
-                Register
+                <RegistationText />
               </Link>
             </motion.div>
           )}
@@ -272,8 +272,7 @@ export const Footer: React.FC<{ className?: string; noFooter?: boolean }> = ({
   className,
   noFooter,
 }) => {
-  const [isTTVisible, setIsTTVisible] = useState(true);
-  const [isDeveloper, setIsDeveloper] = useIsDeveloper();
+  const [isTTVisible] = useState(true);
   const [isFooter, setIsFooter] = useState(false);
 
   return (

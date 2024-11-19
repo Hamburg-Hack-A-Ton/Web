@@ -1,26 +1,22 @@
-"use client";
 import React from "react";
 import { Header } from ">comp/Header";
-import { FilloutPopupEmbed } from "@fillout/react";
+import { FilloutForm } from "@/ux/Interested";
 import { useRouter } from "next/navigation";
-import "@fillout/react/style.css";
+
+function useHandleClose() {
+  const router = useRouter();
+  if (typeof window !== "undefined" && document) {
+    localStorage.setItem("appliedYear", new Date().getFullYear().toString());
+  }
+  router.push("/register/done");
+}
 
 export function Register() {
-  const router = useRouter();
-
-  function handleClose() {
-    localStorage.setItem("appliedYear", new Date().getFullYear().toString());
-    router.push("/register/done");
-  }
   return (
     <>
       <Header />
       <main className="">
-        <FilloutPopupEmbed
-          filloutId="6gV48FesMnus"
-          inheritParameters
-          onClose={handleClose}
-        />
+        <FilloutForm useHandleClose={() => useHandleClose} />
       </main>
     </>
   );
