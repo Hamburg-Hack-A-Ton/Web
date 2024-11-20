@@ -1,6 +1,4 @@
 "use client";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import Link from "next/link";
 import { Header, Footer } from ">comp/Header";
 import { Vortex } from "@/ux/effects/vortex";
 import { TextHoverEffect } from "@/ux/effects/texthoverfx";

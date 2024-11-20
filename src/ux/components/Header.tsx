@@ -19,7 +19,9 @@ import { AspectRatio } from "../ui/aspect-ratio";
 import { Pivot as Hamburger } from "hamburger-react";
 import { cn } from ">util/twm";
 import { HoverEffect } from "../effects/hovercards";
-import { TextCalc } from "../Interested";
+// import { TextCalc } from "../Interested";
+
+import { Application, Register } from "§";
 
 export const Header = () => {
   const { scrollY } = useScroll();
@@ -159,14 +161,14 @@ export const Header = () => {
               </AnimatePresence>
             </motion.div>
           </motion.section>
-          {true && (
+          {Application && (
             <motion.div
               key="apply"
               className="absolute right-4 p-2 max-sm:hidden"
               animate={{ y: showStickyHeader ? 0 : 10, x: -5 }}
             >
               <Link href="/register" prefetch>
-                <TextCalc />
+                {Register ? "Register" : "Interested?"}
               </Link>
             </motion.div>
           )}
@@ -241,7 +243,7 @@ export const Header = () => {
                   </Link>
                 </motion.p>
               )}
-              {popupOpen && (
+              {popupOpen && Application && (
                 <motion.p
                   initial={{ y: 10, opacity: 0, x: "-5rem" }}
                   animate={{ y: 0, opacity: 1, x: 0 }}
@@ -250,7 +252,7 @@ export const Header = () => {
                   key="Links-Register2"
                 >
                   <Link href="/register" prefetch>
-                    Register
+                    {Register ? "Register" : "Interested?"}
                   </Link>
                 </motion.p>
               )}
@@ -405,17 +407,19 @@ export const Footer: React.FC<{ className?: string; noFooter?: boolean }> = ({
                     FAQ
                   </Link>
                 </motion.p>
-                <motion.p
-                  key="Footer-Register"
-                  className="p-1 hover:underline"
-                  initial={{ y: "-2.5rem", opacity: 0 }}
-                  animate={{ y: "0rem", opacity: 1 }}
-                  transition={{ delay: 1 }}
-                >
-                  <Link href="/register" prefetch>
-                    Register
-                  </Link>
-                </motion.p>
+                {Application && (
+                  <motion.p
+                    key="Footer-Register"
+                    className="p-1 hover:underline"
+                    initial={{ y: "-2.5rem", opacity: 0 }}
+                    animate={{ y: "0rem", opacity: 1 }}
+                    transition={{ delay: 1 }}
+                  >
+                    <Link href="/register" prefetch>
+                      {Register ? "Register" : "Interested?"}
+                    </Link>
+                  </motion.p>
+                )}
               </motion.section>
             )}
             <motion.p

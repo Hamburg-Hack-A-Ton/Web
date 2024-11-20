@@ -24,6 +24,7 @@
       ">hooks/*": ["./src/ux/hooks/*"],
       ">cn/*": ["./src/ux/shadcn/*"],
       "~/*": ["./public/*"],
+      "§": ["./src/app/config"],
     },
     "plugins": [
       {
