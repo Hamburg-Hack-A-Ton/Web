@@ -31,11 +31,11 @@ export const AboutEN = () => {
               <Link
                 href="/faq/hackathon"
                 className=" underline decoration-wavy decoration-secondary"
+                prefetch
               >
                 Hackathon
               </Link>
             </Tooltip>
-            <br />
             <Tooltip
               tips={
                 <>
@@ -47,15 +47,15 @@ export const AboutEN = () => {
             >
               It is a hackathon organized{" "}
               <Link
-                href="/faq/hackathon"
+                href="/faq/highschoolers"
                 className="underline decoration-wavy decoration-secondary"
               >
                 by high schoolers, for high schoolers,
               </Link>
               and aims to inspire
             </Tooltip>
-            creativity, innovation, and collaboration <br />
-            through the shared lazy mindset of youth. <br />
+            creativity, innovation, and collaboration through the shared lazy
+            mindset of youth.
           </h1>
         </motion.section>
       </main>

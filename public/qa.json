@@ -96,5 +96,20 @@
         "text": "What is a Hackathon?"
       }
     ]
+  },
+  "highschoolers": {
+    "fxheader": "Only them?",
+    "title": "A Hackathon only for Highschoolers?",
+    "content": [
+      "This is a hackathon that is specifically designed for high school students.",
+      "It is an opportunity for students to come together and work on projects that interest them, learn new skills, and connect with other students who share their passion for technology.",
+      "High school hackathons are a great way for students to gain hands-on experience with coding, design, and other technical skills, and to build their portfolios for college applications and future job opportunities."
+    ],
+    "other": [
+      {
+        "href": "/faq/hackathon",
+        "text": "What is a Hackathon?"
+      }
+    ]
   }
 }

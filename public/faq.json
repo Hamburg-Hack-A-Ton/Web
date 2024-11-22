@@ -1,0 +1,84 @@
+{
+  "root": "/faq",
+  "home": {
+    "fxheader": "FAQ",
+    "title": [
+      "Welcome to the FAQ page",
+      "What would you like to know?",
+      "Need something?",
+      "Ask away!"
+    ]
+  },
+  "map": {
+    "category1": {
+      "display": "Category 1",
+      "pages": {
+        "": {
+          "display": "Category 1",
+          "root-kontext": ["from=root"]
+        },
+        "page1": {
+          "display": "var2",
+          "root-kontext": ["from=root"]
+        }
+      }
+    },
+    "category2": {
+      "display": "Category 2",
+      "subs": {
+        "subcategory1": {
+          "display": "Subcategory 1",
+          "pages": {
+            "page1": {
+              "display": "var2",
+              "root-kontext": ["from=root"]
+            }
+          }
+        }
+      }
+    }
+  },
+  "entries": {
+    "category1": {
+      "": {
+        "title": "Category 1",
+        "fxheader": "NR. 1",
+        "msg": "This is the default page for Category 1. It is displayed when no other page is specified.",
+        "hideothers": false,
+        "exit-kontext": ["from=categories"]
+      },
+      "page1": {
+        "title": {
+          "": "Why does Page1 exist?",
+          "var1": "Why does Page1 exist?",
+          "var2": "What does Page1 do?"
+        },
+        "fxheader": "Page 1",
+        "content": "This is the content of Page 1.",
+        "exit-kontext": ["from=category1"],
+        "other": {
+          "/category2/subcategory1": {
+            "title": ""
+          }
+        }
+      }
+    },
+    "category2": {
+      "subcategory1": {
+        "": "/faq/categorywtf/test1234",
+        "page1": {
+          "title": "Why does Page1 do?",
+          "fxheader": "Page 1",
+          "override": ">comp/faq/id123",
+          "exit-kontext": ["from=category2"]
+        }
+      }
+    }
+  },
+  "config": {
+    "title": {
+      "prefix": "Hackathon FAQ - ",
+      "suffix": ""
+    }
+  }
+}

@@ -33,7 +33,7 @@ export function RootMain() {
           <motion.div key="hero" className="pb-5">
             <motion.div className="w-screen h-max " key="heroimage">
               <Image
-                src="/cdn/placeholder/lg.jpg"
+                src="https://cloud-5n3hm5905-hack-club-bot.vercel.app/1lg.jpg"
                 alt="Hamburg"
                 loading="eager"
                 width={1920}

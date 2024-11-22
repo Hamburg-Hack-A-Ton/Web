@@ -21,6 +21,16 @@ const nextConfig = {
 
     return config;
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cloud-5n3hm5905-hack-club-bot.vercel.app",
+        port: "",
+        pathname: "**",
+      },
+    ],
+  },
 };
 
 const nextconf2 = withSentryConfig(nextConfig, {
