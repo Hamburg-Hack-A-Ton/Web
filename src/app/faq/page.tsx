@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react";
 import { Header, Footer } from ">comp/Header";
 import FAQ from "~/faq.json";
@@ -7,10 +6,7 @@ import { Separator } from ">ui/separator";
 import * as motion from "framer-motion/client";
 import { TextAnimate } from ">fx/textAnimate";
 import Link from "next/link";
-import { Object as CItem, Group as CGroup } from ">ui/collapse";
-import { Button } from "@/ux/ui/button";
-
-interface FAQmappable {
+export interface FAQmappable {
   display: string;
   pages?: {
     [key: string]: {
@@ -23,7 +19,7 @@ interface FAQmappable {
   };
 }
 
-interface FAQentry {
+export interface FAQentry {
   title: string | { [key: string]: string };
   fxheader?: string;
   content?: string;
@@ -35,7 +31,7 @@ interface FAQentry {
     };
   };
 }
-interface FAQdefault {
+export interface FAQdefault {
   title: string;
   fxheader?: string;
   msg?: string;
@@ -43,10 +39,11 @@ interface FAQdefault {
   "exit-kontext"?: string[];
 }
 
-interface FAQentries {
-  [entrykey: string]: "notfound" | string | FAQentry | FAQdefault | FAQentries;
-}
-
+export type FAQentries =
+  | string
+  | FAQentry
+  | FAQdefault
+  | { [key: string]: FAQentry | FAQentries };
 export interface FAQtype {
   root: string;
   home: {
@@ -56,8 +53,9 @@ export interface FAQtype {
   map: {
     [mapkey: string]: FAQmappable;
   };
-  entries: FAQentries;
+  entries: { [entrykey: string]: FAQentries };
   config: {
+    branchindicator: string;
     title?: {
       prefix?: string;
       suffix?: string;

@@ -13,7 +13,7 @@
     "category1": {
       "display": "Category 1",
       "pages": {
-        "": {
+        "<<": {
           "display": "Category 1",
           "root-kontext": ["from=root"]
         },
@@ -36,11 +36,20 @@
           }
         }
       }
+    },
+    "categorytest123": {
+      "display": "Category Test 123",
+      "pages": {
+        "": {
+          "display": "Category Test 123",
+          "root-kontext": ["from=root"]
+        }
+      }
     }
   },
   "entries": {
     "category1": {
-      "": {
+      "<<": {
         "title": "Category 1",
         "fxheader": "NR. 1",
         "msg": "This is the default page for Category 1. It is displayed when no other page is specified.",
@@ -49,7 +58,7 @@
       },
       "page1": {
         "title": {
-          "": "Why does Page1 exist?",
+          "<<": "Why does Page1 exist?",
           "var1": "Why does Page1 exist?",
           "var2": "What does Page1 do?"
         },
@@ -65,7 +74,7 @@
     },
     "category2": {
       "subcategory1": {
-        "": "/faq/categorywtf/test1234",
+        "<<": "/categorywtf",
         "page1": {
           "title": "Why does Page1 do?",
           "fxheader": "Page 1",
@@ -73,9 +82,22 @@
           "exit-kontext": ["from=category2"]
         }
       }
+    },
+    "categorytest123": {
+      "<<": {
+        "title": {
+          "testtesttest": "Ctttttttt3",
+          "stuff": "Category Test 123"
+        },
+        "fxheader": "NR. 123",
+        "msg": "This is the default page for Category Test 123. It is displayed when no other page is specified.",
+        "hideothers": false,
+        "exit-kontext": ["from=categories"]
+      }
     }
   },
   "config": {
+    "branchindicator": "<<",
     "title": {
       "prefix": "Hackathon FAQ - ",
       "suffix": ""

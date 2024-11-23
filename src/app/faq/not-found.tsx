@@ -16,7 +16,7 @@ export default function FAQRoot() {
       <Header />
       <main>
         <TextHoverEffect
-          text="FAQ"
+          text="NF"
           font="lores"
           key="hoverfx"
           thick="1"
@@ -28,65 +28,9 @@ export default function FAQRoot() {
           className="flex flex-col items-center justify-center p-4"
         >
           <TextAnimate
-            text={"text"}
+            text="Not Found"
             className="text-lg sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl puffin-nerf text-foreground p-4 z-20"
           />
-          <motion.section
-            key="Categories-Wrapper"
-            className="flex flex-col items-center justify-center p-4 w-[70%]"
-          >
-            <motion.section
-              key="Categories-Grid"
-              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-[70%]"
-              transition={{ staggerChildren: 0.1 }}
-            >
-              <motion.div
-                id="categories"
-                key="category1"
-                className="flex flex-col items-center justify-center p-4"
-                initial={{ opacity: 0, y: "-2.5rem" }}
-                animate={{ opacity: 1, y: 0 }}
-              >
-                1
-              </motion.div>
-              <motion.div
-                id="categories"
-                key="category2"
-                className="flex flex-col items-center justify-center p-4"
-                initial={{ opacity: 0, y: "-2.5rem" }}
-                animate={{ opacity: 1, y: 0 }}
-              >
-                2
-              </motion.div>
-              <motion.div
-                id="categories"
-                key="category3"
-                className="flex flex-col items-center justify-center p-4"
-                initial={{ opacity: 0, y: "-2.5rem" }}
-                animate={{ opacity: 1, y: 0 }}
-              >
-                3
-              </motion.div>
-              <motion.div
-                id="categories"
-                key="category4"
-                className="flex flex-col items-center justify-center p-4"
-                initial={{ opacity: 0, y: "-2.5rem" }}
-                animate={{ opacity: 1, y: 0 }}
-              >
-                4
-              </motion.div>
-              <motion.div
-                id="categories"
-                key="category5"
-                className="flex flex-col items-center justify-center p-4"
-                initial={{ opacity: 0, y: "-2.5rem" }}
-                animate={{ opacity: 1, y: 0 }}
-              >
-                5
-              </motion.div>
-            </motion.section>
-          </motion.section>
         </motion.section>
       </main>
       <Footer />
