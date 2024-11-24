@@ -48,37 +48,54 @@
     }
   },
   "entries": {
-    "category1": {
+    "others": {
       "<<": {
-        "title": "Category 1",
-        "fxheader": "NR. 1",
-        "msg": "This is the default page for Category 1. It is displayed when no other page is specified.",
-        "hideothers": false,
-        "exit-kontext": ["from=categories"]
+        "title": "Other Test",
+        "fxheader": "Other",
+        "msg": "Testing the different Other Features...",
+        "exit-kontext": ["from=others"]
       },
-      "page1": {
-        "title": {
-          "<<": "Why does Page1 exist?",
-          "var1": "Why does Page1 exist?",
-          "var2": "What does Page1 do?"
-        },
-        "fxheader": "Page 1",
-        "content": "This is the content of Page 1.",
-        "exit-kontext": ["from=category1"],
-        "other": {
-          "/category2/subcategory1": {
-            "title": ""
+      "customother": {
+        "<<": {
+          "title": {
+            "<<": "Custom Other Test",
+            "short": "Custom Other",
+            "long": "Custom Other Test",
+            "var1": "Testing the Custom Other feature",
+            "var2": "This is a test of the Custom Other feature"
+          },
+          "fxheader": "Other",
+          "msg": "Testing the Custom Other feature!",
+          "exit-kontext": ["from=others"],
+          "other": {
+            "/others": "Others",
+            "/others/customother?title=long": "Custom Other Test",
+            "/others/autoother?title=long": "Auto Other Test"
           }
+        }
+      },
+      "autoother": {
+        "<<": {
+          "title": {
+            "<<": "Auto Other Test",
+            "short": "Auto Other",
+            "long": "Auto Other Test",
+            "var1": "Testing the Auto Other feature",
+            "var2": "This is a test of the Auto Other feature"
+          },
+          "fxheader": "Other",
+          "msg": "Testing the Auto Other feature!",
+          "exit-kontext": ["from=others"]
         }
       }
     },
     "category2": {
-      "subcategory1": {
-        "<<": "/categorywtf",
-        "page1": {
+      "<<": "/categorywtf",
+      "page1": {
+        "<<": {
           "title": "Why does Page1 do?",
           "fxheader": "Page 1",
-          "override": ">comp/faq/id123",
+          "override": "test",
           "exit-kontext": ["from=category2"]
         }
       }
@@ -94,7 +111,8 @@
         "hideothers": false,
         "exit-kontext": ["from=categories"]
       }
-    }
+    },
+    "fail-forward": "notfound"
   },
   "config": {
     "branchindicator": "<<",

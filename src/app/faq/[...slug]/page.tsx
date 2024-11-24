@@ -18,6 +18,7 @@ import {
   FAQentry,
   FAQmappable,
 } from "../page";
+import dynamic from "next/dynamic";
 const faqData: FAQtype = FAQ;
 
 type Props = {
@@ -33,7 +34,29 @@ export async function generateMetadata(
   const sparams = await searchParams;
   const map = await faqData.map;
   const entries = await faqData.entries;
-  const here = await entries[slug];
+
+  async function calcHere() {
+    console.log("Calculating 'here'...");
+    let calchere: any = entries;
+    console.log("Initial 'calchere':", calchere);
+    for (const key of slug) {
+      try {
+        console.log("Processing key:", key);
+        const here: any = calchere[key];
+        console.log("Found 'here':", here);
+        calchere = here;
+      } catch (e) {
+        // console.log("Error processing key:", key, e);
+        return "fail-foreward";
+      }
+    }
+    console.log("Final 'calchere':", calchere);
+    if (calchere === undefined) {
+      return "fail-foreward";
+    }
+    return calchere;
+  }
+  const here = await calcHere();
   const doublecc = await faqData.config.branchindicator;
   const inner = (here as any)[doublecc]
     ? await (here as any)[doublecc]
@@ -76,14 +99,36 @@ export default async function FAQPage({
   params,
   searchParams,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string[] }>;
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
   const { slug } = await params;
   const sparams = await searchParams;
   const map = await faqData.map;
   const entries = await faqData.entries;
-  const here = await entries[slug];
+
+  async function calcHere() {
+    console.log("Calculating 'here'...");
+    let calchere: any = entries;
+    console.log("Initial 'calchere':", calchere);
+    for (const key of slug) {
+      try {
+        console.log("Processing key:", key);
+        const here: any = calchere[key];
+        console.log("Found 'here':", here);
+        calchere = here;
+      } catch (e) {
+        // console.log("Error processing key:", key, e);
+        return "fail-foreward";
+      }
+    }
+    console.log("Final 'calchere':", calchere);
+    if (calchere === undefined) {
+      return "fail-foreward";
+    }
+    return calchere;
+  }
+  const here = await calcHere();
   const doublecc = await faqData.config.branchindicator;
   const inner = (here as any)[doublecc]
     ? await (here as any)[doublecc]
@@ -96,20 +141,22 @@ export default async function FAQPage({
       </div>
     );
   }
-  // console.log(params);
-  // console.log(sparams);
-  // console.log(slug);
-  // console.log(map);
-  // console.log(entries);
-  console.log(here);
-  // console.log(sparams?.title);
+
+  console.log("---");
+  // console.log("Params: ", params);
+  // console.log("URL-Params: ", sparams);
+  console.log("Slug: ", slug);
+  // console.log("Map: ", map);
+  // console.log("Entries: ", entries);
+  console.log("Here: ", here);
+  console.log("Inner: ", inner);
+  // console.log("FAQ Data: ", faqData);
+
   console.log(doublecc);
-  console.log(inner);
-  // console.log(faqData);
 
   // the self kontext is always here.""
   function handleIncomingRequest(inner: any) {
-    console.log(inner);
+    // console.log(inner);
     if (typeof inner === "string") {
       if (inner === "notfound") {
         notFound();
@@ -120,8 +167,6 @@ export default async function FAQPage({
       }
     }
   }
-
-  const fp = faqData.entries[slug] as FAQentry;
 
   handleIncomingRequest(inner);
 
@@ -143,46 +188,61 @@ export default async function FAQPage({
         >
           <TextAnimate
             text={getCorrectTitle(inner, sparams) || "FAQ"}
+            key={inner?.title || "FAQ"}
             className="text-lg sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl puffin-nerf text-foreground p-4 "
           />
-          ppp
-          {/* <Other data={fp} /> */}
+          {inner?.override && (
+            <DynamicComponent componentPath={inner?.override} />
+          )}
+          {!inner?.override && inner?.msg && (
+            <motion.h2
+              key={inner?.msg}
+              className="p-4 m-2 text-4xl border-spacing-2 rounded-xl border-secondary border-2"
+            >
+              {inner?.msg}
+            </motion.h2>
+          )}
         </motion.section>
+        {!inner?.hideothers &&
+          Object.keys(here).length > 1 &&
+          !inner?.other && <Other here={here} inner={inner} />}
+        {!inner?.hideothers && inner?.other && (
+          <CustomOther custom={inner?.other} />
+        )}
       </main>
       <Footer />
     </>
   );
 }
 
-// function Other({ data }: { data: FAQentry }) {
-//   return (
-//     <>
-//       <motion.h1
-//         className="p-2 text-xl m-2 mt-4"
-//         initial={{ y: 10, opacity: 0 }}
-//         animate={{ y: 0, opacity: 1 }}
-//       >
-//         Other:
-//       </motion.h1>
-//       <div className="text-lg p-2 grid grid-cols-4">
-//         {data.other.map((item, index) => (
-//           <Link
-//             key={index}
-//             href={item.href}
-//             className="p-2 m-4 border border-accent rounded-xl"
-//             prefetch
-//           >
-//             {item.text}
-//           </Link>
-//         ))}
-//       </div>
-//       <Link
-//         href="/faq"
-//         prefetch
-//         className="py-2 px-4 m-4 border border-accent rounded-xl"
-//       >
-//         Back
-//       </Link>
-//     </>
-//   );
-// }
+type DynamicComponentProps = {
+  componentPath: string;
+};
+
+const DynamicComponent: React.FC<DynamicComponentProps> = ({
+  componentPath,
+}) => {
+  const resolvePath = (path: string) => {
+    return `./custom/${path}`;
+  };
+
+  const ImportedComponent = dynamic(() =>
+    import(resolvePath(componentPath)).then((mod) => mod)
+  );
+
+  return <ImportedComponent />;
+};
+
+type OtherProps = {
+  here?: any;
+  inner?: any;
+  custom?: any;
+};
+
+const Other: React.FC<OtherProps> = ({ here, inner }) => {
+  return <div>AutomaticOther</div>;
+};
+
+const CustomOther: React.FC<OtherProps> = ({ custom }) => {
+  return <div>CustomOther</div>;
+};

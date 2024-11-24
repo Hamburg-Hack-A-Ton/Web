@@ -23,12 +23,11 @@ export interface FAQentry {
   title: string | { [key: string]: string };
   fxheader?: string;
   content?: string;
+  msg?: string;
   override?: string;
   "exit-kontext"?: string[];
   other?: {
-    [otherhref: string]: {
-      title?: string;
-    };
+    [otherhref: string]: string;
   };
 }
 export interface FAQdefault {
@@ -43,7 +42,10 @@ export type FAQentries =
   | string
   | FAQentry
   | FAQdefault
-  | { [key: string]: FAQentry | FAQentries };
+  | { [key: string]: FAQentry }
+  | { [key: string]: string }
+  | { [key: string]: FAQentries };
+
 export interface FAQtype {
   root: string;
   home: {
