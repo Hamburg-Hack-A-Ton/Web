@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React from "react";
+import React, { Suspense } from "react";
 import { Header, Footer } from ">comp/Header";
 import { TextHoverEffect } from ">fx/texthoverfx";
 import { Separator } from ">ui/separator";
@@ -36,21 +36,21 @@ export async function generateMetadata(
   const entries = await faqData.entries;
 
   async function calcHere() {
-    console.log("Calculating 'here'...");
+    // console.log("Calculating 'here'...");
     let calchere: any = entries;
-    console.log("Initial 'calchere':", calchere);
+    // console.log("Initial 'calchere':", calchere);
     for (const key of slug) {
       try {
-        console.log("Processing key:", key);
+        // console.log("Processing key:", key);
         const here: any = calchere[key];
-        console.log("Found 'here':", here);
+        // console.log("Found 'here':", here);
         calchere = here;
       } catch (e) {
         // console.log("Error processing key:", key, e);
         return "fail-foreward";
       }
     }
-    console.log("Final 'calchere':", calchere);
+    // console.log("Final 'calchere':", calchere);
     if (calchere === undefined) {
       return "fail-foreward";
     }
@@ -72,7 +72,7 @@ export async function generateMetadata(
   };
 }
 
-const getCorrectTitle = (inner: FAQentry, sparams: any) => {
+const getCorrectTitle = (inner: FAQentry, sparams?: any) => {
   const title = inner?.title;
   if (typeof title === "string") {
     return title;
@@ -108,21 +108,21 @@ export default async function FAQPage({
   const entries = await faqData.entries;
 
   async function calcHere() {
-    console.log("Calculating 'here'...");
+    // console.log("Calculating 'here'...");
     let calchere: any = entries;
-    console.log("Initial 'calchere':", calchere);
+    // console.log("Initial 'calchere':", calchere);
     for (const key of slug) {
       try {
-        console.log("Processing key:", key);
+        // console.log("Processing key:", key);
         const here: any = calchere[key];
-        console.log("Found 'here':", here);
+        // console.log("Found 'here':", here);
         calchere = here;
       } catch (e) {
         // console.log("Error processing key:", key, e);
         return "fail-foreward";
       }
     }
-    console.log("Final 'calchere':", calchere);
+    // console.log("Final 'calchere':", calchere);
     if (calchere === undefined) {
       return "fail-foreward";
     }
@@ -142,15 +142,21 @@ export default async function FAQPage({
     );
   }
 
+  const referrer = inner?.["exit-kontext"]
+    ? buildReferrer(inner["exit-kontext"])
+    : "";
+
   console.log("---");
   // console.log("Params: ", params);
   // console.log("URL-Params: ", sparams);
-  console.log("Slug: ", slug);
+  // console.log("Slug: ", slug);
   // console.log("Map: ", map);
   // console.log("Entries: ", entries);
-  console.log("Here: ", here);
-  console.log("Inner: ", inner);
+  // console.log("Here: ", here);
+  // console.log("Inner: ", inner);
   // console.log("FAQ Data: ", faqData);
+  // console.log("Config: ", faqData.config);
+  // console.log("Root: ", faqData.root);
 
   console.log(doublecc);
 
@@ -192,23 +198,62 @@ export default async function FAQPage({
             className="text-lg sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl puffin-nerf text-foreground p-4 "
           />
           {inner?.override && (
-            <DynamicComponent componentPath={inner?.override} />
+            <Suspense
+              fallback={
+                <main className="w-full h-2/3 bg-background text-foreground flex items-center justify-center">
+                  <p className="lores text-4xl">Loading</p>
+                </main>
+              }
+            >
+              <DynamicComponent componentPath={inner?.override} />
+            </Suspense>
           )}
           {!inner?.override && inner?.msg && (
             <motion.h2
               key={inner?.msg}
-              className="p-4 m-2 text-4xl border-spacing-2 rounded-xl border-secondary border-2"
+              className="p-4 m-2 bg-card tinyblur rounded-xl shadow-lg shadow-accent border-2 border-accent"
             >
               {inner?.msg}
             </motion.h2>
           )}
+          {!inner?.override && inner?.content && (
+            <motion.section
+              key={inner?.content}
+              className="p-2 m-2 text-2xl rounded-xl"
+            >
+              {inner?.content}
+            </motion.section>
+          )}
+          {/* back-/forwardlinks Section */}
+          {inner?.backlink && (
+            <motion.section
+              key={inner?.backlink}
+              className="p-2 m-2 text-xl rounded-xl bg-card tinyblur shadow-md shadow-muted border-1 border-muted"
+            >
+              <Link href={inner?.backlink} prefetch>
+                <a className="bernina">Back</a>
+              </Link>
+            </motion.section>
+          )}
+          {inner?.walkthrough?.next && (
+            <motion.section
+              key={inner?.walkthrough?.next}
+              className="p-2 m-2 text-xl rounded-xl bg-card tinyblur shadow-md shadow-muted border-1 border-muted"
+            >
+              <Link href={`${inner?.walkthrough?.next}${referrer}`} prefetch>
+                <a className="bernina">Next</a>
+              </Link>
+            </motion.section>
+          )}
+
+          {/* Other Section */}
+          {!inner?.hideothers &&
+            Object.keys(here).length > 1 &&
+            !inner?.other && <Other here={here} inner={inner} />}
+          {!inner?.hideothers &&
+            Object.keys(here).length > 1 &&
+            inner?.other && <CustomOther inner={inner} />}
         </motion.section>
-        {!inner?.hideothers &&
-          Object.keys(here).length > 1 &&
-          !inner?.other && <Other here={here} inner={inner} />}
-        {!inner?.hideothers && inner?.other && (
-          <CustomOther custom={inner?.other} />
-        )}
       </main>
       <Footer />
     </>
@@ -240,9 +285,58 @@ type OtherProps = {
 };
 
 const Other: React.FC<OtherProps> = ({ here, inner }) => {
-  return <div>AutomaticOther</div>;
+  return (
+    <div className="flex items-center justify-center animate-bounce text-destructive-foreground bg-destructive rounded-xl p-4 m-2 text-xl">
+      Be Aware
+      <br />
+      This Feature is not Implemented Yet!
+    </div>
+  );
 };
 
-const CustomOther: React.FC<OtherProps> = ({ custom }) => {
-  return <div>CustomOther</div>;
+const buildReferrer = (exitKontext: string[]): string => {
+  return exitKontext.reduce((acc, curr, index) => {
+    return index === 0 ? `?${curr}` : `${acc}&${curr}`;
+  }, "");
+};
+
+const CustomOther: React.FC<OtherProps> = ({ inner }) => {
+  const variants = {
+    hidden: { opacity: 0, y: "-2.5rem" },
+    visible: { opacity: 0.75, y: "0rem" },
+  };
+
+  const custom = inner?.other || {};
+
+  const referrer = inner?.["exit-kontext"]
+    ? buildReferrer(inner["exit-kontext"])
+    : "";
+  return (
+    <motion.div
+      className="grid grid-cols-4 gap-4 w-3/4 mx-auto pt-4"
+      initial="hidden"
+      animate="visible"
+      transition={{ staggerChildren: 0.025 }}
+    >
+      <Separator className=" col-start-1 col-span-4" />
+      <h3 className=" col-start-1 col-span-4 flex items-center justify-center text-2xl bernina bold">
+        Simmilar
+      </h3>
+      {Object.keys(custom).map((key) => (
+        <motion.div
+          key={key}
+          variants={variants}
+          className="p-2 m-1 bg-card tinyblur rounded-lg shadow-md shadow-muted border-1 border-muted"
+        >
+          <Link
+            href={`${faqData.root}${key}${referrer}`}
+            prefetch
+            className="bernina"
+          >
+            {custom[key]}
+          </Link>
+        </motion.div>
+      ))}
+    </motion.div>
+  );
 };

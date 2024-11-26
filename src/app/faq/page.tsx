@@ -26,6 +26,11 @@ export interface FAQentry {
   msg?: string;
   override?: string;
   "exit-kontext"?: string[];
+  hideothers?: boolean;
+  backlink?: string;
+  walkthrough?: {
+    next?: string;
+  };
   other?: {
     [otherhref: string]: string;
   };
@@ -132,9 +137,9 @@ export default function FAQRoot() {
                             prefetch
                             className={`border ${
                               pageKey === ""
-                                ? "border-primary"
-                                : "border-accent"
-                            } rounded-lg border-2 flex items-center justify-center`}
+                                ? "border-accent shadow-accent"
+                                : "border-muted shadow-muted"
+                            } border-2 flex items-center justify-center p-2 m-1 bg-card tinyblur rounded-lg shadow-md  border-1 `}
                           >
                             {page.display || pageTitle}
                           </Link>
@@ -161,7 +166,11 @@ export default function FAQRoot() {
                                           "root-kontext"
                                         ]?.join("&")}`}
                                         prefetch
-                                        className="border border-accent"
+                                        className={`border ${
+                                          subPageKey === ""
+                                            ? "border-accent shadow-accent"
+                                            : "border-muted shadow-muted"
+                                        } border-2 flex items-center justify-center p-2 m-1 bg-card tinyblur rounded-lg shadow-md  border-1 `}
                                       >
                                         {subPage.display || subPageTitle}
                                       </Link>

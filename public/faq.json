@@ -10,82 +10,209 @@
     ]
   },
   "map": {
-    "category1": {
-      "display": "Category 1",
-      "pages": {
-        "<<": {
-          "display": "Category 1",
-          "root-kontext": ["from=root"]
-        },
-        "page1": {
-          "display": "var2",
-          "root-kontext": ["from=root"]
-        }
-      }
-    },
-    "category2": {
-      "display": "Category 2",
-      "subs": {
-        "subcategory1": {
-          "display": "Subcategory 1",
-          "pages": {
-            "page1": {
-              "display": "var2",
-              "root-kontext": ["from=root"]
-            }
-          }
-        }
-      }
-    },
-    "categorytest123": {
-      "display": "Category Test 123",
+    "Walkthrough": {
+      "display": "Walkthroughs",
       "pages": {
         "": {
-          "display": "Category Test 123",
+          "display": "Start Walkthrough",
           "root-kontext": ["from=root"]
+        },
+        "inonepage": {
+          "display": "Hamburg Hack A Ton in one Page",
+          "root-kontext": ["from=root"]
+        }
+      }
+    },
+    "dev": {
+      "display": "Development Stuff",
+      "subs": {
+        "content-types": {
+          "display": "Content Types",
+          "pages": {
+            "": {
+              "display": "The Different Content Types",
+              "root-kontext": ["from=dev", "title=rand2"]
+            }
+          }
+        },
+        "others": {
+          "display": "The \"Other\" feature",
+          "pages": {
+            "": {
+              "display": "Default Page",
+              "root-kontext": ["from=root"]
+            },
+            "customother": {
+              "display": "Custom Other Test",
+              "root-kontext": ["from=others"]
+            },
+            "autoother": {
+              "display": "Auto Other Test",
+              "root-kontext": ["from=others"]
+            }
+          }
         }
       }
     }
   },
   "entries": {
-    "others": {
-      "<<": {
-        "title": "Other Test",
-        "fxheader": "Other",
-        "msg": "Testing the different Other Features...",
-        "exit-kontext": ["from=others"]
-      },
-      "customother": {
+    "dev": {
+      "<<": "notfound",
+      "others": {
         "<<": {
-          "title": {
-            "<<": "Custom Other Test",
-            "short": "Custom Other",
-            "long": "Custom Other Test",
-            "var1": "Testing the Custom Other feature",
-            "var2": "This is a test of the Custom Other feature"
-          },
+          "title": "Other Test",
           "fxheader": "Other",
-          "msg": "Testing the Custom Other feature!",
-          "exit-kontext": ["from=others"],
+          "msg": "Testing the different Other Features...",
+          "exit-kontext": ["from=others", "title=short"],
           "other": {
-            "/others": "Others",
-            "/others/customother?title=long": "Custom Other Test",
-            "/others/autoother?title=long": "Auto Other Test"
+            "/dev/others/customother": "Custom Other Test",
+            "/dev/others/autoother": "Auto Other Test"
+          }
+        },
+        "customother": {
+          "<<": {
+            "title": {
+              "<<": "Custom Other Test",
+              "short": "Custom Other",
+              "long": "Custom Other Test",
+              "var1": "Testing the Custom Other feature",
+              "var2": "This is a test of the Custom Other feature"
+            },
+            "fxheader": "Other",
+            "msg": "Testing the Custom Other feature!",
+            "exit-kontext": ["from=others", "title=short"],
+            "other": {
+              "/dev/others": "Others",
+              "/dev/others/customother": "Custom Other Test",
+              "/dev/others/autoother": "Auto Other Test"
+            }
+          }
+        },
+        "autoother": {
+          "<<": {
+            "title": {
+              "<<": "Auto Other Test",
+              "short": "Auto Other",
+              "long": "Auto Other Test",
+              "var1": "Testing the Auto Other feature",
+              "var2": "This is a test of the Auto Other feature"
+            },
+            "fxheader": "Other",
+            "msg": "Testing the Auto Other feature!",
+            "exit-kontext": ["from=others"]
           }
         }
       },
-      "autoother": {
+      "content-types": {
         "<<": {
           "title": {
-            "<<": "Auto Other Test",
-            "short": "Auto Other",
-            "long": "Auto Other Test",
-            "var1": "Testing the Auto Other feature",
-            "var2": "This is a test of the Auto Other feature"
+            "rand1": "Content Types",
+            "rand2": "Different Content Types",
+            "rand3": "Content Types Test",
+            "rand4": "Content Types Example",
+            "rand5": "Content Types Demo",
+            "rand6": "Content Types Showcase",
+            "rand7": "Content Types Display",
+            "rand8": "Content Types Feature",
+            "rand9": "Content Types Page",
+            "rand10": "Content Types Stuff"
           },
-          "fxheader": "Other",
-          "msg": "Testing the Auto Other feature!",
-          "exit-kontext": ["from=others"]
+          "msg": "This is a Navigation Page",
+          "content": "Navigate Below",
+          "exit-kontext": ["from=dev", "title=short"],
+          "other": {
+            "/dev/content-types/title": "The Title",
+            "/dev/content-types/fxheader": "The FX Header",
+            "/dev/content-types/content": "The Content",
+            "/dev/content-types/msg": "The Message",
+            "/dev/content-types/override": "The Override",
+            "/dev/content-types/hideothers": "The Hide Others",
+            "/dev/content-types/exit-kontext": "The Exit Kontext"
+          }
+        },
+        "title": {
+          "<<": {
+            "title": {
+              "default": "The Title",
+              "short": "Title",
+              "long": "The Title Prop",
+              "var1": "Different Content Types",
+              "var2": "This is a test of the Content Types feature"
+            },
+            "msg": "WIP!"
+          }
+        },
+        "fxheader": {
+          "<<": {
+            "title": "The FX Header",
+            "short": "FX Header",
+            "long": "The FX Header Prop",
+            "var1": "Different Content Types",
+            "var2": "This is a test of the Content Types feature"
+          },
+          "msg": "WIP!"
+        },
+        "content": {
+          "<<": {
+            "title": "The Content",
+            "short": "Content",
+            "long": "The Content Prop",
+            "var1": "Different Content Types",
+            "var2": "This is a test of the Content Types feature"
+          },
+          "msg": "WIP!"
+        },
+        "msg": {
+          "<<": {
+            "title": "The Message",
+            "short": "Message",
+            "long": "The Message Prop",
+            "var1": "Different Content Types",
+            "var2": "This is a test of the Content Types feature"
+          },
+          "msg": "WIP!"
+        },
+        "override": {
+          "<<": {
+            "title": "The Override",
+            "short": "Override",
+            "long": "The Override Prop",
+            "var1": "Different Content Types",
+            "var2": "This is a test of the Content Types feature"
+          },
+          "msg": "WIP!"
+        },
+        "hideothers": {
+          "<<": {
+            "title": "The Hide Others",
+            "short": "Hide Others",
+            "long": "The Hide Others Prop",
+            "var1": "Different Content Types",
+            "var2": "This is a test of the Content Types feature"
+          },
+          "msg": "WIP!"
+        },
+        "exit-kontext": {
+          "<<": {
+            "title": "The Exit Kontext",
+            "short": "Exit Kontext",
+            "long": "The Exit Kontext Prop",
+            "var1": "Different Content Types",
+            "var2": "This is a test of the Content Types feature"
+          },
+          "msg": "WIP!"
+        }
+      },
+      "tests": {
+        "<<": "/faq/dev/tests/next",
+        "next": {
+          "<<": {
+            "title": "Next Test",
+            "fxheader": "Next",
+            "msg": "Testing the Next feature...",
+            "next": "/faq",
+            "exit-kontext": ["from=tests"]
+          }
         }
       }
     },
@@ -108,6 +235,7 @@
         },
         "fxheader": "NR. 123",
         "msg": "This is the default page for Category Test 123. It is displayed when no other page is specified.",
+        "content": "IDK",
         "hideothers": false,
         "exit-kontext": ["from=categories"]
       }
