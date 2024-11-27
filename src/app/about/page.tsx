@@ -30,14 +30,14 @@ export const metadata: Metadata = {
       "Learn more about Hamburg Hack a Ton - a hackathon organized by high schoolers, for high schoolers.",
   },
 };
-export default async function AboutPage({
+
+export default function AboutPage({
   searchParams,
 }: {
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
-  const sparams = await searchParams;
-  const from = sparams?.from;
-  const wtstep = sparams?.wtstep;
+  const from = searchParams?.from;
+  const wtstep = searchParams?.wtstep;
 
   return (
     <>
