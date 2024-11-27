@@ -27,6 +27,8 @@ export function About({
   walkthrough?: boolean;
   wtstep?: number;
 }) {
+  console.log(lang);
+
   return (
     <>
       <Header />

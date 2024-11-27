@@ -7,6 +7,14 @@ import { type FAQtype } from "./page";
 import React from "react";
 
 export const FAQCategories = ({ faqData }: { faqData: FAQtype }) => {
+  // Move useState hooks outside of the map callback
+  const [openPopups, setOpenPopups] = React.useState<Record<string, boolean>>(
+    {}
+  );
+  const [hoveringPopups, setHoveringPopups] = React.useState<
+    Record<string, boolean>
+  >({});
+
   return (
     <>
       {Object.keys(faqData.map).map((categoryKey) => {
@@ -45,13 +53,17 @@ export const FAQCategories = ({ faqData }: { faqData: FAQtype }) => {
               {category.subs &&
                 Object.keys(category.subs).map((subKey) => {
                   const subCategory = category.subs?.[subKey];
-                  const [isPopupOpen, setIsPopupOpen] = React.useState(false);
-                  const [isHovering, setIsHovering] = React.useState(false);
+                  const isPopupOpen = openPopups[subKey] || false;
+                  const isHovering = hoveringPopups[subKey] || false;
 
-                  const handleMouseEnter = () => setIsHovering(true);
-                  const handleMouseLeave = () => setIsHovering(false);
-                  const handleClick = () => setIsPopupOpen(true);
-                  const handleClose = () => setIsPopupOpen(false);
+                  const handleMouseEnter = () =>
+                    setHoveringPopups((prev) => ({ ...prev, [subKey]: true }));
+                  const handleMouseLeave = () =>
+                    setHoveringPopups((prev) => ({ ...prev, [subKey]: false }));
+                  const handleClick = () =>
+                    setOpenPopups((prev) => ({ ...prev, [subKey]: true }));
+                  const handleClose = () =>
+                    setOpenPopups((prev) => ({ ...prev, [subKey]: false }));
 
                   return (
                     subCategory && (
