@@ -1,3 +1,5 @@
-import { AboutEN } from ">comp/about/en";
+import { redirect } from "next/navigation";
 
-export default AboutEN;
+export default function Test() {
+  redirect("/about");
+}

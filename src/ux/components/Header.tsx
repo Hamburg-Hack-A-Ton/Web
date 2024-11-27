@@ -190,7 +190,7 @@ export const Header = () => {
               x: popupOpen ? "0rem" : "10rem",
             }}
           >
-            <AnimatePresence>
+            <AnimatePresence key="Links-AnimatePresence">
               {popupOpen && (
                 <motion.p
                   initial={{ y: 10, opacity: 0, x: "-5rem" }}
@@ -345,7 +345,7 @@ export const Footer: React.FC<{ className?: string; noFooter?: boolean }> = ({
             whileInView={{ height: "15rem", alignItems: "start" }}
             onViewportEnter={() => setIsFooter(true)}
             onViewportLeave={() => setIsFooter(false)}
-            key="FooterContentzz"
+            key="FooterContent"
           >
             {isFooter && (
               <motion.section

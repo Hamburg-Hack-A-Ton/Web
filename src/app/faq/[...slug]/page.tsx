@@ -177,86 +177,82 @@ export default async function FAQPage({
   handleIncomingRequest(inner);
 
   return (
-    <>
-      <Header />
-      <main>
-        <TextHoverEffect
-          text={inner?.fxheader || "FAQ"}
-          font="lores"
-          key="hoverfx"
-          thick="1"
-          className="w-screen"
+    <main>
+      <TextHoverEffect
+        text={inner?.fxheader || "FAQ"}
+        font="lores"
+        key="hoverfx"
+        thick="1"
+        className="w-screen"
+      />
+      <Separator />
+      <motion.section
+        key="Content"
+        className="flex flex-col items-center justify-center p-4"
+      >
+        <TextAnimate
+          text={getCorrectTitle(inner, sparams) || "FAQ"}
+          key={inner?.title || "FAQ"}
+          className="text-lg sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl puffin-nerf text-foreground p-4 "
         />
-        <Separator />
-        <motion.section
-          key="Content"
-          className="flex flex-col items-center justify-center p-4"
-        >
-          <TextAnimate
-            text={getCorrectTitle(inner, sparams) || "FAQ"}
-            key={inner?.title || "FAQ"}
-            className="text-lg sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl puffin-nerf text-foreground p-4 "
-          />
-          {inner?.override && (
-            <Suspense
-              fallback={
-                <main className="w-full h-2/3 bg-background text-foreground flex items-center justify-center">
-                  <p className="lores text-4xl">Loading</p>
-                </main>
-              }
-            >
-              <DynamicComponent componentPath={inner?.override} />
-            </Suspense>
-          )}
-          {!inner?.override && inner?.msg && (
-            <motion.h2
-              key={inner?.msg}
-              className="p-4 m-2 bg-card tinyblur rounded-xl shadow-lg shadow-accent border-2 border-accent"
-            >
-              {inner?.msg}
-            </motion.h2>
-          )}
-          {!inner?.override && inner?.content && (
-            <motion.section
-              key={inner?.content}
-              className="p-2 m-2 text-2xl rounded-xl"
-            >
-              {inner?.content}
-            </motion.section>
-          )}
-          {/* back-/forwardlinks Section */}
-          {inner?.backlink && (
-            <motion.section
-              key={inner?.backlink}
-              className="p-2 m-2 text-xl rounded-xl bg-card tinyblur shadow-md shadow-muted border-1 border-muted"
-            >
-              <Link href={inner?.backlink} prefetch>
-                <a className="bernina">Back</a>
-              </Link>
-            </motion.section>
-          )}
-          {inner?.walkthrough?.next && (
-            <motion.section
-              key={inner?.walkthrough?.next}
-              className="p-2 m-2 text-xl rounded-xl bg-card tinyblur shadow-md shadow-muted border-1 border-muted"
-            >
-              <Link href={`${inner?.walkthrough?.next}${referrer}`} prefetch>
-                <a className="bernina">Next</a>
-              </Link>
-            </motion.section>
-          )}
+        {inner?.override && (
+          <Suspense
+            fallback={
+              <main className="w-full h-2/3 bg-background text-foreground flex items-center justify-center">
+                <p className="lores text-4xl">Loading</p>
+              </main>
+            }
+          >
+            <DynamicComponent componentPath={inner?.override} />
+          </Suspense>
+        )}
+        {!inner?.override && inner?.msg && (
+          <motion.h2
+            key={inner?.msg}
+            className="p-4 m-2 bg-card tinyblur rounded-xl shadow-lg shadow-accent border-2 border-accent"
+          >
+            {inner?.msg}
+          </motion.h2>
+        )}
+        {!inner?.override && inner?.content && (
+          <motion.section
+            key={inner?.content}
+            className="p-2 m-2 text-2xl rounded-xl"
+          >
+            {inner?.content}
+          </motion.section>
+        )}
+        {/* back-/forwardlinks Section */}
+        {inner?.walkthrough?.back && (
+          <motion.section
+            key={inner?.walkthrough?.back}
+            className="p-2 m-2 text-xl rounded-xl bg-card tinyblur shadow-md shadow-muted border-1 border-muted"
+          >
+            <Link href={inner?.walkthrough?.back} prefetch>
+              <p className="bernina">Back</p>
+            </Link>
+          </motion.section>
+        )}
+        {inner?.walkthrough?.next && (
+          <motion.section
+            key={inner?.walkthrough?.next}
+            className="p-2 m-2 text-xl rounded-xl bg-card tinyblur shadow-md shadow-muted border-1 border-muted"
+          >
+            <Link href={`${inner?.walkthrough?.next}${referrer}`} prefetch>
+              <p className="bernina">Next</p>
+            </Link>
+          </motion.section>
+        )}
 
-          {/* Other Section */}
-          {!inner?.hideothers &&
-            Object.keys(here).length > 1 &&
-            !inner?.other && <Other here={here} inner={inner} />}
-          {!inner?.hideothers &&
-            Object.keys(here).length > 1 &&
-            inner?.other && <CustomOther inner={inner} />}
-        </motion.section>
-      </main>
-      <Footer />
-    </>
+        {/* Other Section */}
+        {inner?.showothers && Object.keys(here).length > 1 && !inner?.other && (
+          <Other here={here} inner={inner} />
+        )}
+        {!inner?.hideothers && Object.keys(here).length > 1 && inner?.other && (
+          <CustomOther inner={inner} />
+        )}
+      </motion.section>
+    </main>
   );
 }
 

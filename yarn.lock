@@ -5056,7 +5056,7 @@ __metadata:
     react-use-measure: "npm:^2.1.1"
     simplex-noise: "npm:^4.0.3"
     sonner: "npm:^1.7.0"
-    tailwind-merge: "npm:^2.5.4"
+    tailwind-merge: "npm:2.5.5"
     tailwindcss: "npm:^3.4.1"
     tailwindcss-animate: "npm:^1.0.7"
     typescript: "npm:^5"
@@ -7475,10 +7475,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwind-merge@npm:^2.5.4":
-  version: 2.5.4
-  resolution: "tailwind-merge@npm:2.5.4"
-  checksum: 10c3/8c23672194af440c35ef370e2525dd31614efc6d796050d6529d261144f0ba2ae02d17ba67d5dc04036b7dccaaa2855d15730f5fef8454655b959829183404e7
+"tailwind-merge@npm:2.5.5":
+  version: 2.5.5
+  resolution: "tailwind-merge@npm:2.5.5"
+  checksum: 10c3/448b8137eb45e17582e5a5aa8c258f0a501715822ce5eb835b8d0a5e74810413e70c710f82fb32f6644e59929b5b04ce94b0b17a22b42d1cd1f1f8061666cc72
   languageName: node
   linkType: hard
 
