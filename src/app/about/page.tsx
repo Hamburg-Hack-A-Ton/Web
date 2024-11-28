@@ -31,13 +31,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function AboutPage({
+export default async function FAQPage({
   searchParams,
 }: {
-  searchParams: { [key: string]: string | string[] | undefined };
+  params: Promise<{ slug: string[] }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
-  const from = searchParams?.from;
-  const wtstep = searchParams?.wtstep;
+  const sparams = await searchParams;
+  const from = sparams.from;
+  const wtstep = sparams.wtstep;
 
   return (
     <>
