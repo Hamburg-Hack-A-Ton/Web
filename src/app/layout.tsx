@@ -20,7 +20,8 @@ export const metadata: Metadata = {
     },
   ],
   generator: "Next.js",
-  keywords: "Hamburg, Hackathon, hamburghackaton, JackatDJL, DJL",
+  keywords:
+    "Hamburg, Hackathon, High School, Student, Programming, Coding, Technology, Innovation, Learning, Competition, Germany, STEM, Education, Development, Software, Hardware, Project, Team, Collaboration, Creativity",
   referrer: "origin-when-cross-origin",
   creator: "Jack Ruder",
   publisher: "JackatDJL, Vercel",

@@ -1,5 +1,5 @@
-import { UnderConstruction } from "@/ux/components/Homepage/wip";
+import NotImplemented from ">util/notImpl";
 
-export default function SchedulePage() {
-  return <UnderConstruction />;
+export default function Schedule() {
+  return <NotImplemented title="Schedule" />;
 }

@@ -243,6 +243,16 @@ export default async function FAQPage({
             </Link>
           </motion.section>
         )}
+        {inner?.walkthrough?.fine && (
+          <motion.section
+            key={inner?.walkthrough?.fine}
+            className="p-2 m-2 text-xl rounded-xl bg-card tinyblur shadow-md shadow-primary border-1 border-primary"
+          >
+            <Link href={`${inner?.walkthrough?.fine}${referrer}`} prefetch>
+              <p className="bernina">Finnish!</p>
+            </Link>
+          </motion.section>
+        )}
 
         {/* Other Section */}
         {inner?.showothers && Object.keys(here).length > 1 && !inner?.other && (

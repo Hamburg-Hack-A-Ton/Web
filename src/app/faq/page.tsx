@@ -30,6 +30,7 @@ export interface FAQentry {
   walkthrough?: {
     back?: string;
     next?: string;
+    fine?: string;
   };
   other?: {
     [otherhref: string]: string;

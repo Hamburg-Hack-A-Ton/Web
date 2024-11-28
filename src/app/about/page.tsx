@@ -14,21 +14,6 @@ export const metadata: Metadata = {
     "programming",
     "technology",
   ],
-  openGraph: {
-    title: "About Hamburg Hack a Ton",
-    description:
-      "Learn more about Hamburg Hack a Ton - a hackathon organized by high schoolers, for high schoolers.",
-    url: "https://hamburgton.de/about",
-    siteName: "Hamburg Hack a Ton",
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "About Hamburg Hack a Ton",
-    description:
-      "Learn more about Hamburg Hack a Ton - a hackathon organized by high schoolers, for high schoolers.",
-  },
 };
 
 export default async function FAQPage({

@@ -161,7 +161,7 @@
         "title": {
           "<<": {
             "title": {
-              "default": "The Title",
+              "title": "The Title",
               "short": "Title",
               "long": "The Title Prop",
               "var1": "Different Content Types",
@@ -172,63 +172,75 @@
         },
         "fxheader": {
           "<<": {
-            "title": "The FX Header",
-            "short": "FX Header",
-            "long": "The FX Header Prop",
-            "var1": "Different Content Types",
-            "var2": "This is a test of the Content Types feature"
-          },
-          "msg": "WIP!"
+            "title": {
+              "title": "The FX Header",
+              "short": "FX Header",
+              "long": "The FX Header Prop",
+              "var1": "Different Content Types",
+              "var2": "This is a test of the Content Types feature"
+            },
+            "msg": "WIP!"
+          }
         },
         "content": {
           "<<": {
-            "title": "The Content",
-            "short": "Content",
-            "long": "The Content Prop",
-            "var1": "Different Content Types",
-            "var2": "This is a test of the Content Types feature"
-          },
-          "msg": "WIP!"
+            "title": {
+              "title": "The Content",
+              "short": "Content",
+              "long": "The Content Prop",
+              "var1": "Different Content Types",
+              "var2": "This is a test of the Content Types feature"
+            },
+            "msg": "WIP!"
+          }
         },
         "msg": {
           "<<": {
-            "title": "The Message",
-            "short": "Message",
-            "long": "The Message Prop",
-            "var1": "Different Content Types",
-            "var2": "This is a test of the Content Types feature"
-          },
-          "msg": "WIP!"
+            "title": {
+              "title": "The Message",
+              "short": "Message",
+              "long": "The Message Prop",
+              "var1": "Different Content Types",
+              "var2": "This is a test of the Content Types feature"
+            },
+            "msg": "WIP!"
+          }
         },
         "override": {
           "<<": {
-            "title": "The Override",
-            "short": "Override",
-            "long": "The Override Prop",
-            "var1": "Different Content Types",
-            "var2": "This is a test of the Content Types feature"
-          },
-          "msg": "WIP!"
+            "title": {
+              "title": "The Override",
+              "short": "Override",
+              "long": "The Override Prop",
+              "var1": "Different Content Types",
+              "var2": "This is a test of the Content Types feature"
+            },
+            "msg": "WIP!"
+          }
         },
         "showothers": {
           "<<": {
-            "title": "The Show Others",
-            "short": "Show Others",
-            "long": "The Show Others Prop",
-            "var1": "Different Content Types",
-            "var2": "This is a test of the Content Types feature"
-          },
-          "msg": "WIP!"
+            "title": {
+              "title": "The Show Others",
+              "short": "Show Others",
+              "long": "The Show Others Prop",
+              "var1": "Different Content Types",
+              "var2": "This is a test of the Content Types feature"
+            },
+            "msg": "WIP!"
+          }
         },
         "exit-kontext": {
           "<<": {
-            "title": "The Exit Kontext",
-            "short": "Exit Kontext",
-            "long": "The Exit Kontext Prop",
-            "var1": "Different Content Types",
-            "var2": "This is a test of the Content Types feature"
-          },
-          "msg": "WIP!"
+            "title": {
+              "title": "The Exit Kontext",
+              "short": "Exit Kontext",
+              "long": "The Exit Kontext Prop",
+              "var1": "Different Content Types",
+              "var2": "This is a test of the Content Types feature"
+            },
+            "msg": "WIP!"
+          }
         }
       },
       "tests": {
@@ -257,11 +269,25 @@
         "msg": "Guess what? This is more Work in Progress than you think!",
         "content": "Welcome to the Walkthrough! This will be a series of pages that will guide you through the Hamburg Hack A Ton. If youre done Reading one Page look for a \"Next\" Button below. If you need help, use a feature i havent implemented yet. If you think you missed something, look at the bottom of the page for a \"Back\" Button.",
         "walkthrough": {
-          "next": "/about?from=walkthrough&step=1"
+          "next": "/about?from=walkthrough&wtstep=1"
         }
       },
       "inonepage": {
         "<<": "/inonepage"
+      },
+      "2": {
+        "<<": {
+          "title": {
+            "about": "Welcome Back!",
+            "short": "Ye aint supposed to be here"
+          },
+          "fxheader": ";)",
+          "msg": "Guess what? This is more Work in Progress than you think!",
+          "content": "Welcome to the Walkthrough! This will be a series of pages that will guide you through the Hamburg Hack A Ton. If youre done Reading one Page look for a \"Next\" Button below. If you need help, use a feature i havent implemented yet. If you think you missed something, look at the bottom of the page for a \"Back\" Button.",
+          "walkthrough": {
+            "fine": "/"
+          }
+        }
       }
     },
     "fail-forward": "notfound"

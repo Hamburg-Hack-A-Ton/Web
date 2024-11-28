@@ -27,8 +27,9 @@ export function About({
   walkthrough?: boolean;
   wtstep?: number;
 }) {
-  console.log(lang);
-
+  console.log("Language:", lang);
+  console.log("Walkthrough Mode:", walkthrough);
+  console.log("Walkthrough Step:", wtstep);
   return (
     <>
       <Header />
