@@ -6,6 +6,7 @@ import { Separator } from ">ui/separator";
 import { motion } from "framer-motion";
 import { Tooltip } from ">ui/tooltip";
 import Link from "next/link";
+import { LinkTip } from ">ui/linktip";
 
 const WalkthroughStepsAboutPage = {
   "1": {
@@ -42,67 +43,32 @@ export function About({
         >
           <h1 className="text-lg sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl puffin-foozle text-foreground z-20">
             Hamburg Hack a Ton is a{" "}
-            <Tooltip
-              tips={
-                <>
-                  <p
-                    className="text-md sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl omnes"
-                    lang="en"
-                  >
-                    What is a Hackathon?
-                  </p>
-                </>
-              }
-            >
-              <Link
-                lang="en"
-                href="/faq/hackathon"
-                className=" underline decoration-wavy decoration-secondary"
-                prefetch
-              >
-                Hackathon
-              </Link>
-            </Tooltip>
-            <Tooltip
+            <LinkTip
+              href="/faq/hackathon"
+              tooltipText="What is a Hackathon?"
               lang="en"
-              tips={
-                <>
-                  <p className="text-md sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl omnes">
-                    Why only Highschoolers?
-                  </p>
-                </>
-              }
             >
-              It is a hackathon organized{" "}
-              <Link
-                href="/faq/highschoolers"
-                className="underline decoration-wavy decoration-secondary"
-              >
-                by high schoolers, for high schoolers,
-              </Link>
+              Hackathon
+            </LinkTip>
+            <LinkTip
+              href="/faq/highschoolers"
+              tooltipText="Why only Highschoolers?"
+              lang="en"
+            >
+              It is a hackathon organized by high schoolers, for high schoolers,
               and aims to inspire
-            </Tooltip>
+            </LinkTip>
             creativity, innovation, and collaboration.
             <br />
             Through hands-on experience and mentorship, participants will learn
             valuable skills in{" "}
-            <Tooltip
-              tips={
-                <>
-                  <p className="text-md sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl omnes">
-                    What technologies will we use?
-                  </p>
-                </>
-              }
+            <LinkTip
+              href="/faq/technologies"
+              tooltipText="What technologies will we use?"
+              lang="en"
             >
-              <Link
-                href="/faq/technologies"
-                className="underline decoration-wavy decoration-secondary"
-                prefetch
-              >
-                programming, design, and teamwork
-              </Link>
-            </Tooltip>
+              programming, design, and teamwork
+            </LinkTip>
             . Join us for an unforgettable weekend of coding, creating, and
             connecting with fellow students who share your passion for
             technology.
