@@ -1,0 +1,28 @@
+config:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "*"
+          - .github/**
+          - src/ux/flags.ts
+          - src/ux/i18n/**
+          - src/app/config.ts
+          - src/ux/util/**
+
+nextjs:
+  - changed-files:
+      - any-glob-to-any-file:
+          - src/app/**
+          - src/ux/components/**
+          - src/ux/hooks/**
+
+api:
+  - changed-files:
+      - any-glob-to-any-file:
+          - src/app/api/**
+          - src/ux/api/**
+
+ui:
+  - changed-files:
+      - any-glob-to-any-file:
+          - src/ux/**
+          - src/app/**

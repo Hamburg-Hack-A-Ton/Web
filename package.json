@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint-cli": "echo \"┏━━ Running Lint with CLI Options\n┣┳━ Running Lint\n┃┠─ run lint --format @microsoft/eslint-formatter-sarif --output-file eslint-results.sarif \" && eslint src --color --format @microsoft/eslint-formatter-sarif --output-file eslint-results.sarif && echo \"┃┗━ Done\n┗━━ Done\" "
   },
   "dependencies": {
     "@fillout/react": "^1.1.2",
