@@ -290,8 +290,8 @@ export const Footer: React.FC<{ className?: string; noFooter?: boolean }> = ({
             y: isFooter ? "12.7rem" : 5,
           }}
           exit={{ opacity: 0 }}
-          whileHover={{ scale: 1.5, y: isFooter ? "14.85rem" : 8, x: 5.5 }}
-          whileTap={{ scale: 1.25, y: isFooter ? "14.8rem" : 6, x: 4.5 }}
+          whileHover={{ scale: 1.5, y: isFooter ? "12.85rem" : 8, x: 5.5 }}
+          whileTap={{ scale: 1.25, y: isFooter ? "12.8rem" : 6, x: 4.5 }}
           transition={{ duration: 0.15 }}
           key="theme-toggle"
         >
