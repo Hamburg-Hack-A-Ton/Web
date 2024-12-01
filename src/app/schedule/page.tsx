@@ -1,5 +1,10 @@
-import NotImplemented from ">util/notImpl";
+import { Header, Footer } from ">comp/Header";
 
 export default function Schedule() {
-  return <NotImplemented title="Schedule" />;
+  return (
+    <>
+      <Header />
+      <Footer />
+    </>
+  );
 }
