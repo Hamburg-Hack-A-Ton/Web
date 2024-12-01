@@ -4,7 +4,6 @@ import { Header, Footer } from ">comp/Header";
 import { TextHoverEffect } from ">fx/texthoverfx";
 import { Separator } from ">ui/separator";
 import { motion } from "framer-motion";
-import { Tooltip } from ">ui/tooltip";
 import Link from "next/link";
 import { LinkTip } from ">ui/linktip";
 
