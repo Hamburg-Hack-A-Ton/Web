@@ -46,3 +46,7 @@ next-env.d.ts
 .env*.local
 
 temp*
+
+local*
+local.*
+local**
