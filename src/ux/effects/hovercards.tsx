@@ -9,6 +9,18 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 
+const randomInt = (min: number, max: number) => {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+const generateRandomInt = () => {
+  let result = 1;
+  for (let i = 0; i < 5; i++) {
+    result *= randomInt(0, 1000);
+  }
+  return result;
+};
+
 export const HoverEffect = ({
   items,
   className,
@@ -29,12 +41,13 @@ export const HoverEffect = ({
         "grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  py-4",
         className
       )}
-      key="hovereffect"
+      key="hovereffectfxwrapppper"
     >
       {items.map((item, idx) => (
         <Link
           href={item?.href || "#"}
-          key={item?.title}
+          key={item?.title || generateRandomInt()}
+          id={item?.title}
           className="relative group  block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
@@ -44,7 +57,7 @@ export const HoverEffect = ({
               <motion.span
                 className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block  rounded-3xl"
                 layoutId="hoverBackground"
-                key={item?.title + "span"}
+                key={item?.title + "span" || generateRandomInt()}
                 initial={{ opacity: 0 }}
                 animate={{
                   opacity: 1,
@@ -57,12 +70,20 @@ export const HoverEffect = ({
               />
             )}
           </AnimatePresence>
-          <Card bg={item?.bg} key={"card" + item?.title}>
+          <Card
+            bg={item?.bg}
+            key={"card" + item?.title || generateRandomInt()}
+            forewardkey={item?.title}
+          >
             {item?.title && (
-              <CardTitle key={"title" + item?.title}>{item.title}</CardTitle>
+              <CardTitle key={"title" + item?.title || generateRandomInt()}>
+                {item.title}
+              </CardTitle>
             )}
             {item?.description && (
-              <CardDescription key={"desc" + item?.title}>
+              <CardDescription
+                key={"desc" + item?.title || generateRandomInt()}
+              >
                 {item.description}
               </CardDescription>
             )}
@@ -76,10 +97,12 @@ export const HoverEffect = ({
 export const Card = ({
   className,
   children,
+  forewardkey,
   bg,
 }: {
   className?: string;
   children: React.ReactNode;
+  forewardkey?: string;
   bg?: string;
 }) => {
   return (
@@ -88,6 +111,7 @@ export const Card = ({
         "rounded-2xl h-full w-full p-1 overflow-hidden bg-background/50 glassblur flex items-center justify-evenly border border-accent group-hover:border-secondary relative z-20",
         className
       )}
+      key={`${forewardkey}hoverfxwrapper`}
     >
       {bg && (
         <Image
@@ -95,7 +119,7 @@ export const Card = ({
           alt={bg || "default image"}
           width={250}
           height={250}
-          key="hovereffectimage"
+          key={`${forewardkey}hoverfximage`}
         />
       )}
       <div className="relative z-50">

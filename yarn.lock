@@ -3890,6 +3890,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"date-fns@npm:4.1.0":
+  version: 4.1.0
+  resolution: "date-fns@npm:4.1.0"
+  checksum: 10c3/2445cbcb276b65d48023f48296673923caeed47c249b6941d5813a2e26d44e6f4c4ab78cacec0c434d56ea38179ec9ac42b5c74fa7e0656212222b113c3fbc7d
+  languageName: node
+  linkType: hard
+
 "debounce@npm:^1.2.1":
   version: 1.2.1
   resolution: "debounce@npm:1.2.1"
@@ -4675,9 +4682,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:^11.11.11":
-  version: 11.11.11
-  resolution: "framer-motion@npm:11.11.11"
+"framer-motion@npm:12.0.0-alpha.1":
+  version: 12.0.0-alpha.1
+  resolution: "framer-motion@npm:12.0.0-alpha.1"
   dependencies:
     tslib: "npm:^2.4.0"
   peerDependencies:
@@ -4691,7 +4698,7 @@ __metadata:
       optional: true
     react-dom:
       optional: true
-  checksum: 10c3/565e44fda6cb383d647f73bea6495b1ee7164038bb318d0eb29f55bce09445c235aa9e19a112e369fe0b44b46b86853c9ecc159f75d67c729b7d3342f542efd2
+  checksum: 10c3/00ae696b182c0904652009984ca2b0d7a282cf74addbda04d7c906c481ffb26e2742dc8e2d132da9797af68bd845a5d37fc7878610cb02d6eb10299dd283d1c7
   languageName: node
   linkType: hard
 
@@ -5039,9 +5046,10 @@ __metadata:
     clsx: "npm:^2.1.1"
     cmdk: "npm:^1.0.4"
     cva: "npm:^1.0.0-beta.1"
+    date-fns: "npm:4.1.0"
     eslint: "npm:^8"
     eslint-config-next: "npm:15.0.3"
-    framer-motion: "npm:^11.11.11"
+    framer-motion: "npm:12.0.0-alpha.1"
     hamburger-react: "npm:^2.5.1"
     input-otp: "npm:^1.4.1"
     ldrs: "npm:^1.0.2"
@@ -5051,12 +5059,13 @@ __metadata:
     next-themes: "npm:^0.4.3"
     postcss: "npm:^8"
     react: "npm:19.0.0-rc-66855b96-20241106"
+    react-day-picker: "npm:8.10.1"
     react-dom: "npm:19.0.0-rc-66855b96-20241106"
     react-feather: "npm:^2.0.10"
     react-use-measure: "npm:^2.1.1"
     simplex-noise: "npm:^4.0.3"
     sonner: "npm:^1.7.0"
-    tailwind-merge: "npm:^2.5.4"
+    tailwind-merge: "npm:2.5.5"
     tailwindcss: "npm:^3.4.1"
     tailwindcss-animate: "npm:^1.0.7"
     typescript: "npm:^5"
@@ -6713,6 +6722,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-day-picker@npm:8.10.1":
+  version: 8.10.1
+  resolution: "react-day-picker@npm:8.10.1"
+  peerDependencies:
+    date-fns: ^2.28.0 || ^3.0.0
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: 10c3/cb5411f5e9335589397d18b5905fba2fb63dfa3ff1e316fa79d1370e38e3586b37007990d0b4a771117017cc081deb8db3cbf1b707a7a8798fbf55745f5050f0
+  languageName: node
+  linkType: hard
+
 "react-dom@npm:19.0.0-rc-66855b96-20241106":
   version: 19.0.0-rc-66855b96-20241106
   resolution: "react-dom@npm:19.0.0-rc-66855b96-20241106"
@@ -7475,10 +7494,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwind-merge@npm:^2.5.4":
-  version: 2.5.4
-  resolution: "tailwind-merge@npm:2.5.4"
-  checksum: 10c3/8c23672194af440c35ef370e2525dd31614efc6d796050d6529d261144f0ba2ae02d17ba67d5dc04036b7dccaaa2855d15730f5fef8454655b959829183404e7
+"tailwind-merge@npm:2.5.5":
+  version: 2.5.5
+  resolution: "tailwind-merge@npm:2.5.5"
+  checksum: 10c3/448b8137eb45e17582e5a5aa8c258f0a501715822ce5eb835b8d0a5e74810413e70c710f82fb32f6644e59929b5b04ce94b0b17a22b42d1cd1f1f8061666cc72
   languageName: node
   linkType: hard
 

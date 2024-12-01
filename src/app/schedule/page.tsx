@@ -1,5 +1,12 @@
-import { UnderConstruction } from "@/ux/components/Homepage/wip";
+import { Header, Footer } from ">comp/Header";
+import { notFound } from "next/navigation";
 
-export default function SchedulePage() {
-  return <UnderConstruction />;
+export default function Schedule() {
+  notFound();
+  return (
+    <>
+      <Header />
+      <Footer />
+    </>
+  );
 }

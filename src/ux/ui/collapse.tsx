@@ -25,7 +25,7 @@ const CollapseGroup: React.FC<CGroupProps> = ({
         type="multiple"
         {...props}
         defaultValue={["default"]}
-        className="border-t border-b duration-700 border-secondary-foreground"
+        className="border-t border-b duration-700 border-secondary"
       >
         {children}
       </CollapsePrimitive.Root>
@@ -41,7 +41,7 @@ const CollapseItem = React.forwardRef<
     ref={ref}
     {...props}
     className={cn(
-      "border-t border-b border-secondary-foreground/70 duration-700 ",
+      "border-t border-b border-secondary/70 duration-700 ",
       className
     )}
   />

@@ -1,0 +1,52 @@
+{
+  "theme_color": "#313182",
+  "background_color": "#F6F6F4",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "name": "Hamburg Hack A Ton!",
+  "short_name": "HHAT",
+  "description": "Website for the Hamburg Hack A Ton!",
+  "icons": [
+    {
+      "src": "cdn/brand/Logo.png",
+      "sizes": "500x500",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "About the Hackathon",
+      "short_name": "About",
+      "url": "/about",
+      "icons": [
+        {
+          "src": "cdn/sponsors/placeholder/cool.svg",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Frequently Asked Questions",
+      "short_name": "FAQ",
+      "url": "/faq",
+      "icons": [
+        {
+          "src": "cdn/sponsors/placeholder/rainbow.svg",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Register for the Hackathon",
+      "short_name": "Register",
+      "url": "/register",
+      "icons": [
+        {
+          "src": "cdn/sponsors/placeholder/triangles.svg",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ]
+}

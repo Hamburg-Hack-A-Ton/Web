@@ -18,8 +18,10 @@ import { ThemeToggleButton } from "./Theme";
 import { AspectRatio } from "../ui/aspect-ratio";
 import { Pivot as Hamburger } from "hamburger-react";
 import { cn } from ">util/twm";
-import { applicationPhase } from "@/flags";
 import { HoverEffect } from "../effects/hovercards";
+// import { TextCalc } from "../Interested";
+
+import { Application, Register } from "§";
 
 export const Header = () => {
   const { scrollY } = useScroll();
@@ -159,14 +161,14 @@ export const Header = () => {
               </AnimatePresence>
             </motion.div>
           </motion.section>
-          {true && (
+          {Application && (
             <motion.div
               key="apply"
               className="absolute right-4 p-2 max-sm:hidden"
               animate={{ y: showStickyHeader ? 0 : 10, x: -5 }}
             >
               <Link href="/register" prefetch>
-                Register
+                {Register ? "Register" : "Interested?"}
               </Link>
             </motion.div>
           )}
@@ -188,7 +190,7 @@ export const Header = () => {
               x: popupOpen ? "0rem" : "10rem",
             }}
           >
-            <AnimatePresence>
+            <AnimatePresence key="Links-AnimatePresence">
               {popupOpen && (
                 <motion.p
                   initial={{ y: 10, opacity: 0, x: "-5rem" }}
@@ -241,7 +243,7 @@ export const Header = () => {
                   </Link>
                 </motion.p>
               )}
-              {popupOpen && (
+              {popupOpen && Application && (
                 <motion.p
                   initial={{ y: 10, opacity: 0, x: "-5rem" }}
                   animate={{ y: 0, opacity: 1, x: 0 }}
@@ -250,7 +252,7 @@ export const Header = () => {
                   key="Links-Register2"
                 >
                   <Link href="/register" prefetch>
-                    Register
+                    {Register ? "Register" : "Interested?"}
                   </Link>
                 </motion.p>
               )}
@@ -272,51 +274,11 @@ export const Footer: React.FC<{ className?: string; noFooter?: boolean }> = ({
   className,
   noFooter,
 }) => {
-  const [isTTVisible, setIsTTVisible] = useState(true);
-  const [isDeveloper, setIsDeveloper] = useIsDeveloper();
+  const [isTTVisible] = useState(true);
   const [isFooter, setIsFooter] = useState(false);
 
   return (
     <>
-      {!noFooter && (
-        <>
-          <motion.div
-            key="displacer"
-            animate={{ height: isFooter ? "0rem" : "10rem" }}
-          ></motion.div>
-          {false && (
-            <>
-              <motion.section
-                className={cn(
-                  "bottom-16 sticky w-screen flex flex-grow justify-center",
-                  className
-                )}
-                key="devui"
-              >
-                <Button className="p-4 z-20">
-                  <Link prefetch href="/portal">
-                    To Dev Portal
-                  </Link>
-                </Button>
-              </motion.section>
-              <motion.section
-                key="turnOff"
-                className={cn(
-                  "sticky right-2 bottom-2 bg-transparent justify-end p-4 flex flex-grow items-center text-accent-foreground",
-                  className
-                )}
-              >
-                <Tooltip tips="Turn DevMode of?">
-                  <Link href="/.well-known/HHAT/devMode/off">
-                    <Power />
-                  </Link>
-                </Tooltip>
-              </motion.section>
-            </>
-          )}
-        </>
-      )}
-
       {isTTVisible && (
         <motion.section
           className={cn("bottom-2 left-2 sticky z-10 w-7 h-7", className)}
@@ -325,11 +287,11 @@ export const Footer: React.FC<{ className?: string; noFooter?: boolean }> = ({
             opacity: 1,
             scale: 1,
             x: 3,
-            y: isFooter ? "14.7rem" : 5,
+            y: isFooter ? "12.7rem" : 5,
           }}
           exit={{ opacity: 0 }}
-          whileHover={{ scale: 1.5, y: isFooter ? "14.85rem" : 8, x: 5.5 }}
-          whileTap={{ scale: 1.25, y: isFooter ? "14.8rem" : 6, x: 4.5 }}
+          whileHover={{ scale: 1.5, y: isFooter ? "12.85rem" : 8, x: 5.5 }}
+          whileTap={{ scale: 1.25, y: isFooter ? "12.8rem" : 6, x: 4.5 }}
           transition={{ duration: 0.15 }}
           key="theme-toggle"
         >
@@ -338,12 +300,17 @@ export const Footer: React.FC<{ className?: string; noFooter?: boolean }> = ({
       )}
       {!noFooter && (
         <motion.footer key="Footer" className=" text-foreground">
+          <motion.div
+            key="displacer"
+            animate={{ height: isFooter ? "0rem" : "10rem" }}
+          ></motion.div>
           <motion.section
             className="flex flex-row justify-evenly  border-t-2 border border-x-0 border-b-0 border-accent p-4"
             animate={{ height: "5rem", alignItems: "start" }}
             whileInView={{ height: "15rem", alignItems: "start" }}
             onViewportEnter={() => setIsFooter(true)}
             onViewportLeave={() => setIsFooter(false)}
+            key="FooterContent"
           >
             {isFooter && (
               <motion.section
@@ -354,8 +321,8 @@ export const Footer: React.FC<{ className?: string; noFooter?: boolean }> = ({
               >
                 <motion.h1
                   key="Footer-Title"
-                  className="lores max-lg:col-start-1 max-lg:col-span-2 text-3xl max-sm:text-lg max-md:text-xl max-sm:flex max-sm:items-center max-sm:justify-center duration-200"
-                  initial={{ y: "-2.5rem", opacity: 0 }}
+                  className="lores max-lg:col-start-1 max-lg:col-span-2 text-3xl max-sm:text-lg max-md:text-xl max-sm:flex max-sm:items-center max-sm:justify-center "
+                  initial={{ y: "-5rem", opacity: 0 }}
                   animate={{ y: "0rem", opacity: 1 }}
                   transition={{ delay: 0 }}
                 >
@@ -405,24 +372,26 @@ export const Footer: React.FC<{ className?: string; noFooter?: boolean }> = ({
                     FAQ
                   </Link>
                 </motion.p>
-                <motion.p
-                  key="Footer-Register"
-                  className="p-1 hover:underline"
-                  initial={{ y: "-2.5rem", opacity: 0 }}
-                  animate={{ y: "0rem", opacity: 1 }}
-                  transition={{ delay: 1 }}
-                >
-                  <Link href="/register" prefetch>
-                    Register
-                  </Link>
-                </motion.p>
+                {Application && (
+                  <motion.p
+                    key="Footer-Register"
+                    className="p-1 hover:underline"
+                    initial={{ y: "-2.5rem", opacity: 0 }}
+                    animate={{ y: "0rem", opacity: 1 }}
+                    transition={{ delay: 1 }}
+                  >
+                    <Link href="/register" prefetch>
+                      {Register ? "Register" : "Interested?"}
+                    </Link>
+                  </motion.p>
+                )}
               </motion.section>
             )}
             <motion.p
               key="ccHHAT"
               className="text-foreground z-10"
               animate={{
-                y: isFooter ? "11.5rem" : "-7.5rem",
+                y: isFooter ? "9.5rem" : "-7.5rem",
               }}
               transition={{ delay: 0.1 }}
             >
@@ -437,8 +406,8 @@ export const Footer: React.FC<{ className?: string; noFooter?: boolean }> = ({
               >
                 <motion.h1
                   key="FooterS-Title"
-                  className="lores text-3xl max-sm:text-lg max-md:text-xl max-lg:decoration-wavy max-lg:underline duration-200"
-                  initial={{ y: "-2.5rem", opacity: 0 }}
+                  className="lores text-3xl max-sm:text-lg max-md:text-xl max-lg:decoration-wavy max-lg:underline "
+                  initial={{ y: "-5rem", opacity: 0 }}
                   animate={{ y: "0rem", opacity: 1 }}
                   transition={{ delay: 0.1 }}
                 >
@@ -448,7 +417,7 @@ export const Footer: React.FC<{ className?: string; noFooter?: boolean }> = ({
                 </motion.h1>
                 <motion.section
                   className="flex items-center justify-center max-lg:hidden"
-                  key="sponsors"
+                  key="FooterSponsors"
                   initial={{ y: "-2.5rem", opacity: 0 }}
                   animate={{ y: "0rem", opacity: 1 }}
                   transition={{ delay: 0.3 }}
@@ -465,13 +434,14 @@ export const Footer: React.FC<{ className?: string; noFooter?: boolean }> = ({
                   >
                     <HoverEffect
                       items={sponsors}
+                      key="SponsorHFX"
                       className="w-64 h-24 max-lg:hidden duration-200  px-4"
                     />
                   </Tooltip>
                 </motion.section>
                 <motion.h1
                   key="FooterA-Title"
-                  className="lores text-3xl max-sm:text-lg max-md:text-xl max-lg:decoration-wavy  max-lg:underline duration-200"
+                  className="lores text-3xl max-sm:text-lg max-md:text-xl max-lg:decoration-wavy  max-lg:underline "
                   initial={{ y: "-2.5rem", opacity: 0 }}
                   animate={{ y: "0rem", opacity: 1 }}
                   transition={{ delay: 0.5 }}

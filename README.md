@@ -1,7 +1,7 @@
 # Hamburg Hack a Ton 
 *an idea by @JackatDJL*
 
-**Hamburg Hack a Ton is not affiliated with the city of Hamburg or Hack Club**
+**Hamburg Hack a Ton is not affiliated with the city of Hamburg or The Hack Foundation**
 **The Hackathon is in the stage of planning!**
 
 ## Why a Hackathon and Why Hamburg
@@ -17,12 +17,12 @@ This is my first hackathon that I am participating in/organizing, so I welcome r
 
 ## Features of the Website
 - **User-friendly Interface**: The website is designed to be intuitive and easy to navigate.
-- ***About *the hackathon* ***: Working on this
+- [***About *the hackathon* ***](https://hamburghackaton.vercel.app/about): A Page with information about the hackathon
 - ***About *the team* ***: Working on this
 - **Sponsors**: Working on this
-- **FAQ Page**: A comprehensive FAQ page that can be easily updated with a central JSON file.
+- [**FAQ Page**](https://hamburghackaton.vercel.app/faq): A comprehensive FAQ page that can be easily updated with a central JSON file. *Fifth Itteration*
 - **Event Schedule**: Working on this
-- **Registration**: Working on this // Using fillout
+- [**Registration**](https://hamburghackaton.vercel.app/register): A *Route* that routes depending if the user filled out the [Fillout](https://fillout.com) to a Form page (using Fillout React) a Form is Closed Page or a You allready registered Page
 - **Resources**: Planned
 
 ## How to Contribute

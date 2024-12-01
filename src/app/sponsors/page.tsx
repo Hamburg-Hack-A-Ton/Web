@@ -1,5 +1,5 @@
-import { UnderConstruction } from "@/ux/components/Homepage/wip";
+import NotImplemented from ">util/notImpl";
 
-export default function SponsorsPage() {
-  return <UnderConstruction />;
+export default function Sponsors() {
+  return <NotImplemented title="Sponsors" />;
 }
