@@ -15,7 +15,6 @@ import { AspectRatio } from ">ui/aspect-ratio";
 import { Footer, Header } from "../Header";
 import { TextHoverEffect } from "@/ux/effects/texthoverfx";
 import { DefaultText } from "@/ux/util/className";
-import SmoothScroll from "../smoothScrool";
 
 export function RootMain() {
   updateTheme();

@@ -3890,7 +3890,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"date-fns@npm:^4.1.0":
+"date-fns@npm:4.1.0":
   version: 4.1.0
   resolution: "date-fns@npm:4.1.0"
   checksum: 10c3/2445cbcb276b65d48023f48296673923caeed47c249b6941d5813a2e26d44e6f4c4ab78cacec0c434d56ea38179ec9ac42b5c74fa7e0656212222b113c3fbc7d
@@ -5046,7 +5046,7 @@ __metadata:
     clsx: "npm:^2.1.1"
     cmdk: "npm:^1.0.4"
     cva: "npm:^1.0.0-beta.1"
-    date-fns: "npm:^4.1.0"
+    date-fns: "npm:4.1.0"
     eslint: "npm:^8"
     eslint-config-next: "npm:15.0.3"
     framer-motion: "npm:12.0.0-alpha.1"
@@ -5065,7 +5065,7 @@ __metadata:
     react-use-measure: "npm:^2.1.1"
     simplex-noise: "npm:^4.0.3"
     sonner: "npm:^1.7.0"
-    tailwind-merge: "npm:^2.5.5"
+    tailwind-merge: "npm:2.5.5"
     tailwindcss: "npm:^3.4.1"
     tailwindcss-animate: "npm:^1.0.7"
     typescript: "npm:^5"
@@ -7494,7 +7494,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwind-merge@npm:^2.5.5":
+"tailwind-merge@npm:2.5.5":
   version: 2.5.5
   resolution: "tailwind-merge@npm:2.5.5"
   checksum: 10c3/448b8137eb45e17582e5a5aa8c258f0a501715822ce5eb835b8d0a5e74810413e70c710f82fb32f6644e59929b5b04ce94b0b17a22b42d1cd1f1f8061666cc72
