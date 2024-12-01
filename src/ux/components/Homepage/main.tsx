@@ -63,10 +63,15 @@ export function RootMain() {
               <motion.h1
                 className="text-lg sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl gigalypse z-20"
                 key="main-title"
+                lang="en"
               >
                 Welcome to Hamburg Hack A Ton
               </motion.h1>
-              <motion.p className="text-2xl omnes " key="main-subtitle">
+              <motion.p
+                className="text-2xl omnes "
+                key="main-subtitle"
+                lang="en"
+              >
                 The best place to build projects
               </motion.p>
             </motion.div>
@@ -77,7 +82,7 @@ export function RootMain() {
           className="flex flex-row items-start justify-center"
           key="disclaimer-container"
         >
-          <p className={DefaultText}>
+          <p className={DefaultText} lang="en">
             Disclaimer: This is just an Idea! <br />
             Not Affiliated with Hackclub! <br />
             Not Affiliated with the city of Hamburg!

@@ -45,13 +45,17 @@ export function About({
             <Tooltip
               tips={
                 <>
-                  <p className="text-md sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl omnes">
+                  <p
+                    className="text-md sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl omnes"
+                    lang="en"
+                  >
                     What is a Hackathon?
                   </p>
                 </>
               }
             >
               <Link
+                lang="en"
                 href="/faq/hackathon"
                 className=" underline decoration-wavy decoration-secondary"
                 prefetch
@@ -60,6 +64,7 @@ export function About({
               </Link>
             </Tooltip>
             <Tooltip
+              lang="en"
               tips={
                 <>
                   <p className="text-md sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl omnes">

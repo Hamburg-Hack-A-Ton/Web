@@ -199,7 +199,9 @@ export default async function FAQPage({
           <Suspense
             fallback={
               <main className="w-full h-2/3 bg-background text-foreground flex items-center justify-center">
-                <p className="lores text-4xl">Loading</p>
+                <p className="lores text-4xl" lang="en">
+                  Loading
+                </p>
               </main>
             }
           >
@@ -323,6 +325,7 @@ const CustomOther: React.FC<OtherProps> = ({ inner }) => {
       initial="hidden"
       animate="visible"
       transition={{ staggerChildren: 0.025 }}
+      lang="en"
     >
       <Separator className=" col-start-1 col-span-4" />
       <h3 className=" col-start-1 col-span-4 flex items-center justify-center text-2xl bernina bold">
