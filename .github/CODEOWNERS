@@ -1,0 +1,11 @@
+# This is a CODEOWNERS file.
+# The owners will be requested for review when someone opens a pull request.
+
+* @hamburghackaton/dev-web
+/src/app @hamburghackaton/dev-frontend
+/src/app/api @hamburghackaton/dev-backend
+/src/ux @hamburghackaton/dev-frontend
+/src/ux/api @hamburghackaton/dev-backend
+
+/public @hamburghackaton/dev-frontend @hamburghackaton/dev-backend
+/.github @hamburghackaton/dev-backend
