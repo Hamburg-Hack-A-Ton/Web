@@ -24,238 +24,15 @@
       }
     },
     "dev": {
-      "display": "Development Stuff",
-      "subs": {
-        "content-types": {
-          "display": "Content Types",
-          "pages": {
-            "": {
-              "display": "The Different Content Types",
-              "root-kontext": ["from=dev", "title=rand2"]
-            },
-            "title": {
-              "display": "The Title",
-              "root-kontext": ["from=dev"]
-            },
-            "fxheader": {
-              "display": "The FX Header",
-              "root-kontext": ["from=dev"]
-            },
-            "content": {
-              "display": "The Content",
-              "root-kontext": ["from=dev"]
-            },
-            "msg": {
-              "display": "The Message",
-              "root-kontext": ["from=dev"]
-            },
-            "override": {
-              "display": "The Override",
-              "root-kontext": ["from=dev"]
-            },
-            "showothers": {
-              "display": "Show Others",
-              "root-kontext": ["from=dev"]
-            },
-            "exit-kontext": {
-              "display": "Exit Kontext",
-              "root-kontext": ["from=dev"]
-            }
-          }
-        },
-        "others": {
-          "display": "The \"Other\" feature",
-          "pages": {
-            "": {
-              "display": "Default Page",
-              "root-kontext": ["from=root"]
-            },
-            "customother": {
-              "display": "Custom Other Test",
-              "root-kontext": ["from=others"]
-            },
-            "autoother": {
-              "display": "Auto Other Test",
-              "root-kontext": ["from=others"]
-            }
-          }
+      "display": "Looking for Dev Utilities?",
+      "pages": {
+        "": {
+          "display": "Not Available in Production"
         }
       }
     }
   },
   "entries": {
-    "dev": {
-      "<<": "notfound",
-      "others": {
-        "<<": {
-          "title": "Other Test",
-          "fxheader": "Other",
-          "msg": "Testing the different Other Features...",
-          "exit-kontext": ["from=others", "title=short"],
-          "other": {
-            "/dev/others/customother": "Custom Other Test",
-            "/dev/others/autoother": "Auto Other Test"
-          }
-        },
-        "customother": {
-          "<<": {
-            "title": {
-              "<<": "Custom Other Test",
-              "short": "Custom Other",
-              "long": "Custom Other Test",
-              "var1": "Testing the Custom Other feature",
-              "var2": "This is a test of the Custom Other feature"
-            },
-            "fxheader": "Other",
-            "msg": "Testing the Custom Other feature!",
-            "exit-kontext": ["from=others", "title=short"],
-            "other": {
-              "/dev/others": "Others",
-              "/dev/others/customother": "Custom Other Test",
-              "/dev/others/autoother": "Auto Other Test"
-            }
-          }
-        },
-        "autoother": {
-          "<<": {
-            "title": {
-              "<<": "Auto Other Test",
-              "short": "Auto Other",
-              "long": "Auto Other Test",
-              "var1": "Testing the Auto Other feature",
-              "var2": "This is a test of the Auto Other feature"
-            },
-            "fxheader": "Other",
-            "msg": "Testing the Auto Other feature!",
-            "exit-kontext": ["from=others"]
-          }
-        }
-      },
-      "content-types": {
-        "<<": {
-          "title": {
-            "rand1": "Content Types",
-            "rand2": "Different Content Types",
-            "rand3": "Content Types Test",
-            "rand4": "Content Types Example",
-            "rand5": "Content Types Demo",
-            "rand6": "Content Types Showcase",
-            "rand7": "Content Types Display",
-            "rand8": "Content Types Feature",
-            "rand9": "Content Types Page",
-            "rand10": "Content Types Stuff"
-          },
-          "msg": "This is a Navigation Page",
-          "content": "Navigate Below",
-          "exit-kontext": ["from=dev", "title=short"],
-          "other": {
-            "/dev/content-types/title": "The Title",
-            "/dev/content-types/fxheader": "The FX Header",
-            "/dev/content-types/content": "The Content",
-            "/dev/content-types/msg": "The Message",
-            "/dev/content-types/override": "The Override",
-            "/dev/content-types/showothers": "The Hide Others",
-            "/dev/content-types/exit-kontext": "The Exit Kontext"
-          }
-        },
-        "title": {
-          "<<": {
-            "title": {
-              "title": "The Title",
-              "short": "Title",
-              "long": "The Title Prop",
-              "var1": "Different Content Types",
-              "var2": "This is a test of the Content Types feature"
-            },
-            "msg": "WIP!"
-          }
-        },
-        "fxheader": {
-          "<<": {
-            "title": {
-              "title": "The FX Header",
-              "short": "FX Header",
-              "long": "The FX Header Prop",
-              "var1": "Different Content Types",
-              "var2": "This is a test of the Content Types feature"
-            },
-            "msg": "WIP!"
-          }
-        },
-        "content": {
-          "<<": {
-            "title": {
-              "title": "The Content",
-              "short": "Content",
-              "long": "The Content Prop",
-              "var1": "Different Content Types",
-              "var2": "This is a test of the Content Types feature"
-            },
-            "msg": "WIP!"
-          }
-        },
-        "msg": {
-          "<<": {
-            "title": {
-              "title": "The Message",
-              "short": "Message",
-              "long": "The Message Prop",
-              "var1": "Different Content Types",
-              "var2": "This is a test of the Content Types feature"
-            },
-            "msg": "WIP!"
-          }
-        },
-        "override": {
-          "<<": {
-            "title": {
-              "title": "The Override",
-              "short": "Override",
-              "long": "The Override Prop",
-              "var1": "Different Content Types",
-              "var2": "This is a test of the Content Types feature"
-            },
-            "msg": "WIP!"
-          }
-        },
-        "showothers": {
-          "<<": {
-            "title": {
-              "title": "The Show Others",
-              "short": "Show Others",
-              "long": "The Show Others Prop",
-              "var1": "Different Content Types",
-              "var2": "This is a test of the Content Types feature"
-            },
-            "msg": "WIP!"
-          }
-        },
-        "exit-kontext": {
-          "<<": {
-            "title": {
-              "title": "The Exit Kontext",
-              "short": "Exit Kontext",
-              "long": "The Exit Kontext Prop",
-              "var1": "Different Content Types",
-              "var2": "This is a test of the Content Types feature"
-            },
-            "msg": "WIP!"
-          }
-        }
-      },
-      "tests": {
-        "<<": "/faq/dev/tests/next",
-        "next": {
-          "<<": {
-            "title": "Next Test",
-            "fxheader": "Next",
-            "msg": "Testing the Next feature...",
-            "next": "/faq",
-            "exit-kontext": ["from=tests"]
-          }
-        }
-      }
-    },
     "walkthrough": {
       "<<": {
         "title": {
@@ -287,6 +64,15 @@
           "walkthrough": {
             "fine": "/"
           }
+        }
+      }
+    },
+    "dev": {
+      "<<": {
+        "title": "Sorry but Utilities are hidden in Production",
+        "fxheader": "Sorry",
+        "walkthough": {
+          "back": "/faq"
         }
       }
     },
