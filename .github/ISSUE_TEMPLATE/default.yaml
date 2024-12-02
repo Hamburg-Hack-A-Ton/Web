@@ -1,0 +1,49 @@
+name: Bug Report
+description: File A Bug Report
+labels: ["bug", "auto-close", "link-form"]
+title: "[DATE]: [TITLE]"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to report a bug. 
+        Please fill out the following template to help us reproduce the issue you are experiencing.
+
+        Due to Issue Automation, you will need to fill out the following Form.
+  - type: input
+    id: title
+    attributes:
+      label: What is this Issue About
+      description: Just type something descriptive as a Title
+      placeholder: The Registration Form always sends me back to the you already registered page
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Your Name
+      description: What is your name
+      placeholder: Michael Jackson
+    validations:
+      required: true
+  - type: checkboxes
+    attributes:
+      label: Conduct
+      description: You need to have Read and Accepted the Code of Conduct
+      options:
+        - label: Did you Read the Code of Conduct?
+          required: true
+        - label: Will you follow the Code of Conduct?
+          required: true
+  - type: markdown
+    attributes:
+      value: |
+        ## Link to the Form
+
+        Please fill out the following Form to help us reproduce the issue you are experiencing.
+
+        [Bug Report Form](https://hamburghackaton.fillout.com/repo-report?type=bug&name={{name}}&title={{title}})
+
+        # Do not Submit this Issue
+        # The Form will Create a new Issue with the Information you provided
+        # This Issue will be closed automatically
