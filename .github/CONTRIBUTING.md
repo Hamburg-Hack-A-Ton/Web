@@ -1,4 +1,13 @@
-![Static Badge](https://img.shields.io/badge/Data-3-data?style=for-the-badge&logo=Vercel&logoColor=%23fffff&label=Version&labelColor=%2300000)
+![Version](https://img.shields.io/badge/Data-3-data?style=for-the-badge&logo=Vercel&logoColor=%23fffff&label=Version&labelColor=%2300000)
+![Project](https://img.shields.io/badge/Hamburg-Hack_a_Ton!-status?style=for-the-badge&logo=vercel&logoColor=%23000&label=Hamburg%3F&labelColor=%23fff)
+![Sponsorship](https://img.shields.io/badge/Planning_to_Apply_to_be-Fiscaly_Sponsored_by_The_Hack_Foundation-config?style=for-the-badge&logo=hackclub&logoColor=%23000&labelColor=%23ff0000)
+![Author](https://img.shields.io/badge/Jack_%40_DJL-config?style=for-the-badge&labelColor=%230014b2&color=%230014b2)
+
+[![CodeQL](https://github.com/Hamburg-Hack-A-Ton/Web/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/Hamburg-Hack-A-Ton/Web/actions/workflows/github-code-scanning/codeql)
+[![CodeQL Advanced](https://github.com/Hamburg-Hack-A-Ton/Web/actions/workflows/codeql.yml/badge.svg)](https://github.com/Hamburg-Hack-A-Ton/Web/actions/workflows/codeql.yml)
+[![ESLint](https://github.com/Hamburg-Hack-A-Ton/Web/actions/workflows/eslint.yml/badge.svg)](https://github.com/Hamburg-Hack-A-Ton/Web/actions/workflows/eslint.yml)
+[![Labeler](https://github.com/Hamburg-Hack-A-Ton/Web/actions/workflows/labeler.yml/badge.svg)](https://github.com/Hamburg-Hack-A-Ton/Web/actions/workflows/labeler.yml)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/5181b2267a714dc0a7b36705d99c3ed6)](https://app.codacy.com/gh/Hamburg-Hack-A-Ton/Web/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
 ## How to contribute to Hamburg Hack A Ton
 
