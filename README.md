@@ -1,4 +1,7 @@
 # Hamburg Hack a Ton 
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e604e411bf594a03af5cd8408a5905ab)](https://app.codacy.com/gh/Hamburg-Hack-A-Ton/Web?utm_source=github.com&utm_medium=referral&utm_content=Hamburg-Hack-A-Ton/Web&utm_campaign=Badge_Grade)
+
 *an idea by @JackatDJL*
 
 **Hamburg Hack a Ton is not affiliated with the city of Hamburg or The Hack Foundation**
