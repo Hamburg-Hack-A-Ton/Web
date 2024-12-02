@@ -1,0 +1,5 @@
+{
+    "yaml.schemas": {
+        "https://json.schemastore.org/github-issue-forms.json": "file:///workspaces/Web/.github/PULL_REQUEST_TEMPLATE/fix.yml"
+    }
+}
