@@ -8,7 +8,12 @@ import { FilloutPopupEmbed } from "@fillout/react";
 import { Vortex } from "@/ux/effects/vortex";
 import { TextHoverEffect } from "@/ux/effects/texthoverfx";
 import { Button } from "@/ux/ui/button";
-import { Application, Register } from "§";
+import {
+  Application,
+  ApplyInterested2025,
+  ApplyRegister2025,
+  Register,
+} from "§";
 
 export default function RegisterPage() {
   const [form, setForm] = React.useState(false);
@@ -44,7 +49,7 @@ export default function RegisterPage() {
             exit={{ y: "-10rem", opacity: 0 }}
           >
             <FilloutPopupEmbed
-              filloutId={Register ? "4QEFws59KFus" : "9qMguiWWE2us"}
+              filloutId={Register ? ApplyRegister2025 : ApplyInterested2025}
               onClose={() => {
                 if (typeof window !== "undefined" && document) {
                   localStorage.setItem(
