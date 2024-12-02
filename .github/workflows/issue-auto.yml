@@ -1,0 +1,45 @@
+name: Auto Close Issues
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  auto-close:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check for auto-close or link-form tag
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const issue = context.payload.issue;
+            if (issue.state === 'closed') return;
+
+            const autoCloseTag = issue.labels.find(label => label.name === 'auto-close');
+            const linkFormTag = issue.labels.find(label => label.name === 'link-form');
+
+            if (autoCloseTag) {
+              await github.issues.update({
+                ...context.repo,
+                issue_number: issue.number,
+                state: 'closed'
+              });
+
+              await github.issues.createComment({
+                ...context.repo,
+                issue_number: issue.number,
+                body: 'Closed because of Auto Close Tag'
+              });
+            } else if (linkFormTag) {
+              await github.issues.update({
+                ...context.repo,
+                issue_number: issue.number,
+                state: 'closed'
+              });
+
+              await github.issues.createComment({
+                ...context.repo,
+                issue_number: issue.number,
+                body: 'Hey! you dont need to Create this Issue!\n(Fill out this Form:)[https://hamburghackaton.fillout.com/repo-report]'
+              });
+            }

@@ -1,0 +1,34 @@
+name: "Fix"
+description: Implement a Fix
+title: "[FIX] -"
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to report a bug. 
+        Please fill out the following template to help us reproduce the issue you are experiencing.
+
+  - type: checkboxes
+    attributes:
+      label: Conduct
+      description: You need to have Read and Accepted the Code of Conduct
+      options:
+        - label: Did you Read the Code of Conduct?
+          required: true
+        - label: Will you follow the Code of Conduct?
+          required: true
+
+  - type: input
+    id: title
+    attributes:
+      label: What did you Fix?
+      description: Just type something descriptive as a Title
+      placeholder: The Registration Form always sends me back to the you already registered page
+    validations:
+      required: true
+  
+  - type: markdown
+    attributes:
+      value: |
+        # Thank you for your Contribution
