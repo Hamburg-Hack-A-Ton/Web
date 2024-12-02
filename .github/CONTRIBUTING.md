@@ -13,19 +13,20 @@
 
 ### **Did you find a bug?**
 
-- **Do not open up a GitHub issue if the bug is a security vulnerability**, and instead refer to our [security policy](https://your-project.org/security).
+- **Do not open up a GitHub issue if the bug is a security vulnerability**, and instead refer to our [security policy](https://github.com/Hamburg-Hack-A-Ton/Web/.github/security.md).
 
-- **Ensure the bug was not already reported** by searching on GitHub under [Issues](https://github.com/your-project/issues).
+- **Ensure the bug was not already reported** by searching on GitHub under [Issues](https://github.com/Hamburg-Hack-A-Ton/Web/issues).
 
-- If you're unable to find an open issue addressing the problem, [open a new one](https://github.com/your-project/issues/new). Be sure to include a **title and clear description**, as much relevant information as possible, and a **code sample** or an **executable test case** demonstrating the expected behavior that is not occurring.
+- If you're unable to find an open issue addressing the problem, please fill out our bug report form at [hamburghackaton.fillout.com/repo-report](https://hamburghackaton.fillout.com/repo-report?type=bug). The form will guide you through providing all necessary information including a **title, clear description**, relevant details, and if applicable, **code samples** or **test cases** that demonstrate the expected behavior.
 
 - If possible, use the relevant bug report templates to create the issue. Simply copy the content of the appropriate template into a file, make the necessary changes to demonstrate the issue, and **paste the content into the issue description**:
 
-  - [**Module A** issues](https://github.com/your-project/blob/main/guides/bug_report_templates/module_a.md)
-  - [**Module B** issues](https://github.com/your-project/blob/main/guides/bug_report_templates/module_b.md)
-  - [**Generic template** for other issues](https://github.com/your-project/blob/main/guides/bug_report_templates/generic.md)
+  - [**Bug Report** issues](https://hamburghackaton.fillout.com/repo-report?type=bug)
+  - [**Security Report** issues](https://hamburghackaton.fillout.com/repo-report?type=security)
+  - [**Feature Request** issues](https://hamburghackaton.fillout.com/repo-report?type=feature)
+  - [**User Support** issues](https://hamburghackaton.fillout.com/user-report)
 
-- For more detailed information on submitting a bug report and creating an issue, visit our [reporting guidelines](https://your-project.org/contributing/reporting-an-issue).
+- For more detailed information on submitting a bug report and creating an issue, visit our [reporting guidelines](https://hamburghackaton.vercel.app/faq/github/contributing/reporting-an-issue).
 
 ### **Did you write a patch that fixes a bug?**
 
@@ -33,30 +34,25 @@
 
 - Ensure the PR description clearly describes the problem and solution. Include the relevant issue number if applicable.
 
-- Before submitting, please read the [Contributing to Your Project](https://your-project.org/contributing) guide to know more about coding conventions and benchmarks.
+- Before submitting, please read the [Contributing to our project](https://hamburghackaton.vercel.app/faq/dev/github/contributing) guide to know more about coding conventions and benchmarks.
 
 ### **Did you fix whitespace, format code, or make a purely cosmetic patch?**
 
-Changes that are cosmetic in nature and do not add anything substantial to the stability, functionality, or testability of the project will generally not be accepted (read more about [our rationales behind this decision](https://github.com/your-project/pull/13771#issuecomment-32746700)).
+We use [Codacy](https://app.codacy.com/gh/Hamburg-Hack-A-Ton/Web/dashboard) for code formatting and quality control. Pull requests that only contain cosmetic changes will likely be rejected.
 
 ### **Do you intend to add a new feature or change an existing one?**
 
-- Suggest your change in the [project-core mailing list](https://discuss.your-project.org/c/project-core) and start writing code.
-
-- Do not open an issue on GitHub until you have collected positive feedback about the change. GitHub issues are primarily intended for bug reports and fixes.
-
-- We generally reject changes to core extensions. Those changes should be proposed in the [project issue tracker instead](https://bugs.your-project.org/issues), as we don't want to conflict with future versions.
+- Suggest your change in the [Ideas discussions](https://github.com/orgs/Hamburg-Hack-A-Ton/discussions/categories/ideas) and create a [feature request](https://hamburghackaton.fillout.com/repo-report?type=feature&doit=myself) to start the process and then start coding!
 
 ### **Do you have questions about the source code?**
 
-- Ask any question about how to use the project in the [project-talk mailing list](https://discuss.your-project.org/c/project-talk).
+- Ask any question about how to use the project in the [GitHub Discussions](https://github.com/orgs/Hamburg-Hack-A-Ton/discussions) or check our [developer FAQ](https://hamburghackaton.vercel.app/faq/dev/).
 
 ### **Do you want to contribute to the project documentation?**
 
-- Please read [Contributing to the Project Documentation](https://your-project.org/contributing/documentation).
-
-Your Project is a volunteer effort. We encourage you to pitch in and join [the team](https://contributors.your-project.org)!
+- Please read [Contributing to the Project Documentation](https://hamburghackaton.vercel.app/faq/dev/documentation).
 
 Thanks! :heart: :heart: :heart:
 
-Your Project Team
+The Hamburg Hack A Ton Team
+With :heart: from Stade, Lower Saxony, Germany

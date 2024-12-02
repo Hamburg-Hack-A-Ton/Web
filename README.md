@@ -48,3 +48,6 @@ We are open to contributions from the community. If you have any suggestions or 
 
 For any inquiries or suggestions, please contact me at (jack.ruder@athenetz.de)[mailto:jack.ruder@athenetz.de]
 Join us in making this hackathon a memorable and impactful event!
+
+The Hamburg Hack A Ton Team
+With :heart: from Stade, Lower Saxony, Germany
