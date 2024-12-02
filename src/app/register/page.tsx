@@ -40,11 +40,11 @@ export default function RegisterPage() {
         {form && (
           <motion.main
             initial={{ y: "10rem", opacity: 0 }}
-            animate={{ y: "0rem", opacity: 1 }}
+            animate={{ y: "0rem", opacity: 1, height: "75vh" }}
             exit={{ y: "-10rem", opacity: 0 }}
           >
             <FilloutPopupEmbed
-              filloutId={Register ? "6gV48FesMnus" : "xxN5JPXCBHus"}
+              filloutId={Register ? "4QEFws59KFus" : "9qMguiWWE2us"}
               onClose={() => {
                 if (typeof window !== "undefined" && document) {
                   localStorage.setItem(
