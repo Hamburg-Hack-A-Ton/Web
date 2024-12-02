@@ -8,6 +8,14 @@ export const Version = 3; //CHHH/255-3 Current Working On Version
 
 //
 
+// Forms
+
+export const ApplyInterested2025 = "4QEFws59KFus";
+
+export const ApplyRegister2025 = "9qMguiWWE2us";
+
+//
+
 /**
  * Hackclub CDN images:
  * 
