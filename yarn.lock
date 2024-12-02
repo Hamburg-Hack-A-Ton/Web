@@ -3217,6 +3217,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@withgraphite/graphite-cli@npm:1.4.8":
+  version: 1.4.8
+  resolution: "@withgraphite/graphite-cli@npm:1.4.8"
+  dependencies:
+    chalk: "npm:^4.1.2"
+    semver: "npm:^7.5.4"
+    ws: "npm:^8.6.0"
+    yargs: "npm:^17.5.1"
+  bin:
+    graphite: graphite.js
+    gt: graphite.js
+  checksum: 10c3/210c0721d63143dbc92048c8850f7074782264c44b10148c4d65851293d2ad72079b4e2a2e22fa7bf24e11cd3497b0661e5d379f8c5ce0bea7fc4d4bfa312184
+  languageName: node
+  linkType: hard
+
 "abbrev@npm:^2.0.0":
   version: 2.0.0
   resolution: "abbrev@npm:2.0.0"
@@ -3650,7 +3665,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chalk@npm:^4.0.0":
+"chalk@npm:^4.0.0, chalk@npm:^4.1.2":
   version: 4.1.2
   resolution: "chalk@npm:4.1.2"
   dependencies:
@@ -3713,6 +3728,17 @@ __metadata:
   version: 0.0.1
   resolution: "client-only@npm:0.0.1"
   checksum: 10c3/7fc9779108429b088d7fe337283bb845cb638a5c05cce5dc747cd114c455cff624773e2a5d8ad5da986c7a64d6162814175867edf56f1030bea86e5de565904d
+  languageName: node
+  linkType: hard
+
+"cliui@npm:^8.0.1":
+  version: 8.0.1
+  resolution: "cliui@npm:8.0.1"
+  dependencies:
+    string-width: "npm:^4.2.0"
+    strip-ansi: "npm:^6.0.1"
+    wrap-ansi: "npm:^7.0.0"
+  checksum: 10c3/32d65bea4c219b909ef68b2e5459769b50fe9a8adb4ec5c6ff9f7474b49e1c0e6dc66de38892551237fd59a3d44cb0a4e537a67d3f20449441d8cd33d8e23613
   languageName: node
   linkType: hard
 
@@ -4231,7 +4257,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"escalade@npm:^3.2.0":
+"escalade@npm:^3.1.1, escalade@npm:^3.2.0":
   version: 3.2.0
   resolution: "escalade@npm:3.2.0"
   checksum: 10c3/e1f76af1e296f1695a0f9a78e8c88ee4832384dbc5e08e28a21be5ddf112e447dc37dc9e0fab1dde5b68b43d778fa7677e8023c11fa6535763c9eac2f54d9e15
@@ -4779,6 +4805,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"get-caller-file@npm:^2.0.5":
+  version: 2.0.5
+  resolution: "get-caller-file@npm:2.0.5"
+  checksum: 10c3/f15118aee40858e1d03a212d55a1ec8c1fb9a7459ee51ab9a28130779edf477646e85c90853c9bb910020f876dbf39ac76e49a16b0fecf3f835ede28787e1c2c
+  languageName: node
+  linkType: hard
+
 "get-intrinsic@npm:^1.1.3, get-intrinsic@npm:^1.2.1, get-intrinsic@npm:^1.2.3, get-intrinsic@npm:^1.2.4":
   version: 1.2.4
   resolution: "get-intrinsic@npm:1.2.4"
@@ -5041,6 +5074,7 @@ __metadata:
     "@vercel/flags": "npm:^2.6.3"
     "@vercel/speed-insights": "npm:^1.1.0"
     "@vercel/toolbar": "npm:^0.1.26"
+    "@withgraphite/graphite-cli": "npm:1.4.8"
     autoprefixer: "npm:^10.4.20"
     class-variance-authority: "npm:^0.7.0"
     clsx: "npm:^2.1.1"
@@ -6884,6 +6918,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"require-directory@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "require-directory@npm:2.1.1"
+  checksum: 10c3/c219f698c354e05ee138c58a50f43e545421fe2d6c151f7baadd232c18ceba489c5bf09ad27b3a17657f3a4ba3474ead185c695bccece54a879c1fa82b6a8e11
+  languageName: node
+  linkType: hard
+
 "require-in-the-middle@npm:^7.1.1":
   version: 7.4.0
   resolution: "require-in-the-middle@npm:7.4.0"
@@ -7055,7 +7096,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^7.3.5, semver@npm:^7.5.2, semver@npm:^7.6.0, semver@npm:^7.6.3":
+"semver@npm:^7.3.5, semver@npm:^7.5.2, semver@npm:^7.5.4, semver@npm:^7.6.0, semver@npm:^7.6.3":
   version: 7.6.3
   resolution: "semver@npm:7.6.3"
   bin:
@@ -7308,7 +7349,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"string-width-cjs@npm:string-width@^4.2.0, string-width@npm:^4.1.0":
+"string-width-cjs@npm:string-width@^4.2.0, string-width@npm:^4.1.0, string-width@npm:^4.2.0, string-width@npm:^4.2.3":
   version: 4.2.3
   resolution: "string-width@npm:4.2.3"
   dependencies:
@@ -7993,7 +8034,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"wrap-ansi-cjs@npm:wrap-ansi@^7.0.0":
+"wrap-ansi-cjs@npm:wrap-ansi@^7.0.0, wrap-ansi@npm:^7.0.0":
   version: 7.0.0
   resolution: "wrap-ansi@npm:7.0.0"
   dependencies:
@@ -8022,10 +8063,32 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ws@npm:^8.6.0":
+  version: 8.18.0
+  resolution: "ws@npm:8.18.0"
+  peerDependencies:
+    bufferutil: ^4.0.1
+    utf-8-validate: ">=5.0.2"
+  peerDependenciesMeta:
+    bufferutil:
+      optional: true
+    utf-8-validate:
+      optional: true
+  checksum: 10c3/9c28205b42f47d7ebcadf5f8e1f2a87eb5b22993507023114872b9dd755071ca7eb784d5ee30946b9a7fa1746b8d470692a91c99af8b2d842175789ebcffcbf8
+  languageName: node
+  linkType: hard
+
 "xtend@npm:^4.0.0":
   version: 4.0.2
   resolution: "xtend@npm:4.0.2"
   checksum: 10c3/43f39f64d7f76cc537ffae438e2a3ef45e4758ddbde48763ddb467ec28a812cac84970378eb0ac5dcf9d740482da7cdf1300ad769fcf53c1ee66e885a6ff4e1a
+  languageName: node
+  linkType: hard
+
+"y18n@npm:^5.0.5":
+  version: 5.0.8
+  resolution: "y18n@npm:5.0.8"
+  checksum: 10c3/666efcfca6d3bdfad1c354e81904c7d1e2070f284cfdd1ceba219de9c5922b0adfe688405655ae2509445f4e9999dd2a89e16a0619e5a10b4b827b4e9150005e
   languageName: node
   linkType: hard
 
@@ -8049,6 +8112,28 @@ __metadata:
   bin:
     yaml: bin.mjs
   checksum: 10c3/53556af622281f4f425e82498304a8b86c65fd817a30667ab77bcc355ce04c83456fbef8b89e044a74c855991a05ba26a90061159e5a40415202ef75e5db6dff
+  languageName: node
+  linkType: hard
+
+"yargs-parser@npm:^21.1.1":
+  version: 21.1.1
+  resolution: "yargs-parser@npm:21.1.1"
+  checksum: 10c3/ee8c909fd40e7b724c9b334d717ad903f1d3743c30e5af844a8d76857a74917aaef51b97f403435d4e4476497c6e20deb0587ffe33b76431f2c0991208b8f168
+  languageName: node
+  linkType: hard
+
+"yargs@npm:^17.5.1":
+  version: 17.7.2
+  resolution: "yargs@npm:17.7.2"
+  dependencies:
+    cliui: "npm:^8.0.1"
+    escalade: "npm:^3.1.1"
+    get-caller-file: "npm:^2.0.5"
+    require-directory: "npm:^2.1.1"
+    string-width: "npm:^4.2.3"
+    y18n: "npm:^5.0.5"
+    yargs-parser: "npm:^21.1.1"
+  checksum: 10c3/6ad91e9d9f2a0b3d6ffb86bcda97405d5446ae529d5d50a6719037898d4ca3e0ba40bbddf9071b10cd781417de2ae018e55eee6b299cb0ccdbb3275b52bc82c9
   languageName: node
   linkType: hard
 
