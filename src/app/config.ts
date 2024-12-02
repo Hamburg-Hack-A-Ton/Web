@@ -4,6 +4,8 @@ export const Register = false; //CHHH/255 Change to true to switch from Interest
 
 export const Application = false; //CHHH/255-2 Change to true to enable any registrations
 
+export const Version = 3; //CHHH/255-3 Current Working On Version
+
 //
 
 /**
