@@ -1,0 +1,37 @@
+---
+name: "Publish"
+about: "Template for publishing changes"
+title: "[PUBLISH] "
+labels: ["publish"]
+assignees: []
+
+---
+
+- type: markdown
+  attributes:
+    value: |
+      Please ensure you have read the Code of Conduct before submitting your changes.
+
+- type: checkboxes
+  attributes:
+    label: Conduct
+    description: You need to have Read and Accepted the Code of Conduct
+    options:
+      - label: Did you Read the Code of Conduct?
+        required: true
+      - label: Will you follow the Code of Conduct?
+        required: true
+
+- type: input
+  id: title
+  attributes:
+    label: What are you publishing?
+    description: Provide a brief description of the changes you are publishing.
+    placeholder: Publishing the new feature for user registration
+  validations:
+    required: true
+
+- type: markdown
+  attributes:
+    value: |
+      # Thank you for your Contribution
